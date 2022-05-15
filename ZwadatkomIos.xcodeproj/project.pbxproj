@@ -8,22 +8,80 @@
 
 /* Begin PBXBuildFile section */
 		863A0C56283105070009EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C55283105070009EA1F /* AppDelegate.swift */; };
-		863A0C58283105070009EA1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C57283105070009EA1F /* SceneDelegate.swift */; };
-		863A0C5A283105070009EA1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C59283105070009EA1F /* ViewController.swift */; };
-		863A0C5D283105070009EA1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863A0C5B283105070009EA1F /* Main.storyboard */; };
-		863A0C5F283105090009EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863A0C5E283105090009EA1F /* Assets.xcassets */; };
-		863A0C62283105090009EA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863A0C60283105090009EA1F /* LaunchScreen.storyboard */; };
+		863A0C5A283105070009EA1F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C59283105070009EA1F /* SplashController.swift */; };
+		863A0C6C283106790009EA1F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C6B283106790009EA1F /* Moya */; };
+		863A0C6F283106AF0009EA1F /* SwifterSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C6E283106AF0009EA1F /* SwifterSwift */; };
+		863A0C71283106E40009EA1F /* APIRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C70283106E40009EA1F /* APIRouter.swift */; };
+		863A0C76283108B80009EA1F /* Constants .swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C75283108B80009EA1F /* Constants .swift */; };
+		863A0C7C28310B4B0009EA1F /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C7B28310B4B0009EA1F /* Kingfisher */; };
+		863A0C7F28310BD00009EA1F /* MOLH in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C7E28310BD00009EA1F /* MOLH */; };
+		863A0C8228310C120009EA1F /* CombineCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C8128310C120009EA1F /* CombineCocoa */; };
+		863A0C8D283112B80009EA1F /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C8C283112B80009EA1F /* NetworkManager.swift */; };
+		863A0C8F2831172D0009EA1F /* ApplicationCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C8E2831172D0009EA1F /* ApplicationCoordinator.swift */; };
+		863A0C93283117610009EA1F /* BaseCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C92283117610009EA1F /* BaseCoordinator.swift */; };
+		863A0C95283117D10009EA1F /* DeepLinkOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C94283117D10009EA1F /* DeepLinkOption.swift */; };
+		863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C98283119170009EA1F /* RouterProtocol.swift */; };
+		863A0C9C283119A60009EA1F /* Presentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C9B283119A60009EA1F /* Presentable.swift */; };
+		863A0C9F28311C350009EA1F /* CoordinatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C9E28311C350009EA1F /* CoordinatorFactory.swift */; };
+		863A0CA128311C4F0009EA1F /* ModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CA028311C4F0009EA1F /* ModuleFactory.swift */; };
+		863A0CA328311D0B0009EA1F /* SplashModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CA228311D0B0009EA1F /* SplashModuleFactory.swift */; };
+		863A0CA628311DDB0009EA1F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CA528311DDB0009EA1F /* BaseView.swift */; };
+		863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CA8283120250009EA1F /* AssetsManager.swift */; };
+		863A0CC3283120260009EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CA9283120250009EA1F /* Assets.xcassets */; };
+		863A0CC4283120260009EA1F /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAC283120250009EA1F /* Cairo-Medium.ttf */; };
+		863A0CC5283120260009EA1F /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAD283120250009EA1F /* Cairo-Regular.ttf */; };
+		863A0CC6283120260009EA1F /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAE283120250009EA1F /* Cairo-Black.ttf */; };
+		863A0CC7283120260009EA1F /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAF283120250009EA1F /* Cairo-Bold.ttf */; };
+		863A0CC8283120260009EA1F /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CB0283120250009EA1F /* FontsManager.swift */; };
+		863A0CC9283120260009EA1F /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CB2283120250009EA1F /* LaunchScreen.strings */; };
+		863A0CCA283120260009EA1F /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CB4283120250009EA1F /* Main.strings */; };
+		863A0CCB283120260009EA1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CB6283120250009EA1F /* LaunchScreen.storyboard */; };
+		863A0CCC283120260009EA1F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CB8283120250009EA1F /* Main.storyboard */; };
+		863A0CCD283120260009EA1F /* Strings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CBB283120250009EA1F /* Strings.swift */; };
+		863A0CCE283120260009EA1F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CBC283120250009EA1F /* Localizable.strings */; };
+		863A0CCF283120260009EA1F /* Colors.txt in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CC0283120260009EA1F /* Colors.txt */; };
+		863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CC1283120260009EA1F /* ColorsManager.swift */; };
+		863A0CD3283120B50009EA1F /* CoordinatorFactoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD2283120B50009EA1F /* CoordinatorFactoryProtocol.swift */; };
+		863A0CD5283120E20009EA1F /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD4283120E20009EA1F /* SplashCoordinator.swift */; };
+		863A0CD7283121D90009EA1F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD6283121D90009EA1F /* Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		863A0C52283105070009EA1F /* ZwadatkomIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZwadatkomIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863A0C55283105070009EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		863A0C57283105070009EA1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		863A0C59283105070009EA1F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		863A0C5C283105070009EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		863A0C5E283105090009EA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		863A0C61283105090009EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		863A0C59283105070009EA1F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
 		863A0C63283105090009EA1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		863A0C70283106E40009EA1F /* APIRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRouter.swift; sourceTree = "<group>"; };
+		863A0C75283108B80009EA1F /* Constants .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Constants .swift"; sourceTree = "<group>"; };
+		863A0C8C283112B80009EA1F /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		863A0C8E2831172D0009EA1F /* ApplicationCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationCoordinator.swift; sourceTree = "<group>"; };
+		863A0C92283117610009EA1F /* BaseCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseCoordinator.swift; sourceTree = "<group>"; };
+		863A0C94283117D10009EA1F /* DeepLinkOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeepLinkOption.swift; sourceTree = "<group>"; };
+		863A0C98283119170009EA1F /* RouterProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RouterProtocol.swift; sourceTree = "<group>"; };
+		863A0C9B283119A60009EA1F /* Presentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Presentable.swift; sourceTree = "<group>"; };
+		863A0C9E28311C350009EA1F /* CoordinatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactory.swift; sourceTree = "<group>"; };
+		863A0CA028311C4F0009EA1F /* ModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModuleFactory.swift; sourceTree = "<group>"; };
+		863A0CA228311D0B0009EA1F /* SplashModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashModuleFactory.swift; sourceTree = "<group>"; };
+		863A0CA528311DDB0009EA1F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		863A0CA8283120250009EA1F /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
+		863A0CA9283120250009EA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		863A0CAC283120250009EA1F /* Cairo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Medium.ttf"; sourceTree = "<group>"; };
+		863A0CAD283120250009EA1F /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
+		863A0CAE283120250009EA1F /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
+		863A0CAF283120250009EA1F /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
+		863A0CB0283120250009EA1F /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
+		863A0CB3283120250009EA1F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		863A0CB5283120250009EA1F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
+		863A0CB7283120250009EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		863A0CB9283120250009EA1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		863A0CBB283120250009EA1F /* Strings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Strings.swift; sourceTree = "<group>"; };
+		863A0CBD283120250009EA1F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		863A0CBE283120250009EA1F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		863A0CC0283120260009EA1F /* Colors.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Colors.txt; sourceTree = "<group>"; };
+		863A0CC1283120260009EA1F /* ColorsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorsManager.swift; sourceTree = "<group>"; };
+		863A0CD2283120B50009EA1F /* CoordinatorFactoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorFactoryProtocol.swift; sourceTree = "<group>"; };
+		863A0CD4283120E20009EA1F /* SplashCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashCoordinator.swift; sourceTree = "<group>"; };
+		863A0CD6283121D90009EA1F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,6 +89,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				863A0C7F28310BD00009EA1F /* MOLH in Frameworks */,
+				863A0C7C28310B4B0009EA1F /* Kingfisher in Frameworks */,
+				863A0C6C283106790009EA1F /* Moya in Frameworks */,
+				863A0C8228310C120009EA1F /* CombineCocoa in Frameworks */,
+				863A0C6F283106AF0009EA1F /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -56,15 +119,249 @@
 		863A0C54283105070009EA1F /* ZwadatkomIos */ = {
 			isa = PBXGroup;
 			children = (
-				863A0C55283105070009EA1F /* AppDelegate.swift */,
-				863A0C57283105070009EA1F /* SceneDelegate.swift */,
-				863A0C59283105070009EA1F /* ViewController.swift */,
-				863A0C5B283105070009EA1F /* Main.storyboard */,
-				863A0C5E283105090009EA1F /* Assets.xcassets */,
-				863A0C60283105090009EA1F /* LaunchScreen.storyboard */,
+				863A0C77283108DF0009EA1F /* Application */,
+				863A0C902831173C0009EA1F /* BaseCoordinator */,
+				863A0C96283118230009EA1F /* Factories */,
+				863A0C97283118EC0009EA1F /* Router */,
+				863A0C69283106300009EA1F /* Networking */,
+				863A0C7828310A340009EA1F /* Managers */,
+				863A0C74283108A80009EA1F /* Utilities */,
+				863A0C8B283112270009EA1F /* Extensions */,
+				863A0C9A2831198F0009EA1F /* Protocols */,
+				863A0C8A283112110009EA1F /* CustomViews */,
+				863A0C89283111F20009EA1F /* Models */,
+				863A0C8328310C410009EA1F /* Flows */,
+				863A0C8628310C8B0009EA1F /* Resources */,
 				863A0C63283105090009EA1F /* Info.plist */,
 			);
 			path = ZwadatkomIos;
+			sourceTree = "<group>";
+		};
+		863A0C69283106300009EA1F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C8C283112B80009EA1F /* NetworkManager.swift */,
+				863A0C70283106E40009EA1F /* APIRouter.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		863A0C74283108A80009EA1F /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C75283108B80009EA1F /* Constants .swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		863A0C77283108DF0009EA1F /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C55283105070009EA1F /* AppDelegate.swift */,
+				863A0C8E2831172D0009EA1F /* ApplicationCoordinator.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		863A0C7828310A340009EA1F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		863A0C8328310C410009EA1F /* Flows */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C87283110260009EA1F /* SplashFlow */,
+				863A0C88283110690009EA1F /* OnboardingFlow */,
+				863A0C8528310C550009EA1F /* MainFlow */,
+				863A0C8428310C4B0009EA1F /* AuthFlow */,
+			);
+			path = Flows;
+			sourceTree = "<group>";
+		};
+		863A0C8428310C4B0009EA1F /* AuthFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = AuthFlow;
+			sourceTree = "<group>";
+		};
+		863A0C8528310C550009EA1F /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MainFlow;
+			sourceTree = "<group>";
+		};
+		863A0C8628310C8B0009EA1F /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CA7283120250009EA1F /* Assets */,
+				863A0CBF283120260009EA1F /* Colors */,
+				863A0CAA283120250009EA1F /* Fonts */,
+				863A0CB1283120250009EA1F /* Storyboards */,
+				863A0CBA283120250009EA1F /* Strings */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		863A0C87283110260009EA1F /* SplashFlow */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CD8283124820009EA1F /* SplashView */,
+				863A0CA428311D790009EA1F /* Coordinator */,
+			);
+			path = SplashFlow;
+			sourceTree = "<group>";
+		};
+		863A0C88283110690009EA1F /* OnboardingFlow */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = OnboardingFlow;
+			sourceTree = "<group>";
+		};
+		863A0C89283111F20009EA1F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		863A0C8A283112110009EA1F /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		863A0C8B283112270009EA1F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		863A0C902831173C0009EA1F /* BaseCoordinator */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C92283117610009EA1F /* BaseCoordinator.swift */,
+				863A0C94283117D10009EA1F /* DeepLinkOption.swift */,
+			);
+			path = BaseCoordinator;
+			sourceTree = "<group>";
+		};
+		863A0C96283118230009EA1F /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C9E28311C350009EA1F /* CoordinatorFactory.swift */,
+				863A0CA028311C4F0009EA1F /* ModuleFactory.swift */,
+				863A0C9D28311C1E0009EA1F /* Protocols */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		863A0C97283118EC0009EA1F /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CD6283121D90009EA1F /* Router.swift */,
+				863A0C98283119170009EA1F /* RouterProtocol.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		863A0C9A2831198F0009EA1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C9B283119A60009EA1F /* Presentable.swift */,
+				863A0CA528311DDB0009EA1F /* BaseView.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		863A0C9D28311C1E0009EA1F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CA228311D0B0009EA1F /* SplashModuleFactory.swift */,
+				863A0CD2283120B50009EA1F /* CoordinatorFactoryProtocol.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		863A0CA428311D790009EA1F /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CD4283120E20009EA1F /* SplashCoordinator.swift */,
+			);
+			path = Coordinator;
+			sourceTree = "<group>";
+		};
+		863A0CA7283120250009EA1F /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CA8283120250009EA1F /* AssetsManager.swift */,
+				863A0CA9283120250009EA1F /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		863A0CAA283120250009EA1F /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CAB283120250009EA1F /* Cairo */,
+				863A0CB0283120250009EA1F /* FontsManager.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		863A0CAB283120250009EA1F /* Cairo */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CAC283120250009EA1F /* Cairo-Medium.ttf */,
+				863A0CAD283120250009EA1F /* Cairo-Regular.ttf */,
+				863A0CAE283120250009EA1F /* Cairo-Black.ttf */,
+				863A0CAF283120250009EA1F /* Cairo-Bold.ttf */,
+			);
+			path = Cairo;
+			sourceTree = "<group>";
+		};
+		863A0CB1283120250009EA1F /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CB2283120250009EA1F /* LaunchScreen.strings */,
+				863A0CB4283120250009EA1F /* Main.strings */,
+				863A0CB6283120250009EA1F /* LaunchScreen.storyboard */,
+				863A0CB8283120250009EA1F /* Main.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		863A0CBA283120250009EA1F /* Strings */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CBB283120250009EA1F /* Strings.swift */,
+				863A0CBC283120250009EA1F /* Localizable.strings */,
+			);
+			path = Strings;
+			sourceTree = "<group>";
+		};
+		863A0CBF283120260009EA1F /* Colors */ = {
+			isa = PBXGroup;
+			children = (
+				863A0CC0283120260009EA1F /* Colors.txt */,
+				863A0CC1283120260009EA1F /* ColorsManager.swift */,
+			);
+			path = Colors;
+			sourceTree = "<group>";
+		};
+		863A0CD8283124820009EA1F /* SplashView */ = {
+			isa = PBXGroup;
+			children = (
+				863A0C59283105070009EA1F /* SplashController.swift */,
+			);
+			path = SplashView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,6 +371,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 863A0C66283105090009EA1F /* Build configuration list for PBXNativeTarget "ZwadatkomIos" */;
 			buildPhases = (
+				863A0CD12831205B0009EA1F /* SwiftGen */,
 				863A0C4E283105070009EA1F /* Sources */,
 				863A0C4F283105070009EA1F /* Frameworks */,
 				863A0C50283105070009EA1F /* Resources */,
@@ -83,6 +381,13 @@
 			dependencies = (
 			);
 			name = ZwadatkomIos;
+			packageProductDependencies = (
+				863A0C6B283106790009EA1F /* Moya */,
+				863A0C6E283106AF0009EA1F /* SwifterSwift */,
+				863A0C7B28310B4B0009EA1F /* Kingfisher */,
+				863A0C7E28310BD00009EA1F /* MOLH */,
+				863A0C8128310C120009EA1F /* CombineCocoa */,
+			);
 			productName = ZwadatkomIos;
 			productReference = 863A0C52283105070009EA1F /* ZwadatkomIos.app */;
 			productType = "com.apple.product-type.application";
@@ -109,8 +414,16 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 863A0C49283105070009EA1F;
+			packageReferences = (
+				863A0C6A283106790009EA1F /* XCRemoteSwiftPackageReference "Moya" */,
+				863A0C6D283106AE0009EA1F /* XCRemoteSwiftPackageReference "SwifterSwift" */,
+				863A0C7A28310B4B0009EA1F /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */,
+				863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+			);
 			productRefGroup = 863A0C53283105070009EA1F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,42 +438,114 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863A0C62283105090009EA1F /* LaunchScreen.storyboard in Resources */,
-				863A0C5F283105090009EA1F /* Assets.xcassets in Resources */,
-				863A0C5D283105070009EA1F /* Main.storyboard in Resources */,
+				863A0CC5283120260009EA1F /* Cairo-Regular.ttf in Resources */,
+				863A0CCC283120260009EA1F /* Main.storyboard in Resources */,
+				863A0CC3283120260009EA1F /* Assets.xcassets in Resources */,
+				863A0CC4283120260009EA1F /* Cairo-Medium.ttf in Resources */,
+				863A0CC7283120260009EA1F /* Cairo-Bold.ttf in Resources */,
+				863A0CCF283120260009EA1F /* Colors.txt in Resources */,
+				863A0CC9283120260009EA1F /* LaunchScreen.strings in Resources */,
+				863A0CCE283120260009EA1F /* Localizable.strings in Resources */,
+				863A0CC6283120260009EA1F /* Cairo-Black.ttf in Resources */,
+				863A0CCB283120260009EA1F /* LaunchScreen.storyboard in Resources */,
+				863A0CCA283120260009EA1F /* Main.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		863A0CD12831205B0009EA1F /* SwiftGen */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftGen;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif [[ -f \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\" ]]; then\n  \"${PROJECT_DIR}/SwiftGen/bin/swiftgen\"\nelse\n  echo \"warning: SwiftGen is not installed. Run 'pod install --repo-update' to install it.\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		863A0C4E283105070009EA1F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863A0C5A283105070009EA1F /* ViewController.swift in Sources */,
+				863A0C76283108B80009EA1F /* Constants .swift in Sources */,
+				863A0C5A283105070009EA1F /* SplashController.swift in Sources */,
+				863A0CC8283120260009EA1F /* FontsManager.swift in Sources */,
+				863A0C8D283112B80009EA1F /* NetworkManager.swift in Sources */,
+				863A0C9C283119A60009EA1F /* Presentable.swift in Sources */,
+				863A0CA128311C4F0009EA1F /* ModuleFactory.swift in Sources */,
+				863A0C71283106E40009EA1F /* APIRouter.swift in Sources */,
+				863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */,
+				863A0CD3283120B50009EA1F /* CoordinatorFactoryProtocol.swift in Sources */,
+				863A0CD5283120E20009EA1F /* SplashCoordinator.swift in Sources */,
+				863A0CD7283121D90009EA1F /* Router.swift in Sources */,
+				863A0C95283117D10009EA1F /* DeepLinkOption.swift in Sources */,
+				863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */,
+				863A0CA328311D0B0009EA1F /* SplashModuleFactory.swift in Sources */,
+				863A0C93283117610009EA1F /* BaseCoordinator.swift in Sources */,
+				863A0CCD283120260009EA1F /* Strings.swift in Sources */,
 				863A0C56283105070009EA1F /* AppDelegate.swift in Sources */,
-				863A0C58283105070009EA1F /* SceneDelegate.swift in Sources */,
+				863A0CA628311DDB0009EA1F /* BaseView.swift in Sources */,
+				863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */,
+				863A0C9F28311C350009EA1F /* CoordinatorFactory.swift in Sources */,
+				863A0C8F2831172D0009EA1F /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		863A0C5B283105070009EA1F /* Main.storyboard */ = {
+		863A0CB2283120250009EA1F /* LaunchScreen.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				863A0C5C283105070009EA1F /* Base */,
+				863A0CB3283120250009EA1F /* ar */,
+			);
+			name = LaunchScreen.strings;
+			sourceTree = "<group>";
+		};
+		863A0CB4283120250009EA1F /* Main.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				863A0CB5283120250009EA1F /* ar */,
+			);
+			name = Main.strings;
+			sourceTree = "<group>";
+		};
+		863A0CB6283120250009EA1F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				863A0CB7283120250009EA1F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		863A0CB8283120250009EA1F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				863A0CB9283120250009EA1F /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		863A0C60283105090009EA1F /* LaunchScreen.storyboard */ = {
+		863A0CBC283120250009EA1F /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				863A0C61283105090009EA1F /* Base */,
+				863A0CBD283120250009EA1F /* ar */,
+				863A0CBE283120250009EA1F /* en */,
 			);
-			name = LaunchScreen.storyboard;
+			name = Localizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -295,6 +680,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -323,6 +709,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -358,6 +745,77 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		863A0C6A283106790009EA1F /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		863A0C6D283106AE0009EA1F /* XCRemoteSwiftPackageReference "SwifterSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwifterSwift/SwifterSwift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		863A0C7A28310B4B0009EA1F /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/MoathOthman/MOLH.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/CombineCommunity/CombineCocoa.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		863A0C6B283106790009EA1F /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863A0C6A283106790009EA1F /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		863A0C6E283106AF0009EA1F /* SwifterSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863A0C6D283106AE0009EA1F /* XCRemoteSwiftPackageReference "SwifterSwift" */;
+			productName = SwifterSwift;
+		};
+		863A0C7B28310B4B0009EA1F /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863A0C7A28310B4B0009EA1F /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		863A0C7E28310BD00009EA1F /* MOLH */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */;
+			productName = MOLH;
+		};
+		863A0C8128310C120009EA1F /* CombineCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */;
+			productName = CombineCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 863A0C4A283105070009EA1F /* Project object */;
 }

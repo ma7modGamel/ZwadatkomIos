@@ -1,0 +1,33 @@
+
+// Auth flow strings
+"loginWelcomeTitle" = "مرحباً بك في متجر المملكة";
+"fullNamePlaceHolder" = "الأسم بالكامل";
+"usernamePlaceHolder" = "اسم المستخدم";
+"passwordPlaceHolder" = "كلمة المرور";
+"emailAddressPlaceHolder" = "البريد الإلكتروني";
+"loginButtonTitle" = "تسجيل الدخول";
+"registerButtonTitle" = "تسجيل جديد";
+"skipButtonTitle" = "تخطي";
+
+"usernameIconName" = "person";
+"passwordIconName" = "lock";
+"emailIconName"= "envelope";
+
+
+// Controllers titles
+"register" = "تسجيل مستخدم جديد";
+"home" = "الرئيسية";
+"servicesCategories" = "الخدمات";
+"account" = "الحساب";
+
+// tab bar icons names
+homeTab = "house";
+servicesTab = "gear";
+accountTab = "person";
+
+// service view strings
+"totalPrice" = "إجمالى سعر طلبك";
+"addToCart" = "إضافه الي السلة";
+
+// Cart view Strings
+"cartControlerTitle" = "سلة المشتريات";
