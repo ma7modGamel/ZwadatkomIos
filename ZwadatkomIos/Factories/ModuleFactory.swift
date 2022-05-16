@@ -19,3 +19,5 @@ extension ModuleFactory: SplashModuleFactory {
         return viewController
     }
 }
+
+extension 

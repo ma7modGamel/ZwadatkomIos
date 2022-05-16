@@ -9,4 +9,5 @@ import UIKit
 
 protocol CoordinatorFactoryProtocol {
     func createSplashCoordinator(router: RouterProtocol) -> Coordinator & SplashCoordinatorOutput
+    func createOnboardingCoordinator(router: RouterProtocol) -> Coordinator & OnboardingCoordinatorOutput
 }
