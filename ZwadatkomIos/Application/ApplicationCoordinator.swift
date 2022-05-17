@@ -16,7 +16,7 @@ fileprivate var ishAuthHasBeenSkipped: Bool {
 
 fileprivate var onboardingHasBeenShowed: Bool {
     get {
-        return false
+        return UserDefaultsManager.shared().isBoardingShowed
     }
 }
     
@@ -102,7 +102,9 @@ class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runAuthFlow() {
-
+        let coordinator = coordinatorFactory.createAuthCoordinator(router: router)
+        addDependency(coordinator)
+        coordinator.start()
     }
     
     private func runMainFlow() {

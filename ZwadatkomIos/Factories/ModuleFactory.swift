@@ -25,6 +25,14 @@ extension ModuleFactory: OnboardingModuleFactory {
         let viewController = OnboardingController(viewModel: viewModel)
         return viewController
     }
+}
+
+extension ModuleFactory: AuthModuleFactory {
+    func createLoginOutput() -> LoginViewProtocol {
+        let viewModel = LoginViewModel()
+        let viewController = LoginController(viewModel: viewModel)
+        return viewController
+    }
     
     
 }

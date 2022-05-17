@@ -11,6 +11,8 @@ import UIKit
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
 
+    
+
     func createSplashCoordinator(router: RouterProtocol) -> Coordinator & SplashCoordinatorOutput {
         let coordinator = SplashCoordinator(router: router, factory: ModuleFactory())
         return coordinator
@@ -20,13 +22,23 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         let coordinator = OnboardingCoordinator(router: router, factory: ModuleFactory())
         return coordinator
     }
+    
+    func createAuthCoordinator(router: RouterProtocol) -> AuthCoordinatorOutput & Coordinator {
+        let coordinator = AuthCoordinator(router: router, factory: ModuleFactory())
+        return coordinator
+    }
 
     private func router(_ navController: UINavigationController?) -> RouterProtocol {
         return Router(rootController: navigationController(navController))
     }
     
+    
+    
+    
     private func navigationController(_ navController: UINavigationController?) -> UINavigationController {
         if let navController = navController { return navController }
         else { return UINavigationController() }
     }
+    
+
 }

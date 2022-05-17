@@ -51,7 +51,7 @@ extension OnboardingController {
     private func bindToViewCurrentValueDataStream() {
         viewModel.onboardingValuePublisher.sink { [weak self] completion in
             guard let self = self else { return }
-            print("flow has been finished")
+            self.onCompleteSplashPublisher.send()
         } receiveValue: { [weak self] currentValue in
             guard let self = self else { return }
             self.onboardingView.currentViewValuePublisher.send(currentValue)

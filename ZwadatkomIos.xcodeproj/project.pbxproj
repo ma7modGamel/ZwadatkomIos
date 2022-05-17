@@ -16,6 +16,11 @@
 		862A216C28328358004CAEDB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A216B28328358004CAEDB /* UserDefaultsManager.swift */; };
 		862A217028328AF3004CAEDB /* SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 862A216F28328AF3004CAEDB /* SemiBold.ttf */; };
 		862A21722833993D004CAEDB /* Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 862A21712833993D004CAEDB /* Light.otf */; };
+		862A217628339F8E004CAEDB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A217528339F8E004CAEDB /* LoginController.swift */; };
+		862A21782833A4D1004CAEDB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A21772833A4D1004CAEDB /* LoginView.swift */; };
+		862A217A2833A68F004CAEDB /* AuthModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A21792833A68F004CAEDB /* AuthModuleFactory.swift */; };
+		862A217C2833AA3C004CAEDB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A217B2833AA3C004CAEDB /* ViewModel.swift */; };
+		862A217F2833AD5B004CAEDB /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A217E2833AD5B004CAEDB /* AuthCoordinator.swift */; };
 		863A0C56283105070009EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C55283105070009EA1F /* AppDelegate.swift */; };
 		863A0C5A283105070009EA1F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C59283105070009EA1F /* SplashController.swift */; };
 		863A0C6C283106790009EA1F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C6B283106790009EA1F /* Moya */; };
@@ -62,6 +67,11 @@
 		862A216B28328358004CAEDB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
 		862A216F28328AF3004CAEDB /* SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SemiBold.ttf; sourceTree = "<group>"; };
 		862A21712833993D004CAEDB /* Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Light.otf; sourceTree = "<group>"; };
+		862A217528339F8E004CAEDB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		862A21772833A4D1004CAEDB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		862A21792833A68F004CAEDB /* AuthModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleFactory.swift; sourceTree = "<group>"; };
+		862A217B2833AA3C004CAEDB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		862A217E2833AD5B004CAEDB /* AuthCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		863A0C52283105070009EA1F /* ZwadatkomIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZwadatkomIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863A0C55283105070009EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863A0C59283105070009EA1F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -145,6 +155,31 @@
 				862A21692832808B004CAEDB /* Bold.ttf */,
 			);
 			path = Bahij;
+			sourceTree = "<group>";
+		};
+		862A217328339F5E004CAEDB /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				862A217528339F8E004CAEDB /* LoginController.swift */,
+				862A21772833A4D1004CAEDB /* LoginView.swift */,
+				862A217B2833AA3C004CAEDB /* ViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		862A217428339F79004CAEDB /* Register */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		862A217D2833AD46004CAEDB /* Coorfinator */ = {
+			isa = PBXGroup;
+			children = (
+				862A217E2833AD5B004CAEDB /* AuthCoordinator.swift */,
+			);
+			path = Coorfinator;
 			sourceTree = "<group>";
 		};
 		863A0C49283105070009EA1F = {
@@ -232,6 +267,9 @@
 		863A0C8428310C4B0009EA1F /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
+				862A217D2833AD46004CAEDB /* Coorfinator */,
+				862A217428339F79004CAEDB /* Register */,
+				862A217328339F5E004CAEDB /* Login */,
 			);
 			path = AuthFlow;
 			sourceTree = "<group>";
@@ -337,6 +375,7 @@
 			children = (
 				863A0CA228311D0B0009EA1F /* SplashModuleFactory.swift */,
 				862A215E28325C90004CAEDB /* OnboardingModuleFactory.swift */,
+				862A21792833A68F004CAEDB /* AuthModuleFactory.swift */,
 				863A0CD2283120B50009EA1F /* CoordinatorFactoryProtocol.swift */,
 			);
 			path = Protocols;
@@ -521,6 +560,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				862A217A2833A68F004CAEDB /* AuthModuleFactory.swift in Sources */,
 				863A0C76283108B80009EA1F /* Constants .swift in Sources */,
 				863A0CDA28312DC30009EA1F /* SplashView.swift in Sources */,
 				863A0C5A283105070009EA1F /* SplashController.swift in Sources */,
@@ -533,18 +573,22 @@
 				862A216228325F92004CAEDB /* OnboardingController.swift in Sources */,
 				862A216C28328358004CAEDB /* UserDefaultsManager.swift in Sources */,
 				863A0C71283106E40009EA1F /* APIRouter.swift in Sources */,
+				862A217628339F8E004CAEDB /* LoginController.swift in Sources */,
 				863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */,
 				862A216428326659004CAEDB /* OnboardingView.swift in Sources */,
 				863A0CD3283120B50009EA1F /* CoordinatorFactoryProtocol.swift in Sources */,
 				863A0CD5283120E20009EA1F /* SplashCoordinator.swift in Sources */,
 				862A215D28325B7F004CAEDB /* OnboardingCoordinator.swift in Sources */,
+				862A21782833A4D1004CAEDB /* LoginView.swift in Sources */,
 				863A0CD7283121D90009EA1F /* Router.swift in Sources */,
 				863A0C95283117D10009EA1F /* DeepLinkOption.swift in Sources */,
+				862A217C2833AA3C004CAEDB /* ViewModel.swift in Sources */,
 				863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */,
 				863A0CA328311D0B0009EA1F /* SplashModuleFactory.swift in Sources */,
 				863A0C93283117610009EA1F /* BaseCoordinator.swift in Sources */,
 				863A0CCD283120260009EA1F /* Strings.swift in Sources */,
 				863A0C56283105070009EA1F /* AppDelegate.swift in Sources */,
+				862A217F2833AD5B004CAEDB /* AuthCoordinator.swift in Sources */,
 				863A0CA628311DDB0009EA1F /* BaseView.swift in Sources */,
 				863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */,
 				863A0C9F28311C350009EA1F /* CoordinatorFactory.swift in Sources */,
