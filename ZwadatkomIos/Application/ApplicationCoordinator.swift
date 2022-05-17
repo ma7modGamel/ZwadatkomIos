@@ -14,20 +14,30 @@ fileprivate var ishAuthHasBeenSkipped: Bool {
     }
 }
 
+fileprivate var onboardingHasBeenShowed: Bool {
+    get {
+        return false
+    }
+}
+    
 fileprivate var splashHasBeenShowed: Bool = false
 
 fileprivate enum LaunchInstructor {
     case splash, onboarding, main, auth
     
-    static func configure(isSplashWasShown: Bool = splashHasBeenShowed, authSkipped: Bool = ishAuthHasBeenSkipped) -> LaunchInstructor {
+    static func configure(isSplashWasShown: Bool = splashHasBeenShowed,
+                          isOnboardingWasShown: Bool = onboardingHasBeenShowed,
+                          authSkipped: Bool = ishAuthHasBeenSkipped) -> LaunchInstructor {
             
-            switch (isSplashWasShown, authSkipped) {
-            case (false, false), (false, true):
+            switch (isSplashWasShown, isOnboardingWasShown ,authSkipped) {
+            case (false, _, _):
                 return .splash
-            case (true, false):
-                return .auth
-            case (true, true):
+            case (true, false, _):
+                return .onboarding
+            case (true, true, true):
                 return .main
+            case (true, true, false):
+                return .auth
             }
         }
 }
@@ -81,7 +91,14 @@ class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runOnboardingFlow() {
-        
+        let coordinator = coordinatorFactory.createOnboardingCoordinator(router: router)
+        coordinator.finishFlowPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.start()
+            self.removeDependency(coordinator)
+        }.store(in: &subscriptions)
+        addDependency(coordinator)
+        coordinator.start()
     }
     
     private func runAuthFlow() {

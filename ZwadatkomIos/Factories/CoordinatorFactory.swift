@@ -15,10 +15,12 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
         let coordinator = SplashCoordinator(router: router, factory: ModuleFactory())
         return coordinator
     }
-    
 
-    
-    
+    func createOnboardingCoordinator(router: RouterProtocol) -> Coordinator & OnboardingCoordinatorOutput {
+        let coordinator = OnboardingCoordinator(router: router, factory: ModuleFactory())
+        return coordinator
+    }
+
     private func router(_ navController: UINavigationController?) -> RouterProtocol {
         return Router(rootController: navigationController(navController))
     }

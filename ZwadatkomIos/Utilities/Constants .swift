@@ -10,6 +10,8 @@ import Foundation
 // UserDefaultsKeys
 struct UserDefaultsKeys {
     static let token = "UDKToken"
+    static let onboardingState = "UDOnboardingState"
+
 }
 
 struct URLs {
