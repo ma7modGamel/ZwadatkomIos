@@ -12,7 +12,7 @@ strings:
 
 fonts:
   inputs:
-    - ZwadatkomIos/Resources/Fonts/Cairo
+    - ZwadatkomIos/Resources/Fonts/Bahij
   outputs:
     templateName: swift5
     output: ZwadatkomIos/Resources/Fonts/FontsManager.swift

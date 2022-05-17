@@ -15,7 +15,7 @@ class SplashView: UIView {
     
     init() {
         super.init(frame: .zero)
-        backgroundColor = ColorName.lightGray.color
+        backgroundColor = ColorName.whiteColor.color
         configureLogoImageView()
         configureCornerLogo()
         layoutLogoImageView()

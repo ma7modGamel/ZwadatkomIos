@@ -1,6 +1,7 @@
 
 whiteColor : #FFFFFF
 blackColor : #000000
-propelColor: #7972e6
-grayColor: #f2f2f2
+
+greenColor: #8AC865
+grayColor: #838383
 lightGray: #E5E5E5

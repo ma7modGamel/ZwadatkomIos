@@ -6,5 +6,5 @@
 //
 
 protocol OnboardingModuleFactory {
-    func createOnboardingOutput () -> 
+    func createOnboardingOutput () -> OnboardingViewProtocol
 }

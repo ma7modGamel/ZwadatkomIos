@@ -21,15 +21,15 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#000000"></span>
   /// Alpha: 100% <br/> (0x000000ff)
   internal static let blackColor = ColorName(rgbaValue: 0x000000ff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f2f2f2"></span>
-  /// Alpha: 100% <br/> (0xf2f2f2ff)
-  internal static let grayColor = ColorName(rgbaValue: 0xf2f2f2ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#838383"></span>
+  /// Alpha: 100% <br/> (0x838383ff)
+  internal static let grayColor = ColorName(rgbaValue: 0x838383ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#8ac865"></span>
+  /// Alpha: 100% <br/> (0x8ac865ff)
+  internal static let greenColor = ColorName(rgbaValue: 0x8ac865ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#e5e5e5"></span>
   /// Alpha: 100% <br/> (0xe5e5e5ff)
   internal static let lightGray = ColorName(rgbaValue: 0xe5e5e5ff)
-  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#7972e6"></span>
-  /// Alpha: 100% <br/> (0x7972e6ff)
-  internal static let propelColor = ColorName(rgbaValue: 0x7972e6ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   internal static let whiteColor = ColorName(rgbaValue: 0xffffffff)

@@ -10,6 +10,12 @@
 		862A215D28325B7F004CAEDB /* OnboardingCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A215C28325B7F004CAEDB /* OnboardingCoordinator.swift */; };
 		862A215F28325C90004CAEDB /* OnboardingModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A215E28325C90004CAEDB /* OnboardingModuleFactory.swift */; };
 		862A216228325F92004CAEDB /* OnboardingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A216128325F92004CAEDB /* OnboardingController.swift */; };
+		862A216428326659004CAEDB /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A216328326659004CAEDB /* OnboardingView.swift */; };
+		862A216728326ED7004CAEDB /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A216628326ED7004CAEDB /* OnboardingViewModel.swift */; };
+		862A216A2832808B004CAEDB /* Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 862A21692832808B004CAEDB /* Bold.ttf */; };
+		862A216C28328358004CAEDB /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A216B28328358004CAEDB /* UserDefaultsManager.swift */; };
+		862A217028328AF3004CAEDB /* SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 862A216F28328AF3004CAEDB /* SemiBold.ttf */; };
+		862A21722833993D004CAEDB /* Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 862A21712833993D004CAEDB /* Light.otf */; };
 		863A0C56283105070009EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C55283105070009EA1F /* AppDelegate.swift */; };
 		863A0C5A283105070009EA1F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C59283105070009EA1F /* SplashController.swift */; };
 		863A0C6C283106790009EA1F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C6B283106790009EA1F /* Moya */; };
@@ -31,10 +37,6 @@
 		863A0CA628311DDB0009EA1F /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CA528311DDB0009EA1F /* BaseView.swift */; };
 		863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CA8283120250009EA1F /* AssetsManager.swift */; };
 		863A0CC3283120260009EA1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CA9283120250009EA1F /* Assets.xcassets */; };
-		863A0CC4283120260009EA1F /* Cairo-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAC283120250009EA1F /* Cairo-Medium.ttf */; };
-		863A0CC5283120260009EA1F /* Cairo-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAD283120250009EA1F /* Cairo-Regular.ttf */; };
-		863A0CC6283120260009EA1F /* Cairo-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAE283120250009EA1F /* Cairo-Black.ttf */; };
-		863A0CC7283120260009EA1F /* Cairo-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CAF283120250009EA1F /* Cairo-Bold.ttf */; };
 		863A0CC8283120260009EA1F /* FontsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CB0283120250009EA1F /* FontsManager.swift */; };
 		863A0CC9283120260009EA1F /* LaunchScreen.strings in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CB2283120250009EA1F /* LaunchScreen.strings */; };
 		863A0CCA283120260009EA1F /* Main.strings in Resources */ = {isa = PBXBuildFile; fileRef = 863A0CB4283120250009EA1F /* Main.strings */; };
@@ -54,6 +56,12 @@
 		862A215C28325B7F004CAEDB /* OnboardingCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCoordinator.swift; sourceTree = "<group>"; };
 		862A215E28325C90004CAEDB /* OnboardingModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModuleFactory.swift; sourceTree = "<group>"; };
 		862A216128325F92004CAEDB /* OnboardingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingController.swift; sourceTree = "<group>"; };
+		862A216328326659004CAEDB /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		862A216628326ED7004CAEDB /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		862A21692832808B004CAEDB /* Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Bold.ttf; sourceTree = "<group>"; };
+		862A216B28328358004CAEDB /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		862A216F28328AF3004CAEDB /* SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = SemiBold.ttf; sourceTree = "<group>"; };
+		862A21712833993D004CAEDB /* Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Light.otf; sourceTree = "<group>"; };
 		863A0C52283105070009EA1F /* ZwadatkomIos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZwadatkomIos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863A0C55283105070009EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863A0C59283105070009EA1F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -72,10 +80,6 @@
 		863A0CA528311DDB0009EA1F /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		863A0CA8283120250009EA1F /* AssetsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssetsManager.swift; sourceTree = "<group>"; };
 		863A0CA9283120250009EA1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		863A0CAC283120250009EA1F /* Cairo-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Medium.ttf"; sourceTree = "<group>"; };
-		863A0CAD283120250009EA1F /* Cairo-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Regular.ttf"; sourceTree = "<group>"; };
-		863A0CAE283120250009EA1F /* Cairo-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Black.ttf"; sourceTree = "<group>"; };
-		863A0CAF283120250009EA1F /* Cairo-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Cairo-Bold.ttf"; sourceTree = "<group>"; };
 		863A0CB0283120250009EA1F /* FontsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FontsManager.swift; sourceTree = "<group>"; };
 		863A0CB3283120250009EA1F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		863A0CB5283120250009EA1F /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Main.strings; sourceTree = "<group>"; };
@@ -120,8 +124,27 @@
 			isa = PBXGroup;
 			children = (
 				862A216128325F92004CAEDB /* OnboardingController.swift */,
+				862A216328326659004CAEDB /* OnboardingView.swift */,
 			);
 			path = OnboardingView;
+			sourceTree = "<group>";
+		};
+		862A216528326EB7004CAEDB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				862A216628326ED7004CAEDB /* OnboardingViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		862A21682832805D004CAEDB /* Bahij */ = {
+			isa = PBXGroup;
+			children = (
+				862A21712833993D004CAEDB /* Light.otf */,
+				862A216F28328AF3004CAEDB /* SemiBold.ttf */,
+				862A21692832808B004CAEDB /* Bold.ttf */,
+			);
+			path = Bahij;
 			sourceTree = "<group>";
 		};
 		863A0C49283105070009EA1F = {
@@ -190,6 +213,7 @@
 		863A0C7828310A340009EA1F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				862A216B28328358004CAEDB /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -243,8 +267,9 @@
 		863A0C88283110690009EA1F /* OnboardingFlow */ = {
 			isa = PBXGroup;
 			children = (
-				862A216028325F6D004CAEDB /* OnboardingView */,
 				862A215B28325B1C004CAEDB /* Coordinator */,
+				862A216028325F6D004CAEDB /* OnboardingView */,
+				862A216528326EB7004CAEDB /* ViewModel */,
 			);
 			path = OnboardingFlow;
 			sourceTree = "<group>";
@@ -337,21 +362,10 @@
 		863A0CAA283120250009EA1F /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				863A0CAB283120250009EA1F /* Cairo */,
+				862A21682832805D004CAEDB /* Bahij */,
 				863A0CB0283120250009EA1F /* FontsManager.swift */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		863A0CAB283120250009EA1F /* Cairo */ = {
-			isa = PBXGroup;
-			children = (
-				863A0CAC283120250009EA1F /* Cairo-Medium.ttf */,
-				863A0CAD283120250009EA1F /* Cairo-Regular.ttf */,
-				863A0CAE283120250009EA1F /* Cairo-Black.ttf */,
-				863A0CAF283120250009EA1F /* Cairo-Bold.ttf */,
-			);
-			path = Cairo;
 			sourceTree = "<group>";
 		};
 		863A0CB1283120250009EA1F /* Storyboards */ = {
@@ -466,16 +480,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				863A0CC5283120260009EA1F /* Cairo-Regular.ttf in Resources */,
 				863A0CCC283120260009EA1F /* Main.storyboard in Resources */,
 				863A0CC3283120260009EA1F /* Assets.xcassets in Resources */,
-				863A0CC4283120260009EA1F /* Cairo-Medium.ttf in Resources */,
-				863A0CC7283120260009EA1F /* Cairo-Bold.ttf in Resources */,
+				862A216A2832808B004CAEDB /* Bold.ttf in Resources */,
 				863A0CCF283120260009EA1F /* Colors.txt in Resources */,
 				863A0CC9283120260009EA1F /* LaunchScreen.strings in Resources */,
 				863A0CCE283120260009EA1F /* Localizable.strings in Resources */,
-				863A0CC6283120260009EA1F /* Cairo-Black.ttf in Resources */,
 				863A0CCB283120260009EA1F /* LaunchScreen.storyboard in Resources */,
+				862A217028328AF3004CAEDB /* SemiBold.ttf in Resources */,
+				862A21722833993D004CAEDB /* Light.otf in Resources */,
 				863A0CCA283120260009EA1F /* Main.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -512,13 +525,16 @@
 				863A0CDA28312DC30009EA1F /* SplashView.swift in Sources */,
 				863A0C5A283105070009EA1F /* SplashController.swift in Sources */,
 				863A0CC8283120260009EA1F /* FontsManager.swift in Sources */,
+				862A216728326ED7004CAEDB /* OnboardingViewModel.swift in Sources */,
 				862A215F28325C90004CAEDB /* OnboardingModuleFactory.swift in Sources */,
 				863A0C8D283112B80009EA1F /* NetworkManager.swift in Sources */,
 				863A0C9C283119A60009EA1F /* Presentable.swift in Sources */,
 				863A0CA128311C4F0009EA1F /* ModuleFactory.swift in Sources */,
 				862A216228325F92004CAEDB /* OnboardingController.swift in Sources */,
+				862A216C28328358004CAEDB /* UserDefaultsManager.swift in Sources */,
 				863A0C71283106E40009EA1F /* APIRouter.swift in Sources */,
 				863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */,
+				862A216428326659004CAEDB /* OnboardingView.swift in Sources */,
 				863A0CD3283120B50009EA1F /* CoordinatorFactoryProtocol.swift in Sources */,
 				863A0CD5283120E20009EA1F /* SplashCoordinator.swift in Sources */,
 				862A215D28325B7F004CAEDB /* OnboardingCoordinator.swift in Sources */,

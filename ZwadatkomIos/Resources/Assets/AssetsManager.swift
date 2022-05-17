@@ -24,6 +24,10 @@ internal enum Asset {
   internal static let accentColor = ColorAsset(name: "AccentColor")
   internal static let cornerLogo = ImageAsset(name: "cornerLogo")
   internal static let logo = ImageAsset(name: "logo")
+  internal static let nextButton = ImageAsset(name: "nextButton")
+  internal static let onboarding1st = ImageAsset(name: "onboarding1st")
+  internal static let onboarding2nd = ImageAsset(name: "onboarding2nd")
+  internal static let onboarding3rd = ImageAsset(name: "onboarding3rd")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name
 

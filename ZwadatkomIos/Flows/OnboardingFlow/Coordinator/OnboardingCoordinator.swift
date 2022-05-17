@@ -12,9 +12,7 @@ protocol OnboardingCoordinatorOutput: AnyObject {
     var finishFlowPublisher: PassthroughSubject<Void, Never> { get }
 }
 
-
 class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
-    
     
     var finishFlowPublisher = PassthroughSubject<Void, Never>()
     
@@ -32,11 +30,11 @@ class OnboardingCoordinator: BaseCoordinator, OnboardingCoordinatorOutput {
     
     //MARK: - Run current flow's controllers
     private func showSplash() {
-//        let splashOutPut = factory.createSplashOutput()
-//        splashOutPut.onCompleteSplashPublisher.sink { [weak self] _ in
-//            guard let self = self else { return }
-//            self.finishFlowPublisher.send()
-//        }.store(in: &subscriptions)
-//        router.setRootModule(splashOutPut, hideBar: true)
+        let onboardingOutput = factory.createOnboardingOutput()
+        onboardingOutput.onCompleteSplashPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.finishFlowPublisher.send()
+        }.store(in: &subscriptions)
+        router.setRootModule(onboardingOutput)
     }
 }
