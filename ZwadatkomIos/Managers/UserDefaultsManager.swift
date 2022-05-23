@@ -18,7 +18,7 @@ class UserDefaultsManager {
         return UserDefaultsManager.sharedInstance
     }
     
-    init() {
+    private init() {
        // userAuthStatePublisher = CurrentValueSubject<Bool, Never>(false)
        // let userAuthState = getUserAuthState()
         //userAuthStatePublisher.send(userAuthState)

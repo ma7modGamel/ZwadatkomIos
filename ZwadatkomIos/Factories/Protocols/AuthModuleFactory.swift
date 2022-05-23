@@ -9,7 +9,9 @@ import Foundation
 
 protocol AuthModuleFactory {
     
-    func createLoginOutput () -> LoginViewProtocol
+    func createLoginOutput() -> LoginViewProtocol
+    func createRegisterHandler() -> RegisterViewProtocol
+    func createOTPHandler() -> OTPViewProtocol
 
     
     

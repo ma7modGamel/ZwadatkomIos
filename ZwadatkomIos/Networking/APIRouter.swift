@@ -9,7 +9,7 @@ import Foundation
 import Moya
 
 enum APIRouter {
-    case login
+    case login(_ loginModel: LoginModel)
     case register
 }
 

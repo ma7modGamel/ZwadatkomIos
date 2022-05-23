@@ -33,6 +33,16 @@ extension ModuleFactory: AuthModuleFactory {
         let viewController = LoginController(viewModel: viewModel)
         return viewController
     }
+
+    func createRegisterHandler() -> RegisterViewProtocol {
+        let viewModel = RegisterViewModel()
+        let viewController = RegisterController(viewModel: viewModel)
+        return viewController
+    }
     
-    
+    func createOTPHandler() -> OTPViewProtocol {
+        let viewModel = OTPViewModel()
+        let viewController = OTPController(viewModel: viewModel)
+        return viewController
+    }
 }

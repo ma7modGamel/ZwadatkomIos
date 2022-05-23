@@ -21,6 +21,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#000000"></span>
   /// Alpha: 100% <br/> (0x000000ff)
   internal static let blackColor = ColorName(rgbaValue: 0x000000ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#29b566"></span>
+  /// Alpha: 100% <br/> (0x29b566ff)
+  internal static let darkGreen = ColorName(rgbaValue: 0x29b566ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#838383"></span>
   /// Alpha: 100% <br/> (0x838383ff)
   internal static let grayColor = ColorName(rgbaValue: 0x838383ff)
@@ -30,6 +33,12 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#e5e5e5"></span>
   /// Alpha: 100% <br/> (0xe5e5e5ff)
   internal static let lightGray = ColorName(rgbaValue: 0xe5e5e5ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f9f9f9"></span>
+  /// Alpha: 100% <br/> (0xf9f9f9ff)
+  internal static let offGray = ColorName(rgbaValue: 0xf9f9f9ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#838383"></span>
+  /// Alpha: 100% <br/> (0x838383ff)
+  internal static let semiGray = ColorName(rgbaValue: 0x838383ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   internal static let whiteColor = ColorName(rgbaValue: 0xffffffff)

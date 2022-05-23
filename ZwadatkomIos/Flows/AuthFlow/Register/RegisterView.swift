@@ -1,14 +1,13 @@
 //
-//  LoginView.swift
+//  RegisterView.swift
 //  ZwadatkomIos
 //
-//  Created by Yousef Mohamed on 17/05/2022.
+//  Created by Yousef Mohamed on 23/05/2022.
 //
 
 import UIKit
-import SwiftUI
 
-class LoginView: UIView {
+class RegisterView: UIView {
     
     private var scrollView = UIScrollView(frame: .zero)
     private var contentView = UIView()
@@ -16,6 +15,7 @@ class LoginView: UIView {
     private let headLabel = UILabel(frame: .zero)
     private var containerStack = UIStackView(frame: .zero)
     
+    let fullNameTextField = TextFieldWithIcon(icon: "envelope")
     let usernameTextField = TextFieldWithIcon(icon: "envelope")
     let passwordTextField = TextFieldWithIcon(icon: "envelope")
     let forgetPasswordButton = UIButton()
@@ -43,8 +43,6 @@ class LoginView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 52).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 52).isActive = true
-
-        
         return imageView
     }
     
@@ -79,8 +77,6 @@ class LoginView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         print("layout view sub views")
-
-
     }
     
     private func configureScrollView() {
@@ -90,27 +86,27 @@ class LoginView: UIView {
     
     private func configureHeadLabel() {
         headLabel.font = UIFont(font: FontFamily.BahijTheSansArabic.bold, size: 24)
-        let headText = "\(L10n.signInHeadText) \n\(L10n.signInAppName)"
-        headLabel.numberOfLines = 2
+        let headText = "\(L10n.registerHeadText)"
         headLabel.text = headText
     }
     
     private func configureContainerStack() {
+        let fullNameHead = textHeadLabel(L10n.fullNameHeadText)
         let usernameHead = textHeadLabel(L10n.usernameHeadText)
         let passwordHead = textHeadLabel(L10n.passwordHeadText)
-        let stackViews = [usernameHead, usernameTextField, passwordHead, passwordTextField]
+        let stackViews = [fullNameHead, fullNameTextField, usernameHead, usernameTextField, passwordHead, passwordTextField]
         containerStack.addArrangedSubviews(stackViews)
         containerStack.axis = .vertical
         containerStack.distribution = .fill
         containerStack.spacing = 12
     }
-
+    
     private func configureForgetPasswordButton() {
         forgetPasswordButton.setTitleForAllStates(L10n.forgetPasswordButtonTitle)
         forgetPasswordButton.titleLabel?.font = UIFont(font: FontFamily.TheSansArabic.light, size: 14)
         forgetPasswordButton.setTitleColorForAllStates(ColorName.semiGray.color)
     }
-
+    
     private func configureLoginButton() {
         loginButton.setTitleForAllStates(L10n.loginButtonTitle)
         loginButton.setTitleColorForAllStates(ColorName.whiteColor.color)
@@ -142,7 +138,7 @@ class LoginView: UIView {
     }
 }
 
-extension LoginView {
+extension RegisterView {
     
     private func layoutScrollView() {
         addSubview(scrollView)
@@ -151,7 +147,7 @@ extension LoginView {
                           bottom: safeAreaLayoutGuide.bottomAnchor,
                           right: rightAnchor)
     }
-
+    
     private func layoutContentView() {
         scrollView.addSubview(contentView)
         contentView.anchor(top: scrollView.contentLayoutGuide.topAnchor,
@@ -161,7 +157,7 @@ extension LoginView {
         //contentView.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true
         contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
     }
-
+    
     private func layoutHeadLabel() {
         contentView.addSubview(headLabel)
         headLabel.anchor(top: contentView.topAnchor,
@@ -171,7 +167,7 @@ extension LoginView {
                          leftConstant: 60,
                          rightConstant: 60)
     }
-
+    
     private func layoutContainerView() {
         contentView.addSubview(containerStack)
         containerStack.anchor(top: headLabel.bottomAnchor,
@@ -211,13 +207,13 @@ extension LoginView {
     
     private func layoutRegisterContainerView() {
         contentView.addSubview(registerContainerView)
-//        registerContainerView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            registerContainerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-//            //registerContainerView.topAnchor.constraint(greaterThanOrEqualTo: socialStack.bottomAnchor, constant: 100),
-//            registerContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-//
-//       ])
+        //        registerContainerView.translatesAutoresizingMaskIntoConstraints = false
+        //        NSLayoutConstraint.activate([
+        //            registerContainerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
+        //            //registerContainerView.topAnchor.constraint(greaterThanOrEqualTo: socialStack.bottomAnchor, constant: 100),
+        //            registerContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
+        //
+        //       ])
         registerContainerView.anchor(bottom: contentView.bottomAnchor,
                                      bottomConstant: 30)
         registerContainerView.anchorCenterXToSuperview()
@@ -233,6 +229,6 @@ extension LoginView {
                               left:registerContainerView.leftAnchor,
                               bottom: registerContainerView.bottomAnchor,
                               right: label.leftAnchor)
-
+        
     }
 }

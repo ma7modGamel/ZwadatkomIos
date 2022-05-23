@@ -31,8 +31,8 @@ class NetworkManager {
         return NetworkManager.sharedInstance
     }
     
-    func login() -> Future<String, Error>  {
-        return request(target: APIRouter.login)
+    func login(with loginModel: LoginModel) -> Future<String, Error>  {
+        return request(target: APIRouter.login(loginModel))
     }
     
     func register() -> Future<String, Error> {

@@ -9,7 +9,7 @@ import UIKit
 import Combine
 
 
-protocol SplashViewProtocol: BaseView {
+protocol SplashViewProtocol: BaseController {
     var onCompleteSplashPublisher: PassthroughSubject <Void, Never> { get }
 }
 

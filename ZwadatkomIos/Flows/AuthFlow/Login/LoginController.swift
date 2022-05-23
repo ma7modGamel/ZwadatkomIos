@@ -8,11 +8,17 @@
 import UIKit
 import Combine
 
-protocol LoginViewProtocol : BaseView {
-    
+protocol LoginViewProtocol : BaseController {
+    var onRegisterTapPublisher: PassthroughSubject<Void, Never> { get }
+    var onToOTPVerificationPublisher: PassthroughSubject<Void, Never> { get}
+
 }
 
 class LoginController: UIViewController, LoginViewProtocol {
+    
+    var onToOTPVerificationPublisher = PassthroughSubject<Void, Never>()
+    var onRegisterTapPublisher = PassthroughSubject<Void, Never>()
+    
     
     private var subscriptions = Set<AnyCancellable>()
     private var viewModel: LoginViewModelProtocol!
@@ -35,7 +41,7 @@ class LoginController: UIViewController, LoginViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        bindToDataStreamsAndUserInteractions()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,4 +49,28 @@ class LoginController: UIViewController, LoginViewProtocol {
         
     }
     
+}
+extension LoginController {
+    private func bindToDataStreamsAndUserInteractions() {
+        bindToRegister()
+        bindToLogin()
+    }
+    
+    private func bidToSkip() {
+        
+    }
+    
+    private func bindToLogin() {
+        loginView.loginButton.tapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.onToOTPVerificationPublisher.send()
+        }.store(in: &subscriptions)
+    }
+    
+    private func bindToRegister() {
+        loginView.registerButton.tapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.onRegisterTapPublisher.send()
+        }.store(in: &subscriptions)
+    }
 }
