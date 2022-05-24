@@ -50,8 +50,7 @@ class OTPStackView: UIStackView {
         for i in 0 ..< numberOfOTPDigit {
             
             let field = OTPTextField()
-            
-            
+
             textFieldArray.append(field)
             addArrangedSubview(field)
             field.delegate = self
@@ -59,7 +58,6 @@ class OTPStackView: UIStackView {
             
             i != 0 ? (field.previousTextField = textFieldArray[i-1]) : ()
             i != 0 ? (textFieldArray[i-1].nextTextFiled = textFieldArray[i]) : ()
-            
             
         }
     }

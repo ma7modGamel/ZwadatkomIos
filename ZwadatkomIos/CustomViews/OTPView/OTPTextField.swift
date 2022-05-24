@@ -9,21 +9,29 @@ import UIKit
 
 class OTPTextField: UITextField {
     
-        var previousTextField: UITextField?
-        var nextTextFiled: UITextField?
+    var previousTextField: UITextField?
+    var nextTextFiled: UITextField?
     
-        override func deleteBackward() {
-            text = ""
-            previousTextField?.becomeFirstResponder()
-        }
+    override func deleteBackward() {
+        text = ""
+        previousTextField?.becomeFirstResponder()
+    }
+    
+    init() {
+        super.init(frame: .zero)
+        textAlignment = .center
+        keyboardType = .numberPad
+        backgroundColor = ColorName.lightGray.color
+        layer.cornerRadius = 18
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        let bottomLine = CALayer()
-        bottomLine.frame = CGRect(x: 0.0, y: self.frame.height - 1, width: self.frame.width, height: 1.0)
-        bottomLine.backgroundColor = ColorName.grayColor.color.cgColor
-        self.borderStyle = .none
-        self.layer.addSublayer(bottomLine)
+        
     }
     
 }

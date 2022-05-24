@@ -23,3 +23,7 @@
 "usernameIconName" = "person";
 "passwordIconName" = "lock";
 "emailIconName" = "envelope";
+
+"otpHeadTitle" = "من فضلك ادخل كود التفعيل";
+"otpSendButton" = "إرسال";
+"otpResendButton" = "إعادة إرسال";

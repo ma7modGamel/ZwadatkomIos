@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit.UIGeometry
 
 // UserDefaultsKeys
 struct UserDefaultsKeys {
@@ -15,9 +16,9 @@ struct UserDefaultsKeys {
 }
 
 struct URLs {
-    static let baseURL = ""
-    static let login = ""
-    static let register = ""
+    static let baseURL = "https://test.dnbscy.com/api/encryptRoute"
+    static let login = "/signin"
+    static let register = "/signup"
 }
 
 struct Cells {
@@ -30,4 +31,8 @@ struct Cells {
 struct HeaderKeys {
     static let contentType = "Content-Type"
     static let accept = "accept"
+}
+
+struct Measurements {
+    static let leadingPadding: CGFloat = 55
 }

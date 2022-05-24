@@ -50,6 +50,9 @@
 		863A0CD5283120E20009EA1F /* SplashCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD4283120E20009EA1F /* SplashCoordinator.swift */; };
 		863A0CD7283121D90009EA1F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD6283121D90009EA1F /* Router.swift */; };
 		863A0CDA28312DC30009EA1F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD928312DC30009EA1F /* SplashView.swift */; };
+		8652C157283CFFC80065BB8C /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C156283CFFC80065BB8C /* AuthResponse.swift */; };
+		8652C159283CFFF80065BB8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C158283CFFF80065BB8C /* User.swift */; };
+		8652C15C283D002F0065BB8C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C15B283D002F0065BB8C /* Address.swift */; };
 		86E80E1C283BACF6005FF239 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */; };
 		86E80E1F283BAD20005FF239 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */; };
 		86E80E20283BAD20005FF239 /* ZawadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1E283BAD20005FF239 /* ZawadButton.swift */; };
@@ -110,6 +113,9 @@
 		863A0CD6283121D90009EA1F /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		863A0CD928312DC30009EA1F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		864425A4283BAFF800D93DC8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		8652C156283CFFC80065BB8C /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
+		8652C158283CFFF80065BB8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		8652C15B283D002F0065BB8C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
 		86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		86E80E1E283BAD20005FF239 /* ZawadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZawadButton.swift; sourceTree = "<group>"; };
@@ -333,6 +339,7 @@
 		863A0C89283111F20009EA1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8652C15A283D00230065BB8C /* User */,
 				86E80E21283BAD68005FF239 /* Auth */,
 			);
 			path = Models;
@@ -465,6 +472,15 @@
 			path = SplashView;
 			sourceTree = "<group>";
 		};
+		8652C15A283D00230065BB8C /* User */ = {
+			isa = PBXGroup;
+			children = (
+				8652C158283CFFF80065BB8C /* User.swift */,
+				8652C15B283D002F0065BB8C /* Address.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		86E80E1A283BACF6005FF239 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +494,7 @@
 			children = (
 				86E80E22283BAD68005FF239 /* LoginModel.swift */,
 				86E80E23283BAD68005FF239 /* RegisterModel.swift */,
+				8652C156283CFFC80065BB8C /* AuthResponse.swift */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -656,6 +673,7 @@
 				862A217C2833AA3C004CAEDB /* ViewModel.swift in Sources */,
 				863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */,
 				86E80E29283BAD83005FF239 /* RegisterView.swift in Sources */,
+				8652C15C283D002F0065BB8C /* Address.swift in Sources */,
 				863A0CA328311D0B0009EA1F /* SplashModuleFactory.swift in Sources */,
 				863A0C93283117610009EA1F /* BaseCoordinator.swift in Sources */,
 				86F88DC2283BCC0F00CCFD18 /* BaseUIView.swift in Sources */,
@@ -663,11 +681,13 @@
 				863A0C56283105070009EA1F /* AppDelegate.swift in Sources */,
 				86E80E1C283BACF6005FF239 /* AuthCoordinator.swift in Sources */,
 				863A0CA628311DDB0009EA1F /* BaseController.swift in Sources */,
+				8652C159283CFFF80065BB8C /* User.swift in Sources */,
 				86E80E2A283BAD83005FF239 /* RegisterViewModel.swift in Sources */,
 				86E80E25283BAD68005FF239 /* RegisterModel.swift in Sources */,
 				863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */,
 				86F88DB5283BB08B00CCFD18 /* OTPController.swift in Sources */,
 				863A0C9F28311C350009EA1F /* CoordinatorFactory.swift in Sources */,
+				8652C157283CFFC80065BB8C /* AuthResponse.swift in Sources */,
 				863A0C8F2831172D0009EA1F /* ApplicationCoordinator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

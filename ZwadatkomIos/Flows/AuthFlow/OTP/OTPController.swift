@@ -11,7 +11,7 @@ protocol OTPViewProtocol: BaseController {
     
 }
 
-class OTPController: UIViewController, OTPViewProtocol {
+class OTPController: BaseUIViewController, OTPViewProtocol {
     
     private var otpView: OTPView!
     private var viewModel: OTPViewModelProtocol!
@@ -27,6 +27,7 @@ class OTPController: UIViewController, OTPViewProtocol {
     
     override func loadView() {
         let otpView = OTPView()
+        self.baseView = otpView
         self.otpView = otpView
         self.view = otpView
     }
@@ -34,5 +35,4 @@ class OTPController: UIViewController, OTPViewProtocol {
     override func viewDidLoad() {
         super.viewDidLoad()
     }
-    
 }

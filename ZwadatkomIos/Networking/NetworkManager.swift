@@ -10,18 +10,8 @@ import Combine
 import Moya
 
 class NetworkManager {
-
-    static var authPlugin = AccessTokenPlugin { _ in
-        let username = "WooCommerce.clientKey"
-        let password = "WooCommerce.clientSecret"
-        let loginString = String(format: "%@:%@", username, password)
-        let loginData = loginString.data(using: String.Encoding.utf8)!
-        let base64LoginString = loginData.base64EncodedString()
-        
-        return base64LoginString
-    }
     
-    private var provider = MoyaProvider<APIRouter>(plugins: [NetworkLoggerPlugin(), authPlugin])
+    private var provider = MoyaProvider<APIRouter>(plugins: [NetworkLoggerPlugin()])
     private static let sharedInstance = NetworkManager()
     
     // Private Init
@@ -31,7 +21,7 @@ class NetworkManager {
         return NetworkManager.sharedInstance
     }
     
-    func login(with loginModel: LoginModel) -> Future<String, Error>  {
+    func login(with loginModel: LoginModel) -> Future<AuthResponse, Error>  {
         return request(target: APIRouter.login(loginModel))
     }
     

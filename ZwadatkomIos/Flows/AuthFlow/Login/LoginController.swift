@@ -11,7 +11,6 @@ import Combine
 protocol LoginViewProtocol : BaseController {
     var onRegisterTapPublisher: PassthroughSubject<Void, Never> { get }
     var onToOTPVerificationPublisher: PassthroughSubject<Void, Never> { get}
-
 }
 
 class LoginController: UIViewController, LoginViewProtocol {
@@ -54,6 +53,18 @@ extension LoginController {
     private func bindToDataStreamsAndUserInteractions() {
         bindToRegister()
         bindToLogin()
+        
+        bindToEmailTextField()
+        bindToPasswordTextField()
+        bindToHasNoSavedAddress()
+        bindToNotVerified()
+    }
+    
+    private func bindToEmailTextField() {
+        loginView.usernameTextField.textPublisher.assign(to: \.email, on: viewModel).store(in: &subscriptions)
+    }
+    private func bindToPasswordTextField() {
+        loginView.passwordTextField.textPublisher.assign(to: \.password, on: viewModel).store(in: &subscriptions)
     }
     
     private func bidToSkip() {
@@ -63,7 +74,7 @@ extension LoginController {
     private func bindToLogin() {
         loginView.loginButton.tapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
-            self.onToOTPVerificationPublisher.send()
+            self.viewModel.tryToLogin()
         }.store(in: &subscriptions)
     }
     
@@ -71,6 +82,18 @@ extension LoginController {
         loginView.registerButton.tapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
             self.onRegisterTapPublisher.send()
+        }.store(in: &subscriptions)
+    }
+    
+    private func bindToNotVerified() {
+        viewModel.notVerifiedPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.onToOTPVerificationPublisher.send()
+        }.store(in: &subscriptions)
+    }
+    private func bindToHasNoSavedAddress() {
+        viewModel.hasNoAddressPublisher.sink { [weak self] _ in
+            
         }.store(in: &subscriptions)
     }
 }

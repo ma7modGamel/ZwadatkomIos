@@ -45,8 +45,11 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
     
     public var task: Task {
         switch self {
-        case .register, .login:
+        case .register:
             return .requestPlain
+        case .login(let loginModel):
+            let body = try! toDictionary(model: loginModel)
+            return .requestParameters(parameters: body, encoding: JSONEncoding.default)
         }
     }
     

@@ -30,6 +30,12 @@ internal enum L10n {
   internal static let onboarding3rdContent = L10n.tr("Localizable", "onboarding3rdContent")
   /// خدمة التوصيل
   internal static let onboarding3rdTitle = L10n.tr("Localizable", "onboarding3rdTitle")
+  /// من فضلك ادخل كود التفعيل
+  internal static let otpHeadTitle = L10n.tr("Localizable", "otpHeadTitle")
+  /// إعادة إرسال
+  internal static let otpResendButton = L10n.tr("Localizable", "otpResendButton")
+  /// إرسال
+  internal static let otpSendButton = L10n.tr("Localizable", "otpSendButton")
   /// كلمة المرور
   internal static let passwordHeadText = L10n.tr("Localizable", "passwordHeadText")
   /// lock
