@@ -12,6 +12,7 @@ import UIKit.UIGeometry
 struct UserDefaultsKeys {
     static let token = "UDKToken"
     static let onboardingState = "UDOnboardingState"
+    static let authState = "UDKAuthState"
 
 }
 

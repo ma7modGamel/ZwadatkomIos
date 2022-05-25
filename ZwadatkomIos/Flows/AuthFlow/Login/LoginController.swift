@@ -7,19 +7,21 @@
 
 import UIKit
 import Combine
+import Toast
 
 protocol LoginViewProtocol : BaseController {
     var onRegisterTapPublisher: PassthroughSubject<Void, Never> { get }
+    var onCompleteAuthPublisher: PassthroughSubject<Void, Never> { get }
     var onToOTPVerificationPublisher: PassthroughSubject<Void, Never> { get}
 }
 
-class LoginController: UIViewController, LoginViewProtocol {
-    
+class LoginController: BaseUIViewController, LoginViewProtocol {
+
+    var onCompleteAuthPublisher = PassthroughSubject<Void, Never>()
     var onToOTPVerificationPublisher = PassthroughSubject<Void, Never>()
     var onRegisterTapPublisher = PassthroughSubject<Void, Never>()
     
     
-    private var subscriptions = Set<AnyCancellable>()
     private var viewModel: LoginViewModelProtocol!
     private var loginView: LoginView!
     
@@ -34,6 +36,7 @@ class LoginController: UIViewController, LoginViewProtocol {
     
     override func loadView() {
         let loginView = LoginView()
+        self.baseView = loginView
         self.loginView = loginView
         self.view = loginView
     }
@@ -51,6 +54,7 @@ class LoginController: UIViewController, LoginViewProtocol {
 }
 extension LoginController {
     private func bindToDataStreamsAndUserInteractions() {
+        bindToSkipAuthButtonUserTap()
         bindToRegister()
         bindToLogin()
         
@@ -58,6 +62,7 @@ extension LoginController {
         bindToPasswordTextField()
         bindToHasNoSavedAddress()
         bindToNotVerified()
+        bindToError()
     }
     
     private func bindToEmailTextField() {
@@ -94,6 +99,26 @@ extension LoginController {
     private func bindToHasNoSavedAddress() {
         viewModel.hasNoAddressPublisher.sink { [weak self] _ in
             
+        }.store(in: &subscriptions)
+    }
+    
+    private func bindToVerifiedUser() {
+        viewModel.verifiedUserPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.onCompleteAuthPublisher.send()
+        }.store(in: &subscriptions)
+    }
+    
+    private func bindToError() {
+        viewModel.errorPublisher.sink { errorAsString in
+            let toast = Toast.text(errorAsString)
+            toast.show()
+        }.store(in: &subscriptions)
+    }
+    private func bindToSkipAuthButtonUserTap() {
+        loginView.authSkipButton.tapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.onCompleteAuthPublisher.send()
         }.store(in: &subscriptions)
     }
 }

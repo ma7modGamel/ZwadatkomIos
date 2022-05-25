@@ -8,9 +8,11 @@
 import Foundation
 
 struct AuthResponse: Codable {
-    let success: Bool
+    let success: Bool?
     let token: String?
     let user: User?
+    let message: String?
+    let errors: [String: [String]]?
 }
 
 

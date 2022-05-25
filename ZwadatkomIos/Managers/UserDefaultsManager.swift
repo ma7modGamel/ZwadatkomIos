@@ -48,4 +48,16 @@ class UserDefaultsManager {
             return UserDefaults.standard.bool(forKey: UserDefaultsKeys.onboardingState)
         }
     }
+    
+    var isAuthFinished: Bool {
+        set {
+            UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.authState)
+        }
+        get {
+            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.authState) != nil else {
+                return false
+            }
+            return UserDefaults.standard.bool(forKey: UserDefaultsKeys.authState)
+        }
+    }
 }

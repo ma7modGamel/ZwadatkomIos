@@ -8,22 +8,20 @@
 import UIKit
 import SwiftUI
 
-class LoginView: UIView {
-    
-    private var scrollView = UIScrollView(frame: .zero)
-    private var contentView = UIView()
+class LoginView: BaseUIView {
     
     private let headLabel = UILabel(frame: .zero)
     private var containerStack = UIStackView(frame: .zero)
     
     let usernameTextField = TextFieldWithIcon(icon: "envelope")
-    let passwordTextField = TextFieldWithIcon(icon: "envelope")
+    let passwordTextField = TextFieldWithIcon(icon: "lock.open")
     let forgetPasswordButton = UIButton()
     let loginButton = ZawadButton()
     let socialHeadLabel = UILabel()
     let socialStack = UIStackView()
     let registerContainerView = UIView()
     let registerButton = UIButton()
+    let authSkipButton = UIButton()
     
     
     private var textHeadLabel: ((_ text: String) -> (UILabel)) = { text in
@@ -43,17 +41,15 @@ class LoginView: UIView {
         imageView.translatesAutoresizingMaskIntoConstraints = false
         imageView.heightAnchor.constraint(equalToConstant: 52).isActive = true
         imageView.widthAnchor.constraint(equalToConstant: 52).isActive = true
-
-        
         return imageView
     }
     
     init() {
         super.init(frame: .zero)
         self.backgroundColor = ColorName.whiteColor.color
-        configureScrollView()
         configureHeadLabel()
         configureContainerStack()
+        configureSkipButton()
         configureForgetPasswordButton()
         configureLoginButton()
         configureSocialLaHeadLabel()
@@ -61,10 +57,9 @@ class LoginView: UIView {
         configureRegisterButton()
         
         // layout views
-        layoutScrollView()
+        layoutSkipButton()
         layoutHeadLabel()
         layoutContainerView()
-        layoutContentView()
         layoutForgetPasswordButton()
         layoutLoginButton()
         layoutSocialHeadLabel()
@@ -78,14 +73,13 @@ class LoginView: UIView {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("layout view sub views")
-
-
     }
     
-    private func configureScrollView() {
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
+    private func configureSkipButton() {
+        authSkipButton.setTitleForAllStates(L10n.skipAuthButtonTitle)
+        authSkipButton.setTitleColorForAllStates(ColorName.blackColor.color)
+        authSkipButton.titleLabel?.font = UIFont(font: FontFamily.TheSansArabic.light, size: 12)
+        backButton.isHidden = true
     }
     
     private func configureHeadLabel() {
@@ -144,22 +138,13 @@ class LoginView: UIView {
 
 extension LoginView {
     
-    private func layoutScrollView() {
-        addSubview(scrollView)
-        scrollView.anchor(top: safeAreaLayoutGuide.topAnchor,
-                          left: leftAnchor,
-                          bottom: safeAreaLayoutGuide.bottomAnchor,
-                          right: rightAnchor)
-    }
-
-    private func layoutContentView() {
-        scrollView.addSubview(contentView)
-        contentView.anchor(top: scrollView.contentLayoutGuide.topAnchor,
-                           left: scrollView.contentLayoutGuide.leftAnchor,
-                           bottom: scrollView.contentLayoutGuide.bottomAnchor,
-                           right: scrollView.contentLayoutGuide.rightAnchor)
-        //contentView.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
+    private func layoutSkipButton() {
+        headerView.addSubview(authSkipButton)
+        authSkipButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            authSkipButton.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -Measurements.leadingPadding),
+            authSkipButton.centerYAnchor.constraint(equalTo: headerView.centerYAnchor),
+        ])
     }
 
     private func layoutHeadLabel() {
@@ -167,9 +152,9 @@ extension LoginView {
         headLabel.anchor(top: contentView.topAnchor,
                          left: contentView.leftAnchor,
                          right: contentView.rightAnchor,
-                         topConstant: 60,
-                         leftConstant: 60,
-                         rightConstant: 60)
+                         topConstant: 25,
+                         leftConstant: 55,
+                         rightConstant: 55)
     }
 
     private func layoutContainerView() {
@@ -202,6 +187,7 @@ extension LoginView {
                                right: headLabel.rightAnchor,
                                topConstant: 20)
     }
+    
     private func layoutSocialStackView() {
         contentView.addSubview(socialStack)
         socialStack.anchor(top: socialHeadLabel.bottomAnchor,
@@ -211,17 +197,10 @@ extension LoginView {
     
     private func layoutRegisterContainerView() {
         contentView.addSubview(registerContainerView)
-//        registerContainerView.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            registerContainerView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
-//            //registerContainerView.topAnchor.constraint(greaterThanOrEqualTo: socialStack.bottomAnchor, constant: 100),
-//            registerContainerView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor)
-//
-//       ])
         registerContainerView.anchor(bottom: contentView.bottomAnchor,
                                      bottomConstant: 30)
         registerContainerView.anchorCenterXToSuperview()
-        registerContainerView.topAnchor.constraint(greaterThanOrEqualTo: socialStack.bottomAnchor, constant: 120).isActive = true
+        registerContainerView.topAnchor.constraint(greaterThanOrEqualTo: socialStack.bottomAnchor, constant: 110).isActive = true
         
         let label = textHeadLabel(L10n.registerLabel)
         registerContainerView.addSubview(label)
@@ -233,6 +212,5 @@ extension LoginView {
                               left:registerContainerView.leftAnchor,
                               bottom: registerContainerView.bottomAnchor,
                               right: label.leftAnchor)
-
     }
 }

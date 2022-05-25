@@ -19,7 +19,7 @@
 		862A217628339F8E004CAEDB /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A217528339F8E004CAEDB /* LoginController.swift */; };
 		862A21782833A4D1004CAEDB /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A21772833A4D1004CAEDB /* LoginView.swift */; };
 		862A217A2833A68F004CAEDB /* AuthModuleFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A21792833A68F004CAEDB /* AuthModuleFactory.swift */; };
-		862A217C2833AA3C004CAEDB /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A217B2833AA3C004CAEDB /* ViewModel.swift */; };
+		862A217C2833AA3C004CAEDB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 862A217B2833AA3C004CAEDB /* LoginViewModel.swift */; };
 		863A0C56283105070009EA1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C55283105070009EA1F /* AppDelegate.swift */; };
 		863A0C5A283105070009EA1F /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0C59283105070009EA1F /* SplashController.swift */; };
 		863A0C6C283106790009EA1F /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = 863A0C6B283106790009EA1F /* Moya */; };
@@ -53,6 +53,12 @@
 		8652C157283CFFC80065BB8C /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C156283CFFC80065BB8C /* AuthResponse.swift */; };
 		8652C159283CFFF80065BB8C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C158283CFFF80065BB8C /* User.swift */; };
 		8652C15C283D002F0065BB8C /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C15B283D002F0065BB8C /* Address.swift */; };
+		8652C169283D08340065BB8C /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8652C168283D08340065BB8C /* Accelerate.framework */; };
+		8652C16B283D08470065BB8C /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8652C16A283D08470065BB8C /* CoreData.framework */; };
+		8652C16F283D0A330065BB8C /* TabBarCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C16E283D0A330065BB8C /* TabBarCoordinator.swift */; };
+		8652C171283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C170283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift */; };
+		8652C174283D0AF70065BB8C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C173283D0AF70065BB8C /* MainTabBarController.swift */; };
+		8652C177283D16390065BB8C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8652C176283D16390065BB8C /* Toast */; };
 		86E80E1C283BACF6005FF239 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */; };
 		86E80E1F283BAD20005FF239 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */; };
 		86E80E20283BAD20005FF239 /* ZawadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1E283BAD20005FF239 /* ZawadButton.swift */; };
@@ -84,7 +90,7 @@
 		862A217528339F8E004CAEDB /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		862A21772833A4D1004CAEDB /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		862A21792833A68F004CAEDB /* AuthModuleFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModuleFactory.swift; sourceTree = "<group>"; };
-		862A217B2833AA3C004CAEDB /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		862A217B2833AA3C004CAEDB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		863A0C52283105070009EA1F /* Zwadatkom.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zwadatkom.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		863A0C55283105070009EA1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		863A0C59283105070009EA1F /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
@@ -116,6 +122,11 @@
 		8652C156283CFFC80065BB8C /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		8652C158283CFFF80065BB8C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		8652C15B283D002F0065BB8C /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		8652C168283D08340065BB8C /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		8652C16A283D08470065BB8C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		8652C16E283D0A330065BB8C /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
+		8652C170283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarCoordinatorOutput.swift; sourceTree = "<group>"; };
+		8652C173283D0AF70065BB8C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
 		86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		86E80E1E283BAD20005FF239 /* ZawadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZawadButton.swift; sourceTree = "<group>"; };
@@ -139,6 +150,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8652C177283D16390065BB8C /* Toast in Frameworks */,
+				8652C16B283D08470065BB8C /* CoreData.framework in Frameworks */,
+				8652C169283D08340065BB8C /* Accelerate.framework in Frameworks */,
 				863A0C7F28310BD00009EA1F /* MOLH in Frameworks */,
 				863A0C7C28310B4B0009EA1F /* Kingfisher in Frameworks */,
 				863A0C6C283106790009EA1F /* Moya in Frameworks */,
@@ -190,7 +204,7 @@
 			children = (
 				862A217528339F8E004CAEDB /* LoginController.swift */,
 				862A21772833A4D1004CAEDB /* LoginView.swift */,
-				862A217B2833AA3C004CAEDB /* ViewModel.swift */,
+				862A217B2833AA3C004CAEDB /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -210,6 +224,7 @@
 			children = (
 				863A0C54283105070009EA1F /* ZwadatkomIos */,
 				863A0C53283105070009EA1F /* Products */,
+				8652C167283D08340065BB8C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -290,6 +305,7 @@
 		863A0C8428310C4B0009EA1F /* AuthFlow */ = {
 			isa = PBXGroup;
 			children = (
+				8652C16C283D09CE0065BB8C /* New Group */,
 				86E80E1A283BACF6005FF239 /* Coordinator */,
 				862A217428339F79004CAEDB /* Register */,
 				862A217328339F5E004CAEDB /* Login */,
@@ -301,6 +317,7 @@
 		863A0C8528310C550009EA1F /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
+				8652C16D283D0A250065BB8C /* New Group */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -481,6 +498,40 @@
 			path = User;
 			sourceTree = "<group>";
 		};
+		8652C167283D08340065BB8C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8652C16A283D08470065BB8C /* CoreData.framework */,
+				8652C168283D08340065BB8C /* Accelerate.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8652C16C283D09CE0065BB8C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8652C16D283D0A250065BB8C /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				8652C172283D0AEA0065BB8C /* MainTabBar */,
+				8652C16E283D0A330065BB8C /* TabBarCoordinator.swift */,
+				8652C170283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
+		8652C172283D0AEA0065BB8C /* MainTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				8652C173283D0AF70065BB8C /* MainTabBarController.swift */,
+			);
+			path = MainTabBar;
+			sourceTree = "<group>";
+		};
 		86E80E1A283BACF6005FF239 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +601,7 @@
 				863A0C7B28310B4B0009EA1F /* Kingfisher */,
 				863A0C7E28310BD00009EA1F /* MOLH */,
 				863A0C8128310C120009EA1F /* CombineCocoa */,
+				8652C176283D16390065BB8C /* Toast */,
 			);
 			productName = ZwadatkomIos;
 			productReference = 863A0C52283105070009EA1F /* Zwadatkom.app */;
@@ -586,6 +638,7 @@
 				863A0C7A28310B4B0009EA1F /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */,
 				863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */,
+				8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */,
 			);
 			productRefGroup = 863A0C53283105070009EA1F /* Products */;
 			projectDirPath = "";
@@ -644,6 +697,7 @@
 				863A0CDA28312DC30009EA1F /* SplashView.swift in Sources */,
 				86F88DBF283BCBB800CCFD18 /* BaseViewController.swift in Sources */,
 				863A0C5A283105070009EA1F /* SplashController.swift in Sources */,
+				8652C16F283D0A330065BB8C /* TabBarCoordinator.swift in Sources */,
 				863A0CC8283120260009EA1F /* FontsManager.swift in Sources */,
 				862A216728326ED7004CAEDB /* OnboardingViewModel.swift in Sources */,
 				862A215F28325C90004CAEDB /* OnboardingModuleFactory.swift in Sources */,
@@ -670,7 +724,7 @@
 				862A21782833A4D1004CAEDB /* LoginView.swift in Sources */,
 				863A0CD7283121D90009EA1F /* Router.swift in Sources */,
 				863A0C95283117D10009EA1F /* DeepLinkOption.swift in Sources */,
-				862A217C2833AA3C004CAEDB /* ViewModel.swift in Sources */,
+				862A217C2833AA3C004CAEDB /* LoginViewModel.swift in Sources */,
 				863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */,
 				86E80E29283BAD83005FF239 /* RegisterView.swift in Sources */,
 				8652C15C283D002F0065BB8C /* Address.swift in Sources */,
@@ -687,6 +741,8 @@
 				863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */,
 				86F88DB5283BB08B00CCFD18 /* OTPController.swift in Sources */,
 				863A0C9F28311C350009EA1F /* CoordinatorFactory.swift in Sources */,
+				8652C171283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift in Sources */,
+				8652C174283D0AF70065BB8C /* MainTabBarController.swift in Sources */,
 				8652C157283CFFC80065BB8C /* AuthResponse.swift in Sources */,
 				863A0C8F2831172D0009EA1F /* ApplicationCoordinator.swift in Sources */,
 			);
@@ -839,6 +895,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5FFZ3X9GMU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZwadatkomIos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -868,6 +928,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 5FFZ3X9GMU;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ZwadatkomIos/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -953,6 +1017,14 @@
 				minimumVersion = 0.4.0;
 			};
 		};
+		8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/BastiaanJansen/toast-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -980,6 +1052,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */;
 			productName = CombineCocoa;
+		};
+		8652C176283D16390065BB8C /* Toast */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */;
+			productName = Toast;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

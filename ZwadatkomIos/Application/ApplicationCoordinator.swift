@@ -10,7 +10,7 @@ import Combine
 
 fileprivate var ishAuthHasBeenSkipped: Bool {
     get {
-       false //return UserDefaultsManager.shared().isUserSkippedAuthenticateFlow
+       return false //UserDefaultsManager.shared().isAuthFinished
     }
 }
 
@@ -103,20 +103,20 @@ class ApplicationCoordinator: BaseCoordinator {
     
     private func runAuthFlow() {
         let coordinator = coordinatorFactory.createAuthCoordinator(router: router)
+        coordinator.finishFlowPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.removeDependency(coordinator)
+            self.start()
+        }.store(in: &subscriptions)
         addDependency(coordinator)
         coordinator.start()
     }
     
     private func runMainFlow() {
-//        let (coordinator, module) = coordinatorFactory.createTabBarCoordinator()
-//        coordinator.onCartIsTapped.sink { [weak self] in
-//            guard let self = self else { return }
-//            self.runCartFlow()
-//            print(self)
-//        }.store(in: &subscriptions)
-//        addDependency(coordinator)
-//        router.setRootModule(module, hideBar: true)
-//        coordinator.start()
+        let (coordinator, module) = coordinatorFactory.createTabBarCoordinator()
+        addDependency(coordinator)
+        router.setRootModule(module, hideBar: true)
+        coordinator.start()
     }
     
 //    private func runCartFlow() {

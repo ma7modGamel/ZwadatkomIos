@@ -6,18 +6,20 @@
 //
 
 import UIKit
+import Toast
 
 protocol RegisterViewProtocol: BaseController {
     
 }
 
-class RegisterController: UIViewController, RegisterViewProtocol {
+class RegisterController: BaseUIViewController, RegisterViewProtocol {
     
     private var viewModel: RegisterViewModelProtocol!
     private var registerView: RegisterView!
     
     override func loadView() {
         let registerView = RegisterView()
+        self.baseView = registerView
         self.registerView = registerView
         self.view = registerView
     }
@@ -29,5 +31,39 @@ class RegisterController: UIViewController, RegisterViewProtocol {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+extension RegisterController {
+    private func bindToDataStreamsAndUserInteractions() {
+        bindToRegister()
+        
+        bindToEmailTextField()
+        bindToPasswordTextField()
+        bindToError()
+    }
+    
+    private func bindToEmailTextField() {
+        registerView.usernameTextField.textPublisher.assign(to: \.emailAddress, on: viewModel).store(in: &subscriptions)
+    }
+    private func bindToPasswordTextField() {
+        registerView.passwordTextField.textPublisher.assign(to: \.password, on: viewModel).store(in: &subscriptions)
+    }
+    
+    private func bidToSkip() {
+        
+    }
+    
+    private func bindToRegister() {
+        registerView.loginButton.tapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.viewModel.tryToRegister()
+        }.store(in: &subscriptions)
+    }
+
+    private func bindToError() {
+        viewModel.errorPublisher.sink { errorAsString in
+            let toast = Toast.text(errorAsString)
+            toast.show()
+        }.store(in: &subscriptions)
     }
 }

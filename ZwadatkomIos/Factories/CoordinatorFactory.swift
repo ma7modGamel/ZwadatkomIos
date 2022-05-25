@@ -11,7 +11,11 @@ import UIKit
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
 
-    
+    func createTabBarCoordinator() -> (configurator: Coordinator & TapBarCoordinatorOutput, toPresent: Presentable?) {
+        let controller = MainTabBarController.create()
+        let coordinator = TabBarCoordinator(tabBarView: controller, coordinatorFactory: CoordinatorFactory())
+        return (coordinator, controller)
+    }
 
     func createSplashCoordinator(router: RouterProtocol) -> Coordinator & SplashCoordinatorOutput {
         let coordinator = SplashCoordinator(router: router, factory: ModuleFactory())

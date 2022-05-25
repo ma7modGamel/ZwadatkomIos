@@ -8,6 +8,7 @@
 "onboarding3rdContent" = "ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى  لصفحة ما سيلهي القارئ عن التركيز على الشكل ";
 
 // Auth flow strings
+"skipAuthButtonTitle" = "تخطي";
 "signInHeadText" = "مرحبا بعودتك";
 "signInAppName" = "لتطبيق زودتاكم";
 "usernameHeadText" = "البريد او الهاتف";

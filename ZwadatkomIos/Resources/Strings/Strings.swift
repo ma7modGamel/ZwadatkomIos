@@ -50,6 +50,8 @@ internal enum L10n {
   internal static let signInAppName = L10n.tr("Localizable", "signInAppName")
   /// مرحبا بعودتك
   internal static let signInHeadText = L10n.tr("Localizable", "signInHeadText")
+  /// تخطي
+  internal static let skipAuthButtonTitle = L10n.tr("Localizable", "skipAuthButtonTitle")
   /// او دخول عبر
   internal static let socialHeadTitle = L10n.tr("Localizable", "socialHeadTitle")
   /// البريد او الهاتف

@@ -38,10 +38,10 @@ class AuthCoordinator: BaseCoordinator, AuthCoordinatorOutput {
             guard let self = self else { return }
             self.showOTP()
         }.store(in: &subscriptions)
-//        loginOutput.onCompleteSplashPublisher.sink { [weak self] _ in
-//            guard let self = self else { return }
-//            self.finishFlowPublisher.send()
-//        }.store(in: &subscriptions)
+        loginOutput.onCompleteAuthPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.finishFlowPublisher.send()
+        }.store(in: &subscriptions)
         router.setRootModule(loginOutput)
     }
     

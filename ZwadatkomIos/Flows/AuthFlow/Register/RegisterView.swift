@@ -7,16 +7,15 @@
 
 import UIKit
 
-class RegisterView: UIView {
-    
-    private var scrollView = UIScrollView(frame: .zero)
-    private var contentView = UIView()
+class RegisterView: BaseUIView {
     
     private let headLabel = UILabel(frame: .zero)
     private var containerStack = UIStackView(frame: .zero)
     
-    let fullNameTextField = TextFieldWithIcon(icon: "envelope")
+    let fullNameTextField = TextFieldWithIcon(icon: "person")
     let usernameTextField = TextFieldWithIcon(icon: "envelope")
+    let mobileNumberTextField = TextFieldWithIcon(icon: "envelope")
+    
     let passwordTextField = TextFieldWithIcon(icon: "envelope")
     let forgetPasswordButton = UIButton()
     let loginButton = ZawadButton()
@@ -49,7 +48,6 @@ class RegisterView: UIView {
     init() {
         super.init(frame: .zero)
         self.backgroundColor = ColorName.whiteColor.color
-        configureScrollView()
         configureHeadLabel()
         configureContainerStack()
         configureForgetPasswordButton()
@@ -59,10 +57,8 @@ class RegisterView: UIView {
         configureRegisterButton()
         
         // layout views
-        layoutScrollView()
         layoutHeadLabel()
         layoutContainerView()
-        layoutContentView()
         layoutForgetPasswordButton()
         layoutLoginButton()
         layoutSocialHeadLabel()
@@ -79,11 +75,6 @@ class RegisterView: UIView {
         print("layout view sub views")
     }
     
-    private func configureScrollView() {
-        scrollView.showsHorizontalScrollIndicator = false
-        scrollView.showsVerticalScrollIndicator = false
-    }
-    
     private func configureHeadLabel() {
         headLabel.font = UIFont(font: FontFamily.BahijTheSansArabic.bold, size: 24)
         let headText = "\(L10n.registerHeadText)"
@@ -92,6 +83,7 @@ class RegisterView: UIView {
     
     private func configureContainerStack() {
         let fullNameHead = textHeadLabel(L10n.fullNameHeadText)
+        let emailHead = textHeadLabel(L10n.fullNameHeadText)
         let usernameHead = textHeadLabel(L10n.usernameHeadText)
         let passwordHead = textHeadLabel(L10n.passwordHeadText)
         let stackViews = [fullNameHead, fullNameTextField, usernameHead, usernameTextField, passwordHead, passwordTextField]
@@ -139,24 +131,6 @@ class RegisterView: UIView {
 }
 
 extension RegisterView {
-    
-    private func layoutScrollView() {
-        addSubview(scrollView)
-        scrollView.anchor(top: safeAreaLayoutGuide.topAnchor,
-                          left: leftAnchor,
-                          bottom: safeAreaLayoutGuide.bottomAnchor,
-                          right: rightAnchor)
-    }
-    
-    private func layoutContentView() {
-        scrollView.addSubview(contentView)
-        contentView.anchor(top: scrollView.contentLayoutGuide.topAnchor,
-                           left: scrollView.contentLayoutGuide.leftAnchor,
-                           bottom: scrollView.contentLayoutGuide.bottomAnchor,
-                           right: scrollView.contentLayoutGuide.rightAnchor)
-        //contentView.heightAnchor.constraint(equalTo: scrollView.frameLayoutGuide.heightAnchor).isActive = true
-        contentView.widthAnchor.constraint(equalTo: scrollView.frameLayoutGuide.widthAnchor).isActive = true
-    }
     
     private func layoutHeadLabel() {
         contentView.addSubview(headLabel)

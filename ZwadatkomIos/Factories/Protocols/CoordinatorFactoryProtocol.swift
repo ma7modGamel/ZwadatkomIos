@@ -11,4 +11,5 @@ protocol CoordinatorFactoryProtocol {
     func createSplashCoordinator(router: RouterProtocol) -> Coordinator & SplashCoordinatorOutput
     func createOnboardingCoordinator(router: RouterProtocol) -> Coordinator & OnboardingCoordinatorOutput
     func createAuthCoordinator(router: RouterProtocol) -> Coordinator & AuthCoordinatorOutput
+    func createTabBarCoordinator() ->  (configurator: Coordinator & TapBarCoordinatorOutput, toPresent: Presentable?)
 }
