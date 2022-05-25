@@ -9,6 +9,7 @@ import Foundation
 
 
 final class ModuleFactory {
+    
 
 }
 
@@ -45,4 +46,29 @@ extension ModuleFactory: AuthModuleFactory {
         let viewController = OTPController(viewModel: viewModel)
         return viewController
     }
+}
+
+extension ModuleFactory: TabBarModuleFactory {
+    func createTabBarOutput() -> MainTabBarController {
+        let tabBarControllersCount = 3
+        let tabBarController = MainTabBarController(tabBarControllersCount: tabBarControllersCount)
+        return tabBarController
+    }
+}
+
+extension ModuleFactory: HomeModuleFactory {
+    func createHomeOutput() -> HomeControllerProtocol {
+        let viewModel = HomeViewModel()
+        let viewController = HomeController(viewModel: viewModel)
+        return viewController
+    }
+}
+
+extension ModuleFactory: SettingsModuleFactory {
+    func createSettingsOutput() -> SettingsController {
+        let viewModel = SettingsViewModel()
+        let viewController = SettingsController(viewModel: viewModel)
+        return viewController
+    }
+    
 }

@@ -27,7 +27,7 @@ class SplashController: UIViewController, SplashViewProtocol {
     }
     
     private func setTimer() {
-        Timer.scheduledTimer(withTimeInterval: 1.5, repeats: false) { [weak self] _ in
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: false) { [weak self] _ in
             guard let self = self else { return }
             self.onCompleteSplashPublisher.send()
         }

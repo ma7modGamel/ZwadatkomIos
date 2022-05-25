@@ -23,6 +23,7 @@ class BaseUIView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = ColorName.whiteColor.color
         configureHeaderView()
         configureBackButton()
         configureScrollView()

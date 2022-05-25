@@ -15,9 +15,7 @@ class BaseUIViewController: UIViewController {
 
     override func loadView() {
         super.loadView()
-        let baseView = BaseUIView()
-        self.baseView = baseView
-        self.view = view
+        self.view = baseView
     }
 
     override func viewDidLoad() {

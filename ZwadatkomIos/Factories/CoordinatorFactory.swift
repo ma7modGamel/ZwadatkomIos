@@ -10,11 +10,11 @@ import UIKit
 
 
 final class CoordinatorFactory: CoordinatorFactoryProtocol {
-
-    func createTabBarCoordinator() -> (configurator: Coordinator & TapBarCoordinatorOutput, toPresent: Presentable?) {
-        let controller = MainTabBarController.create()
-        let coordinator = TabBarCoordinator(tabBarView: controller, coordinatorFactory: CoordinatorFactory())
-        return (coordinator, controller)
+    
+    func createTabBarCoordinator(router:RouterProtocol, coordinatorFactory: MainCoordinatorFactory) -> Coordinator & TapBarCoordinatorOutput {
+        let moduleFactory = ModuleFactory()
+        let coordinator = TabBarCoordinator(router: router, factory: moduleFactory, coordinatorFactory: coordinatorFactory)
+        return coordinator
     }
 
     func createSplashCoordinator(router: RouterProtocol) -> Coordinator & SplashCoordinatorOutput {
@@ -35,14 +35,27 @@ final class CoordinatorFactory: CoordinatorFactoryProtocol {
     private func router(_ navController: UINavigationController?) -> RouterProtocol {
         return Router(rootController: navigationController(navController))
     }
-    
-    
-    
-    
+
     private func navigationController(_ navController: UINavigationController?) -> UINavigationController {
         if let navController = navController { return navController }
         else { return UINavigationController() }
     }
-    
+}
 
+extension CoordinatorFactory: MainCoordinatorFactory {
+    func createHomeCoordinator(navController: UINavigationController) -> Coordinator & HomeCoordinatorOutput {
+        let coordinator = HomeCoordinator(router: router(navController), factory: ModuleFactory())
+        return coordinator
+    }
+    
+    func createCartCoordinator(navController: UINavigationController) -> Coordinator & SettingsCoordinatorOutput {
+        let coordinator = SettingsCoordinator(router: router(navController), factory: ModuleFactory())
+        return coordinator
+    }
+    
+    func createSettingsCoordinator(navController: UINavigationController) -> Coordinator & SettingsCoordinatorOutput {
+        let coordinator = SettingsCoordinator(router: router(navController), factory: ModuleFactory())
+        return coordinator
+    }
+    
 }

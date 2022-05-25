@@ -10,7 +10,7 @@ import Combine
 
 fileprivate var ishAuthHasBeenSkipped: Bool {
     get {
-       return false //UserDefaultsManager.shared().isAuthFinished
+        return UserDefaultsManager.shared().isAuthFinished
     }
 }
 
@@ -19,7 +19,7 @@ fileprivate var onboardingHasBeenShowed: Bool {
         return UserDefaultsManager.shared().isBoardingShowed
     }
 }
-    
+
 fileprivate var splashHasBeenShowed: Bool = false
 
 fileprivate enum LaunchInstructor {
@@ -28,30 +28,30 @@ fileprivate enum LaunchInstructor {
     static func configure(isSplashWasShown: Bool = splashHasBeenShowed,
                           isOnboardingWasShown: Bool = onboardingHasBeenShowed,
                           authSkipped: Bool = ishAuthHasBeenSkipped) -> LaunchInstructor {
-            
-            switch (isSplashWasShown, isOnboardingWasShown ,authSkipped) {
-            case (false, _, _):
-                return .splash
-            case (true, false, _):
-                return .onboarding
-            case (true, true, true):
-                return .main
-            case (true, true, false):
-                return .auth
-            }
+        
+        switch (isSplashWasShown, isOnboardingWasShown ,authSkipped) {
+        case (false, _, _):
+            return .splash
+        case (true, false, _):
+            return .onboarding
+        case (true, true, true):
+            return .main
+        case (true, true, false):
+            return .auth
         }
+    }
 }
 
 class ApplicationCoordinator: BaseCoordinator {
     
-    private let coordinatorFactory: CoordinatorFactoryProtocol
+    private let coordinatorFactory: CoordinatorFactory
     private let router: RouterProtocol
     
     private var instructor: LaunchInstructor {
         return LaunchInstructor.configure()
     }
     
-    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactoryProtocol) {
+    init(router: RouterProtocol, coordinatorFactory: CoordinatorFactory) {
         self.router = router
         self.coordinatorFactory = coordinatorFactory
     }
@@ -113,17 +113,8 @@ class ApplicationCoordinator: BaseCoordinator {
     }
     
     private func runMainFlow() {
-        let (coordinator, module) = coordinatorFactory.createTabBarCoordinator()
+        let coordinator = coordinatorFactory.createTabBarCoordinator(router: router, coordinatorFactory: coordinatorFactory)
         addDependency(coordinator)
-        router.setRootModule(module, hideBar: true)
         coordinator.start()
     }
-    
-//    private func runCartFlow() {
-//        let (coordinator, module) = coordinatorFactory.makeCartCoordinatorBox()
-//        addDependency(coordinator)
-//        router.present(module)
-//        coordinator.start()
-//    }
-    
 }

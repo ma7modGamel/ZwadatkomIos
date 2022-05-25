@@ -22,8 +22,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        configureNavigationAppearance()
+        UserDefaultsManager.shared().isAuthFinished = true
+        //configureNavigationAppearance()
+        setUITabBarAppearance()
         configureMOLH()
         
         let rootViewController = UINavigationController()
@@ -58,5 +59,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         MOLH.shared.activate(true)
     }
     
+    
+    private func setUITabBarAppearance() {
+        let tabBarAppearance = UITabBarAppearance()
+        tabBarAppearance.backgroundColor = ColorName.whiteColor.color
+        
+        UITabBar.appearance().standardAppearance = tabBarAppearance
+        if #available(iOS 15.0, *) {
+            UITabBar.appearance().scrollEdgeAppearance = tabBarAppearance
+        }
+    }
 }
-
