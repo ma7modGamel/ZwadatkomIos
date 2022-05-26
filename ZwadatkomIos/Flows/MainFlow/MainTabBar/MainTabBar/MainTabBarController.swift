@@ -14,22 +14,23 @@ protocol TabBarViewProtocol: AnyObject {
 class MainTabBarController: UITabBarController, TabBarViewProtocol {
             
     static let tabBarTabsCount: Int = 2
+    var middleButtonTapPublisher: AnyCancellable?
+    private enum TabBarNavigationsTags: Int {
+        case main = 1
+        case settings = 2
+    }
     
     init(tabBarControllersCount: Int) {
         super.init(nibName: nil, bundle: nil)
-        
-
-        
         var controllers = [UINavigationController]()
         for tag in 1 ... MainTabBarController.tabBarTabsCount {
             let navigationController = UINavigationController()
-            navigationController.tabBarItem = customTabBarItem(normalImage: Asset.homeTabIcon, selectedImage: Asset.homeTabIcon)
             navigationController.view.tag = tag
+            setTabBarItemForController(controller: navigationController)
             controllers.append(navigationController)
         }
         self.viewControllers = controllers
         self.selectedIndex = 0
-
     }
     
     required init?(coder: NSCoder) {
@@ -44,36 +45,26 @@ class MainTabBarController: UITabBarController, TabBarViewProtocol {
             return tabBar
         }()
         self.setValue(tabBar, forKey: "tabBar")
-        setupMiddleButton()
+    }
+    
+    private func setTabBarItemForController(controller: UIViewController) {
+        guard let controllerTag = TabBarNavigationsTags(rawValue: controller.view.tag) else { return }
+        switch controllerTag {
+        case .main:
+            controller.tabBarItem = customTabBarItem(normalImage: Asset.homeTabIcon)
+        case .settings:
+            controller.tabBarItem = customTabBarItem(normalImage: Asset.settingsTabIcon)
+        }
+    }
+    
+    private func customTabBarItem(normalImage: ImageAsset) -> UITabBarItem {
+        let normalImage = UIImage(asset: normalImage)
+        let selectedImage = normalImage?.withTintColor(ColorName.red.color, renderingMode: .alwaysOriginal)
+        let customTabBarItem: UITabBarItem = UITabBarItem(title: nil, image: normalImage, selectedImage: selectedImage)
+        return customTabBarItem
     }
 
     
-    // TabBarButton – Setup Middle Button
-        func setupMiddleButton() {
-            guard let image = UIImage(asset: Asset.tabBarMiddleButton) else { return }
 
-            let tabBarMiddleButton = UIButton(frame: CGRect(x: (self.view.bounds.width / 2)-25, y: -20, width: 50, height: 50))
-            tabBarMiddleButton.setImageForAllStates(image)
-
-            
-            self.tabBar.addSubview(tabBarMiddleButton)
-            tabBarMiddleButton.addTarget(self, action: #selector(self.menuButtonAction), for: .touchUpInside)
-
-            self.view.layoutIfNeeded()
-        }
-
-        // Menu Button Touch Action
-        @objc func menuButtonAction(sender: UIButton) {
-            print("self.selectedIndex = 2")
-            self.selectedIndex = 2   //to select the middle tab. use "1" if you have only 3 tabs.
-        }
-
-    private func customTabBarItem(normalImage: ImageAsset, selectedImage: ImageAsset) -> UITabBarItem {
-        let normalImage = UIImage(asset: normalImage)
-        let selectedImage = UIImage(asset: selectedImage)?.withTintColor(.blue)
-        let customTabBarItem: UITabBarItem = UITabBarItem(title: nil, image: normalImage, selectedImage: selectedImage)
-        // customTabBarItem.titlePositionAdjustment = UIOffset(horizontal: 0, vertical: -3)
-        return customTabBarItem
-    }
 }
 

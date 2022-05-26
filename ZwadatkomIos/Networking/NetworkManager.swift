@@ -28,6 +28,10 @@ class NetworkManager {
     func register() -> Future<String, Error> {
         return request(target: APIRouter.register)
     }
+    
+    func getBanners() -> Future<[Banar], Error> {
+        return request(target: APIRouter.getBanners)
+    }
 
     
 }

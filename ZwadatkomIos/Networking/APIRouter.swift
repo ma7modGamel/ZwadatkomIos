@@ -11,9 +11,11 @@ import Moya
 enum APIRouter {
     case login(_ loginModel: LoginModel)
     case register
+    case getBanners
 }
 
 extension APIRouter: TargetType, AccessTokenAuthorizable {
+    
     var authorizationType: AuthorizationType? {
         switch self {
         default:
@@ -32,6 +34,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
             return URLs.login
         case .register:
             return URLs.register
+        case .getBanners:
+            return URLs.banners
         }
     }
     
@@ -50,6 +54,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
         case .login(let loginModel):
             let body = try! toDictionary(model: loginModel)
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
+        default:
+            return .requestPlain
         }
     }
     

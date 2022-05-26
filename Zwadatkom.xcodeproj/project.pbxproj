@@ -71,6 +71,11 @@
 		8652C171283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C170283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift */; };
 		8652C174283D0AF70065BB8C /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8652C173283D0AF70065BB8C /* MainTabBarController.swift */; };
 		8652C177283D16390065BB8C /* Toast in Frameworks */ = {isa = PBXBuildFile; productRef = 8652C176283D16390065BB8C /* Toast */; };
+		8655A9E1283F65C60048BF74 /* HomeSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E0283F65C60048BF74 /* HomeSection.swift */; };
+		8655A9E4283F66150048BF74 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E3283F66150048BF74 /* CategoryCell.swift */; };
+		8655A9E6283F66770048BF74 /* BannarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E5283F66770048BF74 /* BannarCell.swift */; };
+		8655A9E8283F67340048BF74 /* ProuductCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E7283F67340048BF74 /* ProuductCell .swift */; };
+		8699A6B3283E914D0094BD41 /* ESTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 8699A6B2283E914D0094BD41 /* ESTabBarController */; };
 		86E80E1C283BACF6005FF239 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */; };
 		86E80E1F283BAD20005FF239 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */; };
 		86E80E20283BAD20005FF239 /* ZawadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1E283BAD20005FF239 /* ZawadButton.swift */; };
@@ -151,6 +156,10 @@
 		8652C16E283D0A330065BB8C /* TabBarCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarCoordinator.swift; sourceTree = "<group>"; };
 		8652C170283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TapBarCoordinatorOutput.swift; sourceTree = "<group>"; };
 		8652C173283D0AF70065BB8C /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		8655A9E0283F65C60048BF74 /* HomeSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeSection.swift; sourceTree = "<group>"; };
+		8655A9E3283F66150048BF74 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
+		8655A9E5283F66770048BF74 /* BannarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannarCell.swift; sourceTree = "<group>"; };
+		8655A9E7283F67340048BF74 /* ProuductCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProuductCell .swift"; sourceTree = "<group>"; };
 		86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		86E80E1E283BAD20005FF239 /* ZawadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZawadButton.swift; sourceTree = "<group>"; };
@@ -178,6 +187,7 @@
 				8652C16B283D08470065BB8C /* CoreData.framework in Frameworks */,
 				8652C169283D08340065BB8C /* Accelerate.framework in Frameworks */,
 				863A0C7F28310BD00009EA1F /* MOLH in Frameworks */,
+				8699A6B3283E914D0094BD41 /* ESTabBarController in Frameworks */,
 				863A0C7C28310B4B0009EA1F /* Kingfisher in Frameworks */,
 				863A0C6C283106790009EA1F /* Moya in Frameworks */,
 				863A0C8228310C120009EA1F /* CombineCocoa in Frameworks */,
@@ -382,6 +392,7 @@
 		863A0C89283111F20009EA1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				8699A6B5283F657F0094BD41 /* DiffableDataSource */,
 				8652C15A283D00230065BB8C /* User */,
 				86E80E21283BAD68005FF239 /* Auth */,
 			);
@@ -391,6 +402,7 @@
 		863A0C8A283112110009EA1F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				8655A9E2283F66060048BF74 /* Cells */,
 				86F88DC0283BCBE300CCFD18 /* BaseViewController */,
 				86F88DB6283BB42A00CCFD18 /* OTPView */,
 				86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */,
@@ -624,6 +636,24 @@
 			path = MainTabBar;
 			sourceTree = "<group>";
 		};
+		8655A9E2283F66060048BF74 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				8655A9E3283F66150048BF74 /* CategoryCell.swift */,
+				8655A9E5283F66770048BF74 /* BannarCell.swift */,
+				8655A9E7283F67340048BF74 /* ProuductCell .swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		8699A6B5283F657F0094BD41 /* DiffableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				8655A9E0283F65C60048BF74 /* HomeSection.swift */,
+			);
+			path = DiffableDataSource;
+			sourceTree = "<group>";
+		};
 		86E80E1A283BACF6005FF239 /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -694,6 +724,7 @@
 				863A0C7E28310BD00009EA1F /* MOLH */,
 				863A0C8128310C120009EA1F /* CombineCocoa */,
 				8652C176283D16390065BB8C /* Toast */,
+				8699A6B2283E914D0094BD41 /* ESTabBarController */,
 			);
 			productName = ZwadatkomIos;
 			productReference = 863A0C52283105070009EA1F /* Zwadatkom.app */;
@@ -731,6 +762,7 @@
 				863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */,
 				863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */,
+				8699A6B1283E914D0094BD41 /* XCRemoteSwiftPackageReference "ESTabBarController" */,
 			);
 			productRefGroup = 863A0C53283105070009EA1F /* Products */;
 			projectDirPath = "";
@@ -806,6 +838,7 @@
 				862A216228325F92004CAEDB /* OnboardingController.swift in Sources */,
 				864DE6C7283E1A1A0036C77C /* SettingsController.swift in Sources */,
 				86F88DBA283BB42A00CCFD18 /* OTPTextField.swift in Sources */,
+				8655A9E8283F67340048BF74 /* ProuductCell .swift in Sources */,
 				86E80E24283BAD68005FF239 /* LoginModel.swift in Sources */,
 				862A216C28328358004CAEDB /* UserDefaultsManager.swift in Sources */,
 				862483CA283E486C006D9B63 /* HomeCoordinator.swift in Sources */,
@@ -813,6 +846,7 @@
 				863A0C71283106E40009EA1F /* APIRouter.swift in Sources */,
 				864DE6CB283E1AB70036C77C /* HomeModuleFactory.swift in Sources */,
 				862A217628339F8E004CAEDB /* LoginController.swift in Sources */,
+				8655A9E6283F66770048BF74 /* BannarCell.swift in Sources */,
 				863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */,
 				862A216428326659004CAEDB /* OnboardingView.swift in Sources */,
 				86F88DB4283BB08B00CCFD18 /* OTPViewModel.swift in Sources */,
@@ -825,6 +859,7 @@
 				863A0CD7283121D90009EA1F /* Router.swift in Sources */,
 				863A0C95283117D10009EA1F /* DeepLinkOption.swift in Sources */,
 				862A217C2833AA3C004CAEDB /* LoginViewModel.swift in Sources */,
+				8655A9E4283F66150048BF74 /* CategoryCell.swift in Sources */,
 				863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */,
 				86E80E29283BAD83005FF239 /* RegisterView.swift in Sources */,
 				8652C15C283D002F0065BB8C /* Address.swift in Sources */,
@@ -840,6 +875,7 @@
 				863A0CA628311DDB0009EA1F /* BaseController.swift in Sources */,
 				8652C159283CFFF80065BB8C /* User.swift in Sources */,
 				86E80E2A283BAD83005FF239 /* RegisterViewModel.swift in Sources */,
+				8655A9E1283F65C60048BF74 /* HomeSection.swift in Sources */,
 				86E80E25283BAD68005FF239 /* RegisterModel.swift in Sources */,
 				863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */,
 				86F88DB5283BB08B00CCFD18 /* OTPController.swift in Sources */,
@@ -1129,6 +1165,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8699A6B1283E914D0094BD41 /* XCRemoteSwiftPackageReference "ESTabBarController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/eggswift/ESTabBarController.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1161,6 +1205,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;
+		};
+		8699A6B2283E914D0094BD41 /* ESTabBarController */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8699A6B1283E914D0094BD41 /* XCRemoteSwiftPackageReference "ESTabBarController" */;
+			productName = ESTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

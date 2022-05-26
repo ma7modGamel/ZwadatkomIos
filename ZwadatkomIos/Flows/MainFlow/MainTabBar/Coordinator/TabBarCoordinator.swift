@@ -12,8 +12,7 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
     
     private enum TabBarNavigationsTags: Int {
         case main = 1
-        case cart = 2
-        case settings = 3
+        case settings = 2
     }
 
     private (set) var onCartIsTapped = PassthroughSubject<Void, Never>()
@@ -23,9 +22,9 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
     private weak var coordinatorFactory: MainCoordinatorFactory!
     
     init(router: RouterProtocol, factory: ModuleFactory, coordinatorFactory: MainCoordinatorFactory) {
+        self.coordinatorFactory = coordinatorFactory
         self.router  = router
         self.factory = factory
-        self.coordinatorFactory = coordinatorFactory
     }
 
     override func start() {
@@ -36,8 +35,6 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
             switch controllerTag {
             case .main:
                 setHomeFlow(navController: controller as! UINavigationController)
-            case .cart:
-                print("cart controller")
             case .settings:
                 setSettingsFlow(navController: controller as! UINavigationController )
             }
@@ -50,6 +47,7 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
         addDependency(coordinator)
         coordinator.start()
     }
+    
     private func setSettingsFlow(navController: UINavigationController) {
         let coordinator = coordinatorFactory.createSettingsCoordinator(navController: navController)
         addDependency(coordinator)
@@ -57,7 +55,7 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
     }
 
     private func setCartFlow() {
-        //let coordinator = coordinatorFactory.
+//        let coordinator = coordinatorFactory.
 //        tabBarView.servicesNavigationPublisher.sink { [weak self] navController in
 //            guard let self = self else { return }
 //            guard let navController = navController else { return }

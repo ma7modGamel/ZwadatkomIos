@@ -36,6 +36,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#f9f9f9"></span>
   /// Alpha: 100% <br/> (0xf9f9f9ff)
   internal static let offGray = ColorName(rgbaValue: 0xf9f9f9ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ee2f35"></span>
+  /// Alpha: 100% <br/> (0xee2f35ff)
+  internal static let red = ColorName(rgbaValue: 0xee2f35ff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#838383"></span>
   /// Alpha: 100% <br/> (0x838383ff)
   internal static let semiGray = ColorName(rgbaValue: 0x838383ff)

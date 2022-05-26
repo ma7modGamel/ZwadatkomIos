@@ -36,6 +36,7 @@ internal enum Asset {
   internal static let onboarding2nd = ImageAsset(name: "onboarding2nd")
   internal static let onboarding3rd = ImageAsset(name: "onboarding3rd")
   internal static let homeTabIcon = ImageAsset(name: "homeTabIcon")
+  internal static let settingsTabIcon = ImageAsset(name: "settingsTabIcon")
   internal static let tabBarMiddleButton = ImageAsset(name: "tabBarMiddleButton")
 }
 // swiftlint:enable identifier_name line_length nesting type_body_length type_name

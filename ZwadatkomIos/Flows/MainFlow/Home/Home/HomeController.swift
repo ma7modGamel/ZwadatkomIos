@@ -19,6 +19,15 @@ final class HomeController: BaseUIViewController, HomeControllerProtocol {
     //----------------------------------------------------------------------------------------------------------------
     //=======>MARK: -  Properties ...
     //----------------------------------------------------------------------------------------------------------------
+    enum Section: String, CaseIterable {
+      case featuredAlbums = "Featured Albums"
+      case sharedAlbums = "Shared Albums"
+      case myAlbums = "My Albums"
+    }
+    private typealias DataSource = UICollectionViewDiffableDataSource<HomeSection, String>
+    private typealias DataSourceSnapshot = NSDiffableDataSourceSnapshot<HomeSection, String>
+    private var dataSource: DataSource!
+    
     private var viewModel: HomeViewModelProtocol!
     private var homeView: BaseUIView!
     
@@ -51,5 +60,9 @@ extension HomeController {
     //----------------------------------------------------------------------------------------------------------------
     private func bindToDataStreamsAndUserInteractions() {
 
+    }
+    
+    private func configureDataSource() {
+        
     }
 }

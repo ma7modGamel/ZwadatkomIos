@@ -20,6 +20,7 @@ struct URLs {
     static let baseURL = "https://test.dnbscy.com/api/encryptRoute"
     static let login = "/signin"
     static let register = "/signup"
+    static let banners = "/v1/promotionView"
 }
 
 struct Cells {

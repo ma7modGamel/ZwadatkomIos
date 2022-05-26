@@ -10,7 +10,31 @@ import UIKit
 class MainTabBar: UITabBar {
     
     private var shapeLayer: CALayer?
+    private lazy var middleButton: UIButton! = {
+        let middleButton = UIButton()
+        guard let image = UIImage(asset: Asset.tabBarMiddleButton) else { return nil }
+        middleButton.frame.size = CGSize(width: 48, height: 48)
+        middleButton.setImageForAllStates(image)
+        addSubview(middleButton)
+        return middleButton
+    }()
 
+    override func draw(_ rect: CGRect) {
+        self.addShape()
+    }
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        print("finished layout")
+        middleButton.center = CGPoint(x: frame.width / 2, y: -5)
+
+    }
+    
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        guard !clipsToBounds && !isHidden && alpha > 0 else { return nil }
+        return self.middleButton.frame.contains(point) ? self.middleButton : super.hitTest(point, with: event)
+    }
+    
     private func addShape() {
         let shapeLayer = CAShapeLayer()
         shapeLayer.path = createPath()
@@ -25,10 +49,6 @@ class MainTabBar: UITabBar {
         }
 
         self.shapeLayer = shapeLayer
-    }
-
-    override func draw(_ rect: CGRect) {
-        self.addShape()
     }
 
     func createPath() -> CGPath {
