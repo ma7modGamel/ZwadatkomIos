@@ -15,7 +15,8 @@ final class ModuleFactory {
 
 extension ModuleFactory: SplashModuleFactory {
     func createSplashOutput() -> SplashViewProtocol {
-        let viewController = SplashController()
+        let viewModel = SplashViewModel()
+        let viewController = SplashController(viewModel: viewModel)
         return viewController
     }
 }

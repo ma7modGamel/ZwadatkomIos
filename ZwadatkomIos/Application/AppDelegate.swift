@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         UserDefaultsManager.shared().isAuthFinished = true
+        UserDefaultsManager.shared().token = "448|KvoRAE696XIMsRlmstXV1CmKMGo2ISLTXkC2hXVo"
         //configureNavigationAppearance()
         setUITabBarAppearance()
         configureMOLH()

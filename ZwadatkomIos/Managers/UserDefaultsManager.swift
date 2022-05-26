@@ -30,10 +30,8 @@ class UserDefaultsManager {
             UserDefaults.standard.set(newValue, forKey: UserDefaultsKeys.token)
         }
         get {
-            guard UserDefaults.standard.object(forKey: UserDefaultsKeys.token) != nil else {
-                return nil
-            }
-            return "Bearer \(UserDefaults.standard.string(forKey: UserDefaultsKeys.token)!)"
+            guard let token = UserDefaults.standard.string(forKey: UserDefaultsKeys.token) else { return nil }
+            return token
         }
     }
     

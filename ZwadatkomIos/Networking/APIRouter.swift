@@ -11,6 +11,7 @@ import Moya
 enum APIRouter {
     case login(_ loginModel: LoginModel)
     case register
+    case userInformations
     case getBanners
 }
 
@@ -18,6 +19,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
     
     var authorizationType: AuthorizationType? {
         switch self {
+        case .userInformations:
+            return .bearer
         default:
             return .none
         }
@@ -34,6 +37,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
             return URLs.login
         case .register:
             return URLs.register
+        case .userInformations:
+            return URLs.userInformations
         case .getBanners:
             return URLs.banners
         }
@@ -41,9 +46,10 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
     
     public var method: Moya.Method {
         switch self {
-
+        case.userInformations :
+            return .get
         default:
-                return .post
+            return .post
         }
     }
     
@@ -75,7 +81,6 @@ extension APIRouter {
         guard let dictionary = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [String: Any] else {
             throw NSError()
         }
-
             return dictionary
     }
 }

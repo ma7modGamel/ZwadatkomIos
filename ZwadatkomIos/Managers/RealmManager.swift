@@ -27,6 +27,13 @@ class RealmManager {
 
         return realm.object(ofType: type, forPrimaryKey: key)
     }
+    
+    func objects<T: Object>(ofType: T.Type) -> [T]? {
+        if !isRealmAccessible() { return nil }
+        let realm = getRealm()
+        realm.refresh()
+        return realm.objects(ofType).reversed()
+    }
 
     func add<T: Object>(_ data: [T], update: Realm.UpdatePolicy = .all) {
         if !isRealmAccessible() { return }

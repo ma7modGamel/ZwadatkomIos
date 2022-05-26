@@ -76,6 +76,10 @@
 		8655A9E6283F66770048BF74 /* BannarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E5283F66770048BF74 /* BannarCell.swift */; };
 		8655A9E8283F67340048BF74 /* ProuductCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E7283F67340048BF74 /* ProuductCell .swift */; };
 		8655A9ED283F867D0048BF74 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9EC283F867D0048BF74 /* RealmManager.swift */; };
+		8655A9F0283F87B20048BF74 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 8655A9EF283F87B20048BF74 /* Realm */; };
+		8655A9F2283F87B20048BF74 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 8655A9F1283F87B20048BF74 /* RealmSwift */; };
+		868F0C22283F92F600D5F8E6 /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868F0C21283F92F600D5F8E6 /* SplashViewModel.swift */; };
+		868F0C25283F948E00D5F8E6 /* MainResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868F0C24283F948E00D5F8E6 /* MainResponse.swift */; };
 		86E80E1C283BACF6005FF239 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */; };
 		86E80E1F283BAD20005FF239 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */; };
 		86E80E20283BAD20005FF239 /* ZawadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1E283BAD20005FF239 /* ZawadButton.swift */; };
@@ -161,6 +165,8 @@
 		8655A9E5283F66770048BF74 /* BannarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannarCell.swift; sourceTree = "<group>"; };
 		8655A9E7283F67340048BF74 /* ProuductCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProuductCell .swift"; sourceTree = "<group>"; };
 		8655A9EC283F867D0048BF74 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		868F0C21283F92F600D5F8E6 /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
+		868F0C24283F948E00D5F8E6 /* MainResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainResponse.swift; sourceTree = "<group>"; };
 		86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		86E80E1E283BAD20005FF239 /* ZawadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZawadButton.swift; sourceTree = "<group>"; };
@@ -190,7 +196,9 @@
 				863A0C7F28310BD00009EA1F /* MOLH in Frameworks */,
 				863A0C7C28310B4B0009EA1F /* Kingfisher in Frameworks */,
 				863A0C6C283106790009EA1F /* Moya in Frameworks */,
+				8655A9F0283F87B20048BF74 /* Realm in Frameworks */,
 				863A0C8228310C120009EA1F /* CombineCocoa in Frameworks */,
+				8655A9F2283F87B20048BF74 /* RealmSwift in Frameworks */,
 				863A0C6F283106AF0009EA1F /* SwifterSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,8 +382,8 @@
 		863A0C87283110260009EA1F /* SplashFlow */ = {
 			isa = PBXGroup;
 			children = (
-				863A0CD8283124820009EA1F /* SplashView */,
 				863A0CA428311D790009EA1F /* Coordinator */,
+				863A0CD8283124820009EA1F /* SplashView */,
 			);
 			path = SplashFlow;
 			sourceTree = "<group>";
@@ -393,6 +401,7 @@
 		863A0C89283111F20009EA1F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				868F0C23283F947A00D5F8E6 /* APIResponses */,
 				8699A6B5283F657F0094BD41 /* DiffableDataSource */,
 				8652C15A283D00230065BB8C /* User */,
 				86E80E21283BAD68005FF239 /* Auth */,
@@ -527,6 +536,7 @@
 			children = (
 				863A0C59283105070009EA1F /* SplashController.swift */,
 				863A0CD928312DC30009EA1F /* SplashView.swift */,
+				868F0C21283F92F600D5F8E6 /* SplashViewModel.swift */,
 			);
 			path = SplashView;
 			sourceTree = "<group>";
@@ -597,6 +607,7 @@
 		8652C15A283D00230065BB8C /* User */ = {
 			isa = PBXGroup;
 			children = (
+				868F0C24283F948E00D5F8E6 /* MainResponse.swift */,
 				8652C158283CFFF80065BB8C /* User.swift */,
 				8652C15B283D002F0065BB8C /* Address.swift */,
 			);
@@ -645,6 +656,13 @@
 				8655A9E7283F67340048BF74 /* ProuductCell .swift */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		868F0C23283F947A00D5F8E6 /* APIResponses */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = APIResponses;
 			sourceTree = "<group>";
 		};
 		8699A6B5283F657F0094BD41 /* DiffableDataSource */ = {
@@ -725,6 +743,8 @@
 				863A0C7E28310BD00009EA1F /* MOLH */,
 				863A0C8128310C120009EA1F /* CombineCocoa */,
 				8652C176283D16390065BB8C /* Toast */,
+				8655A9EF283F87B20048BF74 /* Realm */,
+				8655A9F1283F87B20048BF74 /* RealmSwift */,
 			);
 			productName = ZwadatkomIos;
 			productReference = 863A0C52283105070009EA1F /* Zwadatkom.app */;
@@ -762,6 +782,7 @@
 				863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */,
 				863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */,
+				8655A9EE283F87B20048BF74 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			productRefGroup = 863A0C53283105070009EA1F /* Products */;
 			projectDirPath = "";
@@ -846,6 +867,7 @@
 				864DE6CB283E1AB70036C77C /* HomeModuleFactory.swift in Sources */,
 				862A217628339F8E004CAEDB /* LoginController.swift in Sources */,
 				8655A9E6283F66770048BF74 /* BannarCell.swift in Sources */,
+				868F0C22283F92F600D5F8E6 /* SplashViewModel.swift in Sources */,
 				863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */,
 				862A216428326659004CAEDB /* OnboardingView.swift in Sources */,
 				86F88DB4283BB08B00CCFD18 /* OTPViewModel.swift in Sources */,
@@ -879,6 +901,7 @@
 				86E80E25283BAD68005FF239 /* RegisterModel.swift in Sources */,
 				863A0CD0283120260009EA1F /* ColorsManager.swift in Sources */,
 				86F88DB5283BB08B00CCFD18 /* OTPController.swift in Sources */,
+				868F0C25283F948E00D5F8E6 /* MainResponse.swift in Sources */,
 				863A0C9F28311C350009EA1F /* CoordinatorFactory.swift in Sources */,
 				8652C171283D0A6C0065BB8C /* TapBarCoordinatorOutput.swift in Sources */,
 				864DE6C5283E18240036C77C /* HomeController.swift in Sources */,
@@ -1165,6 +1188,14 @@
 				minimumVersion = 1.0.0;
 			};
 		};
+		8655A9EE283F87B20048BF74 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1197,6 +1228,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;
+		};
+		8655A9EF283F87B20048BF74 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8655A9EE283F87B20048BF74 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+		8655A9F1283F87B20048BF74 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8655A9EE283F87B20048BF74 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
