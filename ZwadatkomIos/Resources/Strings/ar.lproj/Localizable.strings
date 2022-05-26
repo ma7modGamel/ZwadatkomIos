@@ -28,3 +28,10 @@
 "otpHeadTitle" = "من فضلك ادخل كود التفعيل";
 "otpSendButton" = "إرسال";
 "otpResendButton" = "إعادة إرسال";
+
+// Settings strings
+
+"personalInformation" = "بيانتي الشخصية";
+"orders" = "طلباتي";
+"settings" = "الاعدادات";
+"logout" = "تسجيل خروج";

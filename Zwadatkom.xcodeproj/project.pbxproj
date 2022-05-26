@@ -75,7 +75,7 @@
 		8655A9E4283F66150048BF74 /* CategoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E3283F66150048BF74 /* CategoryCell.swift */; };
 		8655A9E6283F66770048BF74 /* BannarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E5283F66770048BF74 /* BannarCell.swift */; };
 		8655A9E8283F67340048BF74 /* ProuductCell .swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9E7283F67340048BF74 /* ProuductCell .swift */; };
-		8699A6B3283E914D0094BD41 /* ESTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = 8699A6B2283E914D0094BD41 /* ESTabBarController */; };
+		8655A9ED283F867D0048BF74 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8655A9EC283F867D0048BF74 /* RealmManager.swift */; };
 		86E80E1C283BACF6005FF239 /* AuthCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */; };
 		86E80E1F283BAD20005FF239 /* TextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */; };
 		86E80E20283BAD20005FF239 /* ZawadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86E80E1E283BAD20005FF239 /* ZawadButton.swift */; };
@@ -160,6 +160,7 @@
 		8655A9E3283F66150048BF74 /* CategoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCell.swift; sourceTree = "<group>"; };
 		8655A9E5283F66770048BF74 /* BannarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannarCell.swift; sourceTree = "<group>"; };
 		8655A9E7283F67340048BF74 /* ProuductCell .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ProuductCell .swift"; sourceTree = "<group>"; };
+		8655A9EC283F867D0048BF74 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		86E80E1B283BACF6005FF239 /* AuthCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCoordinator.swift; sourceTree = "<group>"; };
 		86E80E1D283BAD20005FF239 /* TextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextFieldWithIcon.swift; sourceTree = "<group>"; };
 		86E80E1E283BAD20005FF239 /* ZawadButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZawadButton.swift; sourceTree = "<group>"; };
@@ -187,7 +188,6 @@
 				8652C16B283D08470065BB8C /* CoreData.framework in Frameworks */,
 				8652C169283D08340065BB8C /* Accelerate.framework in Frameworks */,
 				863A0C7F28310BD00009EA1F /* MOLH in Frameworks */,
-				8699A6B3283E914D0094BD41 /* ESTabBarController in Frameworks */,
 				863A0C7C28310B4B0009EA1F /* Kingfisher in Frameworks */,
 				863A0C6C283106790009EA1F /* Moya in Frameworks */,
 				863A0C8228310C120009EA1F /* CombineCocoa in Frameworks */,
@@ -320,6 +320,7 @@
 		863A0C7828310A340009EA1F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				8655A9EC283F867D0048BF74 /* RealmManager.swift */,
 				862A216B28328358004CAEDB /* UserDefaultsManager.swift */,
 			);
 			path = Managers;
@@ -724,7 +725,6 @@
 				863A0C7E28310BD00009EA1F /* MOLH */,
 				863A0C8128310C120009EA1F /* CombineCocoa */,
 				8652C176283D16390065BB8C /* Toast */,
-				8699A6B2283E914D0094BD41 /* ESTabBarController */,
 			);
 			productName = ZwadatkomIos;
 			productReference = 863A0C52283105070009EA1F /* Zwadatkom.app */;
@@ -762,7 +762,6 @@
 				863A0C7D28310BD00009EA1F /* XCRemoteSwiftPackageReference "MOLH" */,
 				863A0C8028310C120009EA1F /* XCRemoteSwiftPackageReference "CombineCocoa" */,
 				8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */,
-				8699A6B1283E914D0094BD41 /* XCRemoteSwiftPackageReference "ESTabBarController" */,
 			);
 			productRefGroup = 863A0C53283105070009EA1F /* Products */;
 			projectDirPath = "";
@@ -863,6 +862,7 @@
 				863A0CC2283120260009EA1F /* AssetsManager.swift in Sources */,
 				86E80E29283BAD83005FF239 /* RegisterView.swift in Sources */,
 				8652C15C283D002F0065BB8C /* Address.swift in Sources */,
+				8655A9ED283F867D0048BF74 /* RealmManager.swift in Sources */,
 				863A0CA328311D0B0009EA1F /* SplashModuleFactory.swift in Sources */,
 				863A0C93283117610009EA1F /* BaseCoordinator.swift in Sources */,
 				86F88DC2283BCC0F00CCFD18 /* BaseUIView.swift in Sources */,
@@ -1165,14 +1165,6 @@
 				minimumVersion = 1.0.0;
 			};
 		};
-		8699A6B1283E914D0094BD41 /* XCRemoteSwiftPackageReference "ESTabBarController" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/eggswift/ESTabBarController.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 2.0.0;
-			};
-		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1205,11 +1197,6 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 8652C175283D16390065BB8C /* XCRemoteSwiftPackageReference "toast-swift" */;
 			productName = Toast;
-		};
-		8699A6B2283E914D0094BD41 /* ESTabBarController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 8699A6B1283E914D0094BD41 /* XCRemoteSwiftPackageReference "ESTabBarController" */;
-			productName = ESTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

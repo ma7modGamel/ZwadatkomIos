@@ -42,6 +42,9 @@ internal struct ColorName {
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#838383"></span>
   /// Alpha: 100% <br/> (0x838383ff)
   internal static let semiGray = ColorName(rgbaValue: 0x838383ff)
+  /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#eeeeee"></span>
+  /// Alpha: 100% <br/> (0xeeeeeeff)
+  internal static let softGray = ColorName(rgbaValue: 0xeeeeeeff)
   /// <span style="display:block;width:3em;height:2em;border:1px solid black;background:#ffffff"></span>
   /// Alpha: 100% <br/> (0xffffffff)
   internal static let whiteColor = ColorName(rgbaValue: 0xffffffff)

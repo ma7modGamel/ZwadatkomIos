@@ -8,4 +8,5 @@ grayColor: #838383
 lightGray: #E5E5E5
 semiGray: #838383
 offGray: #F9F9F9
+softGray: #EEEEEE
 red: #EE2F35
