@@ -85,7 +85,6 @@ class ApplicationCoordinator: BaseCoordinator {
             self.start()
             self.removeDependency(coordinator)
         }.store(in: &subscriptions)
-        
         addDependency(coordinator)
         coordinator.start()
     }

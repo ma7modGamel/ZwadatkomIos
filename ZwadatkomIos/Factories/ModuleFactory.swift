@@ -58,9 +58,24 @@ extension ModuleFactory: TabBarModuleFactory {
 }
 
 extension ModuleFactory: HomeModuleFactory {
+
+    
+    
     func createHomeOutput() -> HomeControllerProtocol {
         let viewModel = HomeViewModel()
         let viewController = HomeController(viewModel: viewModel)
+        return viewController
+    }
+
+    func createCategoriesHandler(with categories: [Category]) -> CategoriesControllerProtocol {
+        let viewModel = CategoriesViewModel(categories: categories)
+        let viewController = CategoriesController(viewModel: viewModel)
+        return viewController
+    }
+    
+    func createCategoryHandler(with categories: [Category], and selectedCategory: Category) -> CategoryControllerProtocol {
+        let viewModel = CategoryViewModel(selectedCategory: selectedCategory, categoriesList: categories)
+        let viewController = CategoryController(viewModel: viewModel)
         return viewController
     }
 }

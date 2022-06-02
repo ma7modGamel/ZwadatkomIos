@@ -15,8 +15,8 @@ class NetworkManager {
         guard let token = UserDefaultsManager.shared().token else { return "" }
         return token
     }
-    
-    private var provider = MoyaProvider<APIRouter>(plugins: [NetworkLoggerPlugin(), basicAuthPlugin])
+    // [NetworkLoggerPlugin()
+    private var provider = MoyaProvider<APIRouter>(plugins: [basicAuthPlugin])
     private static let sharedInstance = NetworkManager()
     
     // Private Init
@@ -38,12 +38,17 @@ class NetworkManager {
         return request(target: APIRouter.register)
     }
     
-    func getBanners() -> Future<[Banar], Error> {
+    func getBanners() -> Future<BannerMainResponse, Error> {
         return request(target: APIRouter.getBanners)
     }
     
-
+    func getCategories() -> Future<CategoriesMainResponse, Error> {
+        return request(target: APIRouter.getCategories)
+    }
     
+    func getProducts(inCategory id: Int = 0) -> Future<ProductsMainResponse, Error> {
+        return request(target: APIRouter.getProducts(categoryId: [id]))
+    }
 }
 
 private extension NetworkManager {
@@ -53,7 +58,7 @@ private extension NetworkManager {
             self.provider.request(target) { result in
                 switch result {
                 case .success(let response):
-                     try! print(response.mapString())
+                     //try! print(response.mapString())
                     do {
                         try promise(.success(response.map(T.self)))
                     } catch {

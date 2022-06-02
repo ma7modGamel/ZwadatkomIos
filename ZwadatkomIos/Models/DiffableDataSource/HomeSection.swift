@@ -12,3 +12,4 @@ enum HomeSection: Hashable, CaseIterable {
     case Categories
     case Products
 }
+

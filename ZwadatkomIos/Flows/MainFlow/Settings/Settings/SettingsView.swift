@@ -8,14 +8,21 @@
 import UIKit
 
 class SettingsView: BaseUIView {
-    
+    // sub views
     let backGroundImage = UIImageView(frame: .zero)
     private var basicInformationStack = UIStackView(frame: .zero)
     private var balanceStack = UIStackView(frame: .zero)
     private var buttonsStack = UIStackView(frame: .zero)
     private var avatarImageView = UIImageView(frame: .zero)
     private var userFullNameLabel = UILabel(frame: .zero)
+    
+    // tap Gestures
+    let personalInformationGesture = UITapGestureRecognizer()
+    let previousOrdersGesture = UITapGestureRecognizer()
+    let settingsGesture = UITapGestureRecognizer()
+    let logoutGesture = UITapGestureRecognizer()
 
+    // computed properties
     private var sepLineView: UIView {
         let view = UIView()
         view.heightAnchor.constraint(equalToConstant: 1).isActive = true
@@ -32,9 +39,11 @@ class SettingsView: BaseUIView {
         stackView.addArrangedSubviews([imageView, contentView])
         stackView.axis = .horizontal
         stackView.distribution = .fill
+        stackView.spacing = 10
         return stackView
     }
     
+    // constants
     private var sidesPadding: CGFloat = 48
     
     init() {
@@ -51,6 +60,25 @@ class SettingsView: BaseUIView {
         self.sendSubviewToBack(backGroundImage)
         self.headerView.backgroundColor = .clear
         self.backgroundColor = ColorName.lightGray.color
+    }
+    
+    internal func configure(with user: User?) {
+        guard let user = user else { return }
+        configureUserInfoLabel(with: user)
+        
+    }
+    
+    private func configureUserInfoLabel(with user: User) {
+        userFullNameLabel.textAlignment = .right
+        userFullNameLabel.numberOfLines = 0
+        let name = user.name
+        let id = String(user.id)
+        let nameAttributes = [NSAttributedString.Key.font: UIFont(font: FontFamily.BahijTheSansArabic.light, size: 14)]
+        let idAttributes = [NSAttributedString.Key.font: UIFont(font: FontFamily.BahijTheSansArabic.light, size: 11)]
+        let nameAttributedString = NSMutableAttributedString(string: name, attributes: nameAttributes as [NSAttributedString.Key : Any])
+        let idAttributedString = NSMutableAttributedString(string: "\n\(id) :ID", attributes: idAttributes as [NSAttributedString.Key: Any])
+        nameAttributedString.append(idAttributedString)
+        userFullNameLabel.attributedText = nameAttributedString.colored(with: ColorName.whiteColor.color)
     }
     
     required init?(coder: NSCoder) {
@@ -77,15 +105,15 @@ class SettingsView: BaseUIView {
     }
     
     private func configureBalanceDetailsStackView() {
-        let balanceView = basicStack(Asset.userIcon, "the title os view")
-        let ordersCountView = basicStack(Asset.userAvatar,  "the title os view")
+        let balanceView = basicStack(Asset.walletImage, "the title os view")
+        let ordersCountView = basicStack(Asset.ordersCountImage,  "the title os view")
         
         balanceStack.addArrangedSubviews([balanceView, ordersCountView])
         balanceStack.layoutMargins = UIEdgeInsets(top: 32, left: 12, bottom: 32, right: 12)
         balanceStack.isLayoutMarginsRelativeArrangement = true
         balanceStack.axis = .horizontal
         balanceStack.distribution = .fillEqually
-        balanceStack.spacing = 10
+        balanceStack.spacing = 1
         balanceStack.backgroundColor = ColorName.whiteColor.color
         balanceStack.layerCornerRadius = 12
 
@@ -93,25 +121,29 @@ class SettingsView: BaseUIView {
     
     private func configureButtonStackView() {
         let basicInformationImage = UIImage(asset: Asset.userIcon)
-        let perviousOrdersImage = UIImage(asset: Asset.userIcon)
-        let logoutImage = UIImage(asset: Asset.userAvatar)
+        let perviousOrdersImage = UIImage(asset: Asset.settingsIcon)
+        let settingsImage = UIImage(asset: Asset.settingsIcon)
+        let logoutImage = UIImage(asset: Asset.logoutIcon)
         let basicInformation = createButtonStackView(viewTitle: L10n.personalInformation, viewIcon: basicInformationImage)
-        let perviousOrders = createButtonStackView(viewTitle: L10n.orders, viewIcon: basicInformationImage)
-        let settings = createButtonStackView(viewTitle: L10n.settings, viewIcon: basicInformationImage)
-        let logout = createButtonStackView(viewTitle: L10n.logout, viewIcon: logoutImage)
-
+        let perviousOrders = createButtonStackView(viewTitle: L10n.orders, viewIcon: perviousOrdersImage)
+        let settings = createButtonStackView(viewTitle: L10n.settings, viewIcon: settingsImage)
+        let logout = createButtonStackView(viewTitle: L10n.logout, viewIcon: logoutImage, sepLine: false)
+        basicInformation.addGestureRecognizer(personalInformationGesture)
+        perviousOrders.addGestureRecognizer(previousOrdersGesture)
+        settings.addGestureRecognizer(settingsGesture)
+        logout.addGestureRecognizer(logoutGesture)
 
         let buttonsStackViews = [basicInformation, perviousOrders, settings, logout]
         buttonsStack.addArrangedSubviews(buttonsStackViews)
         buttonsStack.axis = .vertical
         buttonsStack.distribution = .fill
-        buttonsStack.layoutMargins = UIEdgeInsets(top: 0, left: 25, bottom: 0, right: 25)
+        buttonsStack.layoutMargins = UIEdgeInsets(top: 11, left: 25, bottom: 11, right: 25)
         buttonsStack.backgroundColor = ColorName.whiteColor.color
         buttonsStack.isLayoutMarginsRelativeArrangement = true
         buttonsStack.layerCornerRadius = 12
     }
     
-    private func createButtonStackView(viewTitle: String, viewIcon: UIImage?) -> UIView {
+    private func createButtonStackView(viewTitle: String, viewIcon: UIImage?, sepLine: Bool = true) -> UIView {
         let iconConfig = UIImage.SymbolConfiguration(pointSize: 22, weight: .light)
         let arrowIcon = UIImage(systemName: "chevron.left", withConfiguration: iconConfig)?.withTintColor(.random, renderingMode: .alwaysOriginal)
         let containerStack = UIStackView(frame: .zero)
@@ -127,12 +159,13 @@ class SettingsView: BaseUIView {
         iconImageView.heightAnchor.constraint(equalToConstant: imageIconConstant).isActive = true
 
         let bottomLine = sepLineView
+        bottomLine.isHidden = !sepLine
         containerStack.addSubview(bottomLine)
         bottomLine.anchor(left: containerStack.leftAnchor, bottom: containerStack.bottomAnchor, right: containerStack.rightAnchor)
 
         let containerStackViews = [iconImageView, titleLabel, arrowImageView]
         containerStack.addArrangedSubviews(containerStackViews)
-        containerStack.layoutMargins = UIEdgeInsets(top: 18, left: 0, bottom: 26, right: 0)
+        containerStack.layoutMargins = UIEdgeInsets(top: 26, left: 0, bottom: 18, right: 0)
         containerStack.isLayoutMarginsRelativeArrangement = true
 
         containerStack.axis = .horizontal

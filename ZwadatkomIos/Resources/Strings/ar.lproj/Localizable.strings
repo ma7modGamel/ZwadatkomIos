@@ -35,3 +35,12 @@
 "orders" = "طلباتي";
 "settings" = "الاعدادات";
 "logout" = "تسجيل خروج";
+
+// Home strings
+
+"categorySectionTitle" = "التصنيفات";
+"showAllCategoriesButton" = "عرض الكل";
+
+
+// categories strings
+

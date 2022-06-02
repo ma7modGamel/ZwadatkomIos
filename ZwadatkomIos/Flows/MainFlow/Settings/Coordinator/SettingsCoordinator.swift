@@ -9,7 +9,7 @@ protocol SettingsCoordinatorOutput: AnyObject {
     
 }
 
-class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
+final class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
     
     private let router: RouterProtocol
     private let factory: SettingsModuleFactory
@@ -21,7 +21,15 @@ class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
     
     override func start() {
         let settingsOutput = factory.createSettingsOutput()
+        settingsOutput.onPersonalTapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.showPersonalInformation()
+        }.store(in: &subscriptions)
         router.setRootModule(settingsOutput)
+    }
+    
+    private func showPersonalInformation() {
+        print("showPersonalInformation")
     }
 }
 

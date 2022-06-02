@@ -13,6 +13,8 @@ enum APIRouter {
     case register
     case userInformations
     case getBanners
+    case getCategories
+    case getProducts(categoryId: [Int])
 }
 
 extension APIRouter: TargetType, AccessTokenAuthorizable {
@@ -20,6 +22,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
     var authorizationType: AuthorizationType? {
         switch self {
         case .userInformations:
+            return .bearer
+        case .getBanners, .getCategories, .getProducts:
             return .bearer
         default:
             return .none
@@ -41,12 +45,16 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
             return URLs.userInformations
         case .getBanners:
             return URLs.banners
+        case .getCategories:
+            return URLs.categories
+        case .getProducts:
+            return URLs.products
         }
     }
     
     public var method: Moya.Method {
         switch self {
-        case.userInformations :
+        case.userInformations, .getBanners, .getCategories, .getProducts :
             return .get
         default:
             return .post
@@ -60,6 +68,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
         case .login(let loginModel):
             let body = try! toDictionary(model: loginModel)
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
+        case .getProducts(let categoryId):
+            return .requestParameters(parameters: ["categories" : [categoryId]], encoding: URLEncoding.queryString)
         default:
             return .requestPlain
         }
@@ -69,7 +79,8 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
     public var headers: [String : String]? {
         let headers = [
             HeaderKeys.contentType: "application/json",
-            HeaderKeys.accept: "application/json"
+            HeaderKeys.accept: "application/json",
+            "Accept-Language": "ar"
         ]
         return headers
     }

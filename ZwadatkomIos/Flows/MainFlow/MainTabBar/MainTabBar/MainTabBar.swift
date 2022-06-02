@@ -25,9 +25,7 @@ class MainTabBar: UITabBar {
     
     override func layoutSubviews() {
         super.layoutSubviews()
-        print("finished layout")
         middleButton.center = CGPoint(x: frame.width / 2, y: -5)
-
     }
     
     override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {

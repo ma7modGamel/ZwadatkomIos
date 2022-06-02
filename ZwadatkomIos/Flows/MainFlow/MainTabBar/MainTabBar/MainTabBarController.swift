@@ -39,12 +39,7 @@ class MainTabBarController: UITabBarController, TabBarViewProtocol {
         
     override func viewDidLoad() {
         super.viewDidLoad()
-        let tabBar = { () -> MainTabBar in
-            let tabBar = MainTabBar()
-            tabBar.delegate = self
-            return tabBar
-        }()
-        self.setValue(tabBar, forKey: "tabBar")
+
     }
     
     private func setTabBarItemForController(controller: UIViewController) {
@@ -63,8 +58,4 @@ class MainTabBarController: UITabBarController, TabBarViewProtocol {
         let customTabBarItem: UITabBarItem = UITabBarItem(title: nil, image: normalImage, selectedImage: selectedImage)
         return customTabBarItem
     }
-
-    
-
 }
-

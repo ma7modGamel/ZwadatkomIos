@@ -28,14 +28,18 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
     }
 
     override func start() {
+        print("##### starting tab bar coordinator #####")
         let tabBarController = factory.createTabBarOutput()
         guard let tabBarNavigationControllers = tabBarController.viewControllers else { fatalError("error due failed to setup tap bar")}
         tabBarNavigationControllers.forEach { controller in
+            print("set root controllers for \(controller.description)")
             guard let controllerTag = TabBarNavigationsTags(rawValue: controller.view.tag) else { return }
             switch controllerTag {
             case .main:
+                print("##### sets home controller for first tab navigation controller #####")
                 setHomeFlow(navController: controller as! UINavigationController)
             case .settings:
+                print("##### sets home controller for second tab navigation controller #####")
                 setSettingsFlow(navController: controller as! UINavigationController )
             }
         }
@@ -43,6 +47,7 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
     }
 
     private func setHomeFlow(navController: UINavigationController) {
+        print("set home flow  ....")
         let coordinator = coordinatorFactory.createHomeCoordinator(navController: navController)
         addDependency(coordinator)
         coordinator.start()
@@ -55,15 +60,5 @@ final class TabBarCoordinator: BaseCoordinator, TapBarCoordinatorOutput {
     }
 
     private func setCartFlow() {
-//        let coordinator = coordinatorFactory.
-//        tabBarView.servicesNavigationPublisher.sink { [weak self] navController in
-//            guard let self = self else { return }
-//            guard let navController = navController else { return }
-//            guard navController.viewControllers.isEmpty else { return }
-//            let coordinator = self.coordinatorFactory.createServicesCoordinator(navController: navController)
-//            self.addDependency(coordinator)
-//            coordinator.start()
-//            self.tabBarView.servicesNavigationPublisher.send(completion: .finished)
-//        }.store(in: &subscriptions)
     }
 }

@@ -13,24 +13,50 @@ class BaseUIView: UIView {
     internal final let contentView = UIView(frame: .zero)
     
 
-    private final let buttonTopPadding: CGFloat = 25
+    private final let buttonTopPadding: CGFloat = 22
     private final let buttonFixedHeight: CGFloat = 36
     
+    private let searchStack = UIStackView(frame: .zero)
     internal var headerView = UIView(frame: .zero)
     internal var viewTitleLabel = UILabel(frame: .zero)
     internal var backButton = UIButton(frame: .zero)
+    internal var filterButton = UIButton(frame: .zero)
+    internal var searchBar = UISearchBar(frame: .zero)
+    
+    internal var isHasSearchBar: Bool = false {
+        willSet {
+            switch newValue {
+            case true:
+                stackBottomConstraint.constant = 55
+            default:
+                stackBottomConstraint.constant = 0
+            }
+        }
+    }
+    
+    private var stackBottomConstraint: NSLayoutConstraint
     
     
     override init(frame: CGRect) {
+        stackBottomConstraint = NSLayoutConstraint(item: searchStack,
+                                                   attribute: .height,
+                                                   relatedBy: .equal,
+                                                   toItem: nil, attribute: .notAnAttribute,
+                                                   multiplier: 1,
+                                                   constant: 0)
         super.init(frame: frame)
         backgroundColor = ColorName.whiteColor.color
         configureHeaderView()
         configureBackButton()
         configureScrollView()
-        
+        configureFilterButton()
+        configureSearchBar()
+        configureSearchStackView()
+
         layoutBackButton()
         layoutTitleLabel()
         layoutHeaderView()
+        layoutSearchStack()
         layoutScrollView()
         layoutContentView()
     }
@@ -52,6 +78,26 @@ class BaseUIView: UIView {
         guard let image = UIImage(asset: Asset.backIndicator) else { return }
         backButton.setImageForAllStates(image)
     }
+    
+    private func configureSearchStackView() {
+        let stackViews = [searchBar, filterButton]
+        searchStack.addArrangedSubviews(stackViews)
+        searchStack.distribution = .fill
+    }
+    
+    private func configureSearchBar() {
+        searchBar.layerBorderColor = .clear
+        searchBar.textField?.backgroundColor = ColorName.offGray.color
+        searchBar.textField?.placeholder = "أكتب محتوي البحث"
+        searchBar.backgroundImage = UIImage()
+        searchBar.barTintColor = ColorName.whiteColor.color
+    }
+    
+    private func configureFilterButton() {
+        guard let image = UIImage(asset: Asset.filterIcon) else { return }
+        filterButton.setImageForAllStates(image)
+        filterButton.layerCornerRadius = 12
+    }
 
     private func layoutHeaderView() {
         self.addSubview(headerView)
@@ -69,9 +115,20 @@ class BaseUIView: UIView {
         backButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             backButton.topAnchor.constraint(equalTo: headerView.topAnchor, constant: buttonTopPadding),
-            backButton.bottomAnchor.constraint(greaterThanOrEqualTo: headerView.bottomAnchor, constant: -buttonTopPadding),
+            //backButton.bottomAnchor.constraint(greaterThanOrEqualTo: headerView.bottomAnchor, constant: -buttonTopPadding),
             backButton.heightAnchor.constraint(equalToConstant: buttonFixedHeight),
             backButton.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: Measurements.leadingPadding)
+        ])
+    }
+    private func layoutSearchStack() {
+        headerView.addSubview(searchStack)
+        searchStack.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            searchStack.topAnchor.constraint(equalTo: backButton.bottomAnchor, constant: 22),
+            stackBottomConstraint,
+            searchStack.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: -Measurements.leadingPadding),
+            searchStack.leadingAnchor.constraint(equalTo: headerView.leadingAnchor, constant: Measurements.leadingPadding),
+            searchStack.bottomAnchor.constraint(greaterThanOrEqualTo: headerView.bottomAnchor),
         ])
     }
     

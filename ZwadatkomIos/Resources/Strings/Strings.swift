@@ -10,6 +10,8 @@ import Foundation
 // swiftlint:disable explicit_type_interface function_parameter_count identifier_name line_length
 // swiftlint:disable nesting type_body_length type_name vertical_whitespace_opening_braces
 internal enum L10n {
+  /// التصنيفات
+  internal static let categorySectionTitle = L10n.tr("Localizable", "categorySectionTitle")
   /// envelope
   internal static let emailIconName = L10n.tr("Localizable", "emailIconName")
   /// نسيت كلمة المرور
@@ -54,6 +56,8 @@ internal enum L10n {
   internal static let registerLabel = L10n.tr("Localizable", "registerLabel")
   /// الاعدادات
   internal static let settings = L10n.tr("Localizable", "settings")
+  /// عرض الكل
+  internal static let showAllCategoriesButton = L10n.tr("Localizable", "showAllCategoriesButton")
   /// لتطبيق زودتاكم
   internal static let signInAppName = L10n.tr("Localizable", "signInAppName")
   /// مرحبا بعودتك

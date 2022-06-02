@@ -26,7 +26,7 @@ class LoginView: BaseUIView {
     
     private var textHeadLabel: ((_ text: String) -> (UILabel)) = { text in
         let label = UILabel(text: text)
-        let font = UIFont(font: FontFamily.TheSansArabic.light, size: 14)
+        let font = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 14)
         label.textColor = ColorName.semiGray.color
         label.textAlignment = .natural
         label.font = font
@@ -78,7 +78,7 @@ class LoginView: BaseUIView {
     private func configureSkipButton() {
         authSkipButton.setTitleForAllStates(L10n.skipAuthButtonTitle)
         authSkipButton.setTitleColorForAllStates(ColorName.blackColor.color)
-        authSkipButton.titleLabel?.font = UIFont(font: FontFamily.TheSansArabic.light, size: 12)
+        authSkipButton.titleLabel?.font = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 12)
         backButton.isHidden = true
     }
     
@@ -101,7 +101,7 @@ class LoginView: BaseUIView {
 
     private func configureForgetPasswordButton() {
         forgetPasswordButton.setTitleForAllStates(L10n.forgetPasswordButtonTitle)
-        forgetPasswordButton.titleLabel?.font = UIFont(font: FontFamily.TheSansArabic.light, size: 14)
+        forgetPasswordButton.titleLabel?.font = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 14)
         forgetPasswordButton.setTitleColorForAllStates(ColorName.semiGray.color)
     }
 
@@ -114,7 +114,7 @@ class LoginView: BaseUIView {
         socialHeadLabel.text = L10n.socialHeadTitle
         socialHeadLabel.textColor = ColorName.semiGray.color
         socialHeadLabel.textAlignment = .center
-        socialHeadLabel.font = UIFont(font: FontFamily.TheSansArabic.light, size: 14)
+        socialHeadLabel.font = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 14)
     }
     
     private func configureSocialStack() {
@@ -132,7 +132,7 @@ class LoginView: BaseUIView {
     private func configureRegisterButton() {
         registerButton.setTitleForAllStates(L10n.registerButton)
         registerButton.setTitleColorForAllStates(ColorName.darkGreen.color)
-        registerButton.titleLabel?.font = UIFont(font: FontFamily.TheSansArabic.light, size: 14)
+        registerButton.titleLabel?.font = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 14)
     }
 }
 

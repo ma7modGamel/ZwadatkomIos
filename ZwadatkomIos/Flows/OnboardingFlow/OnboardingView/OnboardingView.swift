@@ -65,7 +65,7 @@ class OnboardingView: UIView {
     }
     
     private func configureContentLabel() {
-        welcomeContent.font = UIFont(font: FontFamily.TheSansArabic.light, size: 12)
+        welcomeContent.font = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 12)
         welcomeContent.textColor = ColorName.grayColor.color
         welcomeContent.numberOfLines = 0
         welcomeContent.textAlignment = .center

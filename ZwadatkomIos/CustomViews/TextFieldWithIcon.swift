@@ -12,7 +12,7 @@ class TextFieldWithIcon: UITextField {
     // MARK: - Properties
     private var rectHeight: CGFloat = 52
     private var padding = UIEdgeInsets(top: 0, left: 45, bottom: 0, right: 45)
-    private var textFont = UIFont(font: FontFamily.TheSansArabic.light, size: 16)
+    private var textFont = UIFont(font: FontFamily.BahijTheSansArabic.light, size: 16)
     private var placeHolderText = String()
     
     // Life cycle methods

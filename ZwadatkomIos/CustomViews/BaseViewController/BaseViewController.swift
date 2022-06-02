@@ -14,7 +14,6 @@ class BaseUIViewController: UIViewController {
     internal var subscriptions = Set<AnyCancellable>()
 
     override func loadView() {
-        super.loadView()
         self.view = baseView
     }
 
