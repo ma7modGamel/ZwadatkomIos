@@ -14,10 +14,14 @@ internal enum L10n {
   internal static let categorySectionTitle = L10n.tr("Localizable", "categorySectionTitle")
   /// envelope
   internal static let emailIconName = L10n.tr("Localizable", "emailIconName")
+  /// البريد
+  internal static let emailTextFieldHead = L10n.tr("Localizable", "emailTextFieldHead")
   /// نسيت كلمة المرور
   internal static let forgetPasswordButtonTitle = L10n.tr("Localizable", "forgetPasswordButtonTitle")
   /// الاسم
   internal static let fullNameHeadText = L10n.tr("Localizable", "fullNameHeadText")
+  /// الإسم
+  internal static let fullNameTextFieldHead = L10n.tr("Localizable", "fullNameTextFieldHead")
   /// دخول
   internal static let loginButtonTitle = L10n.tr("Localizable", "loginButtonTitle")
   /// تسجيل خروج
@@ -54,6 +58,8 @@ internal enum L10n {
   internal static let registerHeadText = L10n.tr("Localizable", "registerHeadText")
   /// مستخدم جديد 
   internal static let registerLabel = L10n.tr("Localizable", "registerLabel")
+  /// حفظ
+  internal static let saveButton = L10n.tr("Localizable", "saveButton")
   /// الاعدادات
   internal static let settings = L10n.tr("Localizable", "settings")
   /// عرض الكل

@@ -55,6 +55,12 @@
 		863A0CD7283121D90009EA1F /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD6283121D90009EA1F /* Router.swift */; };
 		863A0CDA28312DC30009EA1F /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 863A0CD928312DC30009EA1F /* SplashView.swift */; };
 		864D54AD2847667C0027F6FB /* CategorySection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54AC2847667C0027F6FB /* CategorySection.swift */; };
+		864D54BB28489DAC0027F6FB /* PersonalInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54BA28489DAC0027F6FB /* PersonalInformationView.swift */; };
+		864D54BD28489E6B0027F6FB /* PersonalInformationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54BC28489E6B0027F6FB /* PersonalInformationController.swift */; };
+		864D54BF28489FB90027F6FB /* PersonalInformationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54BE28489FB90027F6FB /* PersonalInformationViewModel.swift */; };
+		864D54C12848AB890027F6FB /* OutlinedTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54C02848AB890027F6FB /* OutlinedTextField.swift */; };
+		864D54C42848BA9E0027F6FB /* OutLinedTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54C32848BA9E0027F6FB /* OutLinedTextView.swift */; };
+		864D54C72848BAFB0027F6FB /* LabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864D54C62848BAFB0027F6FB /* LabelView.swift */; };
 		864DE6C5283E18240036C77C /* HomeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DE6C4283E18240036C77C /* HomeController.swift */; };
 		864DE6C7283E1A1A0036C77C /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DE6C6283E1A1A0036C77C /* SettingsController.swift */; };
 		864DE6C9283E1A4F0036C77C /* SettingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864DE6C8283E1A4F0036C77C /* SettingViewModel.swift */; };
@@ -164,6 +170,12 @@
 		863A0CD928312DC30009EA1F /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		864425A4283BAFF800D93DC8 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		864D54AC2847667C0027F6FB /* CategorySection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategorySection.swift; sourceTree = "<group>"; };
+		864D54BA28489DAC0027F6FB /* PersonalInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationView.swift; sourceTree = "<group>"; };
+		864D54BC28489E6B0027F6FB /* PersonalInformationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationController.swift; sourceTree = "<group>"; };
+		864D54BE28489FB90027F6FB /* PersonalInformationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformationViewModel.swift; sourceTree = "<group>"; };
+		864D54C02848AB890027F6FB /* OutlinedTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutlinedTextField.swift; sourceTree = "<group>"; };
+		864D54C32848BA9E0027F6FB /* OutLinedTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OutLinedTextView.swift; sourceTree = "<group>"; };
+		864D54C62848BAFB0027F6FB /* LabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelView.swift; sourceTree = "<group>"; };
 		864DE6C4283E18240036C77C /* HomeController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeController.swift; sourceTree = "<group>"; };
 		864DE6C6283E1A1A0036C77C /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		864DE6C8283E1A4F0036C77C /* SettingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewModel.swift; sourceTree = "<group>"; };
@@ -330,8 +342,8 @@
 				863A0C74283108A80009EA1F /* Utilities */,
 				863A0C8B283112270009EA1F /* Extensions */,
 				863A0C9A2831198F0009EA1F /* Protocols */,
-				863A0C8A283112110009EA1F /* CustomViews */,
 				863A0C89283111F20009EA1F /* Models */,
+				863A0C8A283112110009EA1F /* CustomViews */,
 				863A0C8328310C410009EA1F /* Flows */,
 				863A0C8628310C8B0009EA1F /* Resources */,
 				863A0C63283105090009EA1F /* Info.plist */,
@@ -455,6 +467,8 @@
 		863A0C8A283112110009EA1F /* CustomViews */ = {
 			isa = PBXGroup;
 			children = (
+				864D54C52848BAD30027F6FB /* Label */,
+				864D54C22848BA6A0027F6FB /* OutLinedTextField */,
 				86DF0DE02845065D005EEA61 /* Headers */,
 				8655A9E2283F66060048BF74 /* Cells */,
 				86F88DC0283BCBE300CCFD18 /* BaseViewController */,
@@ -585,6 +599,33 @@
 			path = SplashView;
 			sourceTree = "<group>";
 		};
+		864D54B928489D880027F6FB /* PersonalInformation */ = {
+			isa = PBXGroup;
+			children = (
+				864D54BA28489DAC0027F6FB /* PersonalInformationView.swift */,
+				864D54BC28489E6B0027F6FB /* PersonalInformationController.swift */,
+				864D54BE28489FB90027F6FB /* PersonalInformationViewModel.swift */,
+			);
+			path = PersonalInformation;
+			sourceTree = "<group>";
+		};
+		864D54C22848BA6A0027F6FB /* OutLinedTextField */ = {
+			isa = PBXGroup;
+			children = (
+				864D54C02848AB890027F6FB /* OutlinedTextField.swift */,
+				864D54C32848BA9E0027F6FB /* OutLinedTextView.swift */,
+			);
+			path = OutLinedTextField;
+			sourceTree = "<group>";
+		};
+		864D54C52848BAD30027F6FB /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				864D54C62848BAFB0027F6FB /* LabelView.swift */,
+			);
+			path = Label;
+			sourceTree = "<group>";
+		};
 		864DE6BD283E17060036C77C /* Coordinator */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,6 +669,7 @@
 			children = (
 				864DE6C3283E17620036C77C /* Coordinator */,
 				864DE6C2283E174D0036C77C /* Settings */,
+				864D54B928489D880027F6FB /* PersonalInformation */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -960,6 +1002,7 @@
 				863A0C8D283112B80009EA1F /* NetworkManager.swift in Sources */,
 				86E80E20283BAD20005FF239 /* ZawadButton.swift in Sources */,
 				86DF0DED28461610005EEA61 /* CategoriesView.swift in Sources */,
+				864D54C42848BA9E0027F6FB /* OutLinedTextView.swift in Sources */,
 				86E80E1F283BAD20005FF239 /* TextFieldWithIcon.swift in Sources */,
 				863A0C9C283119A60009EA1F /* Presentable.swift in Sources */,
 				863A0CA128311C4F0009EA1F /* ModuleFactory.swift in Sources */,
@@ -968,6 +1011,7 @@
 				864DE6CD283E1B3D0036C77C /* HomeViewModel.swift in Sources */,
 				862A216228325F92004CAEDB /* OnboardingController.swift in Sources */,
 				864DE6C7283E1A1A0036C77C /* SettingsController.swift in Sources */,
+				864D54BB28489DAC0027F6FB /* PersonalInformationView.swift in Sources */,
 				86F88DBA283BB42A00CCFD18 /* OTPTextField.swift in Sources */,
 				8655A9E8283F67340048BF74 /* ProuductCell .swift in Sources */,
 				86E80E24283BAD68005FF239 /* LoginModel.swift in Sources */,
@@ -977,14 +1021,18 @@
 				863A0C71283106E40009EA1F /* APIRouter.swift in Sources */,
 				864D54AD2847667C0027F6FB /* CategorySection.swift in Sources */,
 				86DF0DEB284615C4005EEA61 /* CategoriesViewModel.swift in Sources */,
+				864D54BF28489FB90027F6FB /* PersonalInformationViewModel.swift in Sources */,
 				864DE6CB283E1AB70036C77C /* HomeModuleFactory.swift in Sources */,
 				86DF0DD72844E4C8005EEA61 /* ProductsMainResponse.swift in Sources */,
+				864D54C72848BAFB0027F6FB /* LabelView.swift in Sources */,
 				862A217628339F8E004CAEDB /* LoginController.swift in Sources */,
+				864D54BD28489E6B0027F6FB /* PersonalInformationController.swift in Sources */,
 				86DF0DF8284653B0005EEA61 /* CategoryViewModel.swift in Sources */,
 				8655A9E6283F66770048BF74 /* BannarCell.swift in Sources */,
 				86DF0DF42846522A005EEA61 /* CategoryController.swift in Sources */,
 				86DF0DD92844E4E3005EEA61 /* Products.swift in Sources */,
 				868F0C22283F92F600D5F8E6 /* SplashViewModel.swift in Sources */,
+				864D54C12848AB890027F6FB /* OutlinedTextField.swift in Sources */,
 				863A0C99283119170009EA1F /* RouterProtocol.swift in Sources */,
 				862A216428326659004CAEDB /* OnboardingView.swift in Sources */,
 				86DF0DDB2844E50D005EEA61 /* Product.swift in Sources */,

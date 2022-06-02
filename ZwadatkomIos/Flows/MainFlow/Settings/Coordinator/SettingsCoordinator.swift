@@ -29,7 +29,8 @@ final class SettingsCoordinator: BaseCoordinator, SettingsCoordinatorOutput {
     }
     
     private func showPersonalInformation() {
-        print("showPersonalInformation")
+        let personalInformationHandler = factory.createPersonalInformationHandler()
+        router.push(personalInformationHandler, hideBottomBar: true)
     }
 }
 

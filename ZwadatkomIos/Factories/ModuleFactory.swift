@@ -59,8 +59,7 @@ extension ModuleFactory: TabBarModuleFactory {
 
 extension ModuleFactory: HomeModuleFactory {
 
-    
-    
+
     func createHomeOutput() -> HomeControllerProtocol {
         let viewModel = HomeViewModel()
         let viewController = HomeController(viewModel: viewModel)
@@ -81,10 +80,15 @@ extension ModuleFactory: HomeModuleFactory {
 }
 
 extension ModuleFactory: SettingsModuleFactory {
+
+    func createPersonalInformationHandler() -> PersonalInformationControllerProtocol {
+        let viewModel = PersonalInformationViewModel()
+        return PersonalInformationController(viewModel: viewModel)
+    }
+
     func createSettingsOutput() -> SettingsController {
         let viewModel = SettingsViewModel()
-        let viewController = SettingsController(viewModel: viewModel)
-        return viewController
+        return SettingsController(viewModel: viewModel)
     }
     
 }

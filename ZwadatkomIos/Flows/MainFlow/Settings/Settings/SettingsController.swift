@@ -63,8 +63,6 @@ extension SettingsController {
         }.store(in: &subscriptions)
     }
     private func bindToPersonalInformationsTab() {
-        print("bindToPersonalInformationsTab")
-
         settingsView.personalInformationGesture.tapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
             self.onPersonalTapPublisher.send()

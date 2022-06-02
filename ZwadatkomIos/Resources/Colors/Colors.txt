@@ -6,7 +6,8 @@ greenColor: #8AC865
 darkGreen: #29B566
 grayColor: #838383
 lightGray: #E5E5E5
-semiGray: #838383
+semiGray: #686868
 offGray: #F9F9F9
 softGray: #EEEEEE
+
 red: #EE2F35

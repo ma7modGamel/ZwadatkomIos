@@ -20,7 +20,7 @@ fileprivate var onboardingHasBeenShowed: Bool {
     }
 }
 
-fileprivate var splashHasBeenShowed: Bool = false
+fileprivate var splashHasBeenShowed: Bool = true
 
 fileprivate enum LaunchInstructor {
     case splash, onboarding, main, auth

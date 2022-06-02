@@ -44,3 +44,10 @@
 
 // categories strings
 
+
+// personal informations
+"fullNameTextFieldHead" = "الإسم";
+"emailTextFieldHead" = "البريد";
+
+// global
+"saveButton" = "حفظ";
