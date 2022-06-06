@@ -1,6 +1,4 @@
-
 // Onboarding flow strings
-
 "onboarding1stTitle" = "تسوق اونلاين";
 "onboarding2ndTitle" = "افضل المتاجر";
 "onboarding3rdTitle" = "خدمة التوصيل";
@@ -9,29 +7,63 @@
 "onboarding2ndContent" = "ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى  لصفحة ما سيلهي القارئ عن التركيز على الشكل ";
 "onboarding3rdContent" = "ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى  لصفحة ما سيلهي القارئ عن التركيز على الشكل ";
 
-
 // Auth flow strings
-
+"skipAuthButtonTitle" = "تخطي";
+"signInHeadText" = "مرحبا بعودتك";
+"signInAppName" = "لتطبيق زودتاكم";
+"usernameHeadText" = "البريد او الهاتف";
+"passwordHeadText" = "كلمة المرور";
+"forgetPasswordButtonTitle" = "نسيت كلمة المرور";
+"loginButtonTitle" = "دخول";
+"socialHeadTitle" = "او دخول عبر";
+"registerLabel" = "مستخدم جديد ";
+"registerButton" = "انشأ حساب";
+"registerHeadText" = "أهلا بك";
+"fullNameHeadText" = "الاسم";
 
 "usernameIconName" = "person";
 "passwordIconName" = "lock";
-"emailIconName"= "envelope";
+"emailIconName" = "envelope";
+
+"otpHeadTitle" = "من فضلك ادخل كود التفعيل";
+"otpSendButton" = "إرسال";
+"otpResendButton" = "إعادة إرسال";
+
+// Settings strings
+
+"personalInformation" = "بيانتي الشخصية";
+"orders" = "طلباتي";
+"settings" = "الاعدادات";
+"logout" = "تسجيل خروج";
+
+// Home strings
+
+"categorySectionTitle" = "التصنيفات";
+"newestProductsSection" = "احدث المنتجات";
+"showAllCategoriesButton" = "عرض الكل";
+"deliveryHeadlabelTitle" = "توصيل الى";
 
 
-// Controllers titles
-"register" = "تسجيل مستخدم جديد";
-"home" = "الرئيسية";
-"servicesCategories" = "الخدمات";
-"account" = "الحساب";
+// categories strings
 
-// tab bar icons names
-homeTab = "house";
-servicesTab = "gear";
-accountTab = "person";
 
-// service view strings
-"totalPrice" = "إجمالى سعر طلبك";
-"addToCart" = "إضافه الي السلة";
+// personal informations
+"PersonalInformationsControllerTitle" = "بيانتي الشخصية";
+"fullNameTextFieldHead" = "الإسم";
+"emailTextFieldHead" = "البريد";
+"mobileTextFieldHead" = "الجوال";
 
-// Cart view Strings
-"cartControlerTitle" = "سلة المشتريات";
+// orders
+"ordersCellOrderNumber" = "رقم الاوردر :";
+"orderStatusLabel" = "الحالة :";
+
+// order
+"orderDetailsControllerTitle" = "تفاصيل الطلب";
+"orderNumberLabel" = "رقم الاوردر :";
+"priceLabel" = "السعر";
+"discountLabel" = "الخصم";
+"totalLabel" = "الاجمالي";
+
+// global
+"saveButton" = "حفظ";
+"sar" = "ر.س";

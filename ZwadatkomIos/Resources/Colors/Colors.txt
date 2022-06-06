@@ -3,5 +3,12 @@ whiteColor : #FFFFFF
 blackColor : #000000
 
 greenColor: #8AC865
+darkGreen: #29B566
 grayColor: #838383
 lightGray: #E5E5E5
+semiGray: #686868
+offGray: #F9F9F9
+softGray: #EEEEEE
+darkGray: #5C5C5C
+
+red: #EE2F35

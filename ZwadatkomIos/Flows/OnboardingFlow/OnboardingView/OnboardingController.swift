@@ -9,7 +9,7 @@ import Combine
 import CombineCocoa
 import UIKit
 
-protocol OnboardingViewProtocol: BaseView {
+protocol OnboardingViewProtocol: BaseController {
     var onCompleteSplashPublisher: PassthroughSubject <Void, Never> { get }
 }
 
@@ -29,7 +29,6 @@ class OnboardingController: UIViewController, OnboardingViewProtocol {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     override func loadView() {
         let onboardingView = OnboardingView()
@@ -51,7 +50,7 @@ extension OnboardingController {
     private func bindToViewCurrentValueDataStream() {
         viewModel.onboardingValuePublisher.sink { [weak self] completion in
             guard let self = self else { return }
-            print("flow has been finished")
+            self.onCompleteSplashPublisher.send()
         } receiveValue: { [weak self] currentValue in
             guard let self = self else { return }
             self.onboardingView.currentViewValuePublisher.send(currentValue)
@@ -64,5 +63,4 @@ extension OnboardingController {
             self.viewModel.getNextValuePublisher.send()
         }.store(in: &subscriptions)
     }
-    
 }

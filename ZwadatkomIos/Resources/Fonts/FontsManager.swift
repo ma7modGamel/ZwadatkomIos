@@ -19,15 +19,15 @@ internal typealias Font = FontConvertible.Font
 // swiftlint:disable identifier_name line_length type_body_length
 internal enum FontFamily {
   internal enum BahijTheSansArabic {
+    internal static let extraLight = FontConvertible(name: "BahijTheSansArabic-ExtraLight", family: "Bahij TheSansArabic", path: "ExtraLight.ttf")
+    internal static let light = FontConvertible(name: "BahijTheSansArabic-Light", family: "Bahij TheSansArabic", path: "Light.ttf")
     internal static let semiBold = FontConvertible(name: "BahijTheSansArabic-SemiBold", family: "Bahij TheSansArabic", path: "SemiBold.ttf")
+    internal static let semiLight = FontConvertible(name: "BahijTheSansArabic-SemiLight", family: "Bahij TheSansArabic", path: "SemiLight.ttf")
     internal static let bold = FontConvertible(name: "BahijTheSansArabicBold", family: "Bahij TheSansArabic", path: "Bold.ttf")
-    internal static let all: [FontConvertible] = [semiBold, bold]
+    internal static let plain = FontConvertible(name: "BahijTheSansArabicPlain", family: "Bahij TheSansArabic", path: "Plain.ttf")
+    internal static let all: [FontConvertible] = [extraLight, light, semiBold, semiLight, bold, plain]
   }
-  internal enum TheSansArabic {
-    internal static let light = FontConvertible(name: "TheSansArabic-Light", family: "TheSansArabic", path: "Light.otf")
-    internal static let all: [FontConvertible] = [light]
-  }
-  internal static let allCustomFonts: [FontConvertible] = [BahijTheSansArabic.all, TheSansArabic.all].flatMap { $0 }
+  internal static let allCustomFonts: [FontConvertible] = [BahijTheSansArabic.all].flatMap { $0 }
   internal static func registerAllCustomFonts() {
     allCustomFonts.forEach { $0.register() }
   }
