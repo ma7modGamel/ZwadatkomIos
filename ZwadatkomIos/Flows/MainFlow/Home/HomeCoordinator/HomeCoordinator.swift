@@ -49,7 +49,8 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorOutput {
     }
     
     private func showSearch() {
-       // let searchHandler =
+        let searchHandler = factory.createSearchHandler()
+        self.router.push(searchHandler, hideBottomBar: true)
     }
 }
 
