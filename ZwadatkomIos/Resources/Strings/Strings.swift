@@ -12,6 +12,10 @@ import Foundation
 internal enum L10n {
   /// التصنيفات
   internal static let categorySectionTitle = L10n.tr("Localizable", "categorySectionTitle")
+  /// توصيل الى
+  internal static let deliveryHeadlabelTitle = L10n.tr("Localizable", "deliveryHeadlabelTitle")
+  /// الخصم
+  internal static let discountLabel = L10n.tr("Localizable", "discountLabel")
   /// envelope
   internal static let emailIconName = L10n.tr("Localizable", "emailIconName")
   /// البريد
@@ -26,6 +30,10 @@ internal enum L10n {
   internal static let loginButtonTitle = L10n.tr("Localizable", "loginButtonTitle")
   /// تسجيل خروج
   internal static let logout = L10n.tr("Localizable", "logout")
+  /// الجوال
+  internal static let mobileTextFieldHead = L10n.tr("Localizable", "mobileTextFieldHead")
+  /// احدث المنتجات
+  internal static let newestProductsSection = L10n.tr("Localizable", "newestProductsSection")
   /// ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى  لصفحة ما سيلهي القارئ عن التركيز على الشكل 
   internal static let onboarding1stContent = L10n.tr("Localizable", "onboarding1stContent")
   /// تسوق اونلاين
@@ -38,8 +46,16 @@ internal enum L10n {
   internal static let onboarding3rdContent = L10n.tr("Localizable", "onboarding3rdContent")
   /// خدمة التوصيل
   internal static let onboarding3rdTitle = L10n.tr("Localizable", "onboarding3rdTitle")
+  /// تفاصيل الطلب
+  internal static let orderDetailsControllerTitle = L10n.tr("Localizable", "orderDetailsControllerTitle")
+  /// رقم الاوردر :
+  internal static let orderNumberLabel = L10n.tr("Localizable", "orderNumberLabel")
   /// طلباتي
   internal static let orders = L10n.tr("Localizable", "orders")
+  /// رقم الاوردر :
+  internal static let ordersCellOrderNumber = L10n.tr("Localizable", "ordersCellOrderNumber")
+  /// الحالة :
+  internal static let orderStatusLabel = L10n.tr("Localizable", "orderStatusLabel")
   /// من فضلك ادخل كود التفعيل
   internal static let otpHeadTitle = L10n.tr("Localizable", "otpHeadTitle")
   /// إعادة إرسال
@@ -52,12 +68,18 @@ internal enum L10n {
   internal static let passwordIconName = L10n.tr("Localizable", "passwordIconName")
   /// بيانتي الشخصية
   internal static let personalInformation = L10n.tr("Localizable", "personalInformation")
+  /// بيانتي الشخصية
+  internal static let personalInformationsControllerTitle = L10n.tr("Localizable", "PersonalInformationsControllerTitle")
+  /// السعر
+  internal static let priceLabel = L10n.tr("Localizable", "priceLabel")
   /// انشأ حساب
   internal static let registerButton = L10n.tr("Localizable", "registerButton")
   /// أهلا بك
   internal static let registerHeadText = L10n.tr("Localizable", "registerHeadText")
   /// مستخدم جديد 
   internal static let registerLabel = L10n.tr("Localizable", "registerLabel")
+  /// ر.س
+  internal static let sar = L10n.tr("Localizable", "sar")
   /// حفظ
   internal static let saveButton = L10n.tr("Localizable", "saveButton")
   /// الاعدادات
@@ -72,6 +94,8 @@ internal enum L10n {
   internal static let skipAuthButtonTitle = L10n.tr("Localizable", "skipAuthButtonTitle")
   /// او دخول عبر
   internal static let socialHeadTitle = L10n.tr("Localizable", "socialHeadTitle")
+  /// الاجمالي
+  internal static let totalLabel = L10n.tr("Localizable", "totalLabel")
   /// البريد او الهاتف
   internal static let usernameHeadText = L10n.tr("Localizable", "usernameHeadText")
   /// person

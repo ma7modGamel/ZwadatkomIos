@@ -50,12 +50,16 @@ class PersonalInformationController: BaseUIViewController, PersonalInformationCo
 }
 extension PersonalInformationController {
     private func bindToDataStreamsAndUserInteractions() {
-        
+        bindToUserInformation()
+        bindToSaveButtonUserTap()
     }
-    
+    private func bindToUserInformation() {
+        viewModel.currentUserInformationPublisher.assign(to: \.currentUser, on: personalInformationView).store(in: &subscriptions)
+    }
     private func bindToSaveButtonUserTap() {
         personalInformationView.saveButton.tapPublisher.sink { [weak self] _ in
-            
+            guard let self = self else { return }
+            print(self)
         }.store(in: &subscriptions)
     }
 }

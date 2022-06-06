@@ -50,7 +50,6 @@ class HomeViewModel: HomeViewModelProtocol {
             var categoriesList = self.categoriesListPublisher.value
             categoriesList.append(contentsOf: categoriesResponse.categories.data)
             self.categoriesListPublisher.send(categoriesList)
-            print(categoriesList)
         }.store(in: &subscriptions)
     }
     
@@ -63,7 +62,6 @@ class HomeViewModel: HomeViewModelProtocol {
             var productsList = self.productsListPublisher.value
             productsList.append(contentsOf: productsResponse.products.data)
             self.productsListPublisher.send(productsList)
-            print(productsList)
         }.store(in: &subscriptions)
     }
 }

@@ -39,15 +39,31 @@
 // Home strings
 
 "categorySectionTitle" = "التصنيفات";
+"newestProductsSection" = "احدث المنتجات";
 "showAllCategoriesButton" = "عرض الكل";
+"deliveryHeadlabelTitle" = "توصيل الى";
 
 
 // categories strings
 
 
 // personal informations
+"PersonalInformationsControllerTitle" = "بيانتي الشخصية";
 "fullNameTextFieldHead" = "الإسم";
 "emailTextFieldHead" = "البريد";
+"mobileTextFieldHead" = "الجوال";
+
+// orders
+"ordersCellOrderNumber" = "رقم الاوردر :";
+"orderStatusLabel" = "الحالة :";
+
+// order
+"orderDetailsControllerTitle" = "تفاصيل الطلب";
+"orderNumberLabel" = "رقم الاوردر :";
+"priceLabel" = "السعر";
+"discountLabel" = "الخصم";
+"totalLabel" = "الاجمالي";
 
 // global
 "saveButton" = "حفظ";
+"sar" = "ر.س";

@@ -9,7 +9,6 @@ import Foundation
 
 struct Product: Codable, Hashable {
     
-    
     private let identifier = UUID()
     
     let id: Int
@@ -33,8 +32,6 @@ struct Product: Codable, Hashable {
     static func == (lhs: Product, rhs: Product) -> Bool {
       return lhs.identifier == rhs.identifier
     }
-    
-
 }
 
 struct Image: Codable {

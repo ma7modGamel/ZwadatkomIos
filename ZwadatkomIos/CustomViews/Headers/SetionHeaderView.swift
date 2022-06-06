@@ -28,8 +28,9 @@ class SectionHeaderView: UICollectionReusableView {
     
     func configure() {
         backgroundColor = .clear
-        let insetX = CGFloat(55)
-        let insetY = CGFloat(30)
+        let insetX = CGFloat(0)
+        let insetYTop = CGFloat(40)
+        let insetYBottom = CGFloat(20)
         
         addSubview(titleLAbel)
         
@@ -39,8 +40,8 @@ class SectionHeaderView: UICollectionReusableView {
         NSLayoutConstraint.activate([
 
             
-            titleLAbel.topAnchor.constraint(equalTo: topAnchor, constant: insetY),
-            titleLAbel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -insetY),
+            titleLAbel.topAnchor.constraint(equalTo: topAnchor, constant: insetYTop),
+            titleLAbel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -insetYBottom),
             
             titleLAbel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: insetX),
             titleLAbel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -insetX),

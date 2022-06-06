@@ -10,4 +10,6 @@ import Foundation
 protocol SettingsModuleFactory {
     func createSettingsOutput() -> SettingsController
     func createPersonalInformationHandler() -> PersonalInformationControllerProtocol
+    func createOrdersHandler() -> OrdersControllerProtocol
+    func createOrderDetailsHandler(for orderId: Int) -> OrderDetailsControllerProtocol
 }

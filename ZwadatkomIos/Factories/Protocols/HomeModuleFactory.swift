@@ -11,4 +11,5 @@ protocol HomeModuleFactory {
     func createHomeOutput() -> HomeControllerProtocol
     func createCategoriesHandler(with categories: [Category]) -> CategoriesControllerProtocol
     func createCategoryHandler(with categories: [Category], and selectedCategory: Category) -> CategoryControllerProtocol
+    func createSearchHandler()
 }

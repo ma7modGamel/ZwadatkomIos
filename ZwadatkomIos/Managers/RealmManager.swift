@@ -7,11 +7,12 @@
 
 import Realm
 import RealmSwift
+import Combine
 
 class RealmManager {
     static let shared = RealmManager()
 
-    private func getRealm() -> Realm {
+    func getRealm() -> Realm {
         do {
            return try Realm()
         } catch {
@@ -49,6 +50,16 @@ class RealmManager {
             }
         }
     }
+    
+    func write<T: Object>(_ data: T, update: Realm.UpdatePolicy = .all) {
+        if !isRealmAccessible() { return }
+        let realm = getRealm()
+        realm.refresh()
+        try? realm.write {
+            realm.add(data, update: update)
+        }
+    }
+        
 
     func add<T: Object>(_ data: T, update: Realm.UpdatePolicy = .all) {
         add([data], update: update)
@@ -57,6 +68,7 @@ class RealmManager {
     func delete<T: Object>(_ data: T) {
         delete([data])
     }
+
 
     func delete<T: Object>(_ data: [T]) {
         let realm = getRealm()

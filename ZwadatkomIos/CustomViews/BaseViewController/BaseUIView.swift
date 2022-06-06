@@ -13,8 +13,8 @@ class BaseUIView: UIView {
     internal final let contentView = UIView(frame: .zero)
     
 
-    private final let buttonTopPadding: CGFloat = 22
-    private final let buttonFixedHeight: CGFloat = 36
+    internal final let buttonTopPadding: CGFloat = 22
+    internal final let buttonFixedHeight: CGFloat = 36
     
     private let searchStack = UIStackView(frame: .zero)
     internal var headerView = UIView(frame: .zero)
@@ -48,6 +48,7 @@ class BaseUIView: UIView {
         backgroundColor = ColorName.whiteColor.color
         configureHeaderView()
         configureBackButton()
+        configureTitleLabel() 
         configureScrollView()
         configureFilterButton()
         configureSearchBar()
@@ -72,6 +73,10 @@ class BaseUIView: UIView {
     
     private func configureHeaderView() {
         headerView.backgroundColor = ColorName.whiteColor.color
+    }
+    
+    private func configureTitleLabel() {
+        viewTitleLabel.font = FontFamily.BahijTheSansArabic.plain.font(size: 14)
     }
     
     private func configureBackButton() {

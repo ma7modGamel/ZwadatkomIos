@@ -10,10 +10,11 @@ import UIKit
 
 class ProductCell: UICollectionViewCell {
     
-    let container = UIView(frame: .zero)
-    let productImageView = UIImageView(frame: .zero)
-    let productNameLabel = UILabel(frame: .zero)
-    let productDescriptionLabel = UILabel(frame: .zero)
+    private let container = UIView(frame: .zero)
+    private let productImageView = UIImageView(frame: .zero)
+    private let productNameLabel = UILabel(frame: .zero)
+    private let productDescriptionLabel = UILabel(frame: .zero)
+    private let productPriceLabel = UILabel(frame: .zero)
     let addToCartButton = UIButton()
     
     override init(frame: CGRect) {
@@ -22,6 +23,8 @@ class ProductCell: UICollectionViewCell {
         configureProductNameLabel()
         configureDescriptionLabel()
         configureAddToCartButton()
+        configurePriceLabel()
+        configurePriceLabel()
         
         layout()
     }
@@ -35,10 +38,8 @@ class ProductCell: UICollectionViewCell {
         productImageView.kf.setImage(with: url)
         productNameLabel.text = product.name
         productDescriptionLabel.text = product.productDescription
-        
-        layout()
+        productPriceLabel.text = "\(product.price) \(L10n.sar)"
     }
-    
     
     private func configureContainer () {
         container.layerCornerRadius = 12
@@ -54,13 +55,16 @@ class ProductCell: UICollectionViewCell {
         productDescriptionLabel.textColor = ColorName.grayColor.color
     }
     
+    private func configurePriceLabel() {
+        productPriceLabel.font = FontFamily.BahijTheSansArabic.plain.font(size: 12)
+        productPriceLabel.textColor = ColorName.greenColor.color
+    }
+    
     private func configureAddToCartButton() {
         addToCartButton.backgroundColor = ColorName.greenColor.color
         let image = UIImage(asset: Asset.plusIcon)
         addToCartButton.setImage(image, for: .normal)
     }
-    
-    
     
 }
 
@@ -71,6 +75,7 @@ extension ProductCell {
         layoutProductImageView()
         layoutProductNameLabel()
         layoutProductDescriptionLabel()
+        layoutProductPriceLabel()
     }
     
     private func layoutContainer() {
@@ -107,5 +112,15 @@ extension ProductCell {
                                bottom: container.bottomAnchor,
                                widthConstant: buttonConstant,
                                heightConstant: buttonConstant)
+    }
+    
+    private func layoutProductPriceLabel() {
+        container.addSubview(productPriceLabel)
+        productPriceLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            productPriceLabel.leadingAnchor.constraint(equalTo: productNameLabel.leadingAnchor),
+            productPriceLabel.centerYAnchor.constraint(equalTo: addToCartButton.centerYAnchor),
+        
+        ])
     }
 }

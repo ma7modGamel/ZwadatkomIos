@@ -27,6 +27,10 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorOutput {
             guard let self = self else { return }
             self.showCategories(categories: categoriesList)
         }.store(in: &subscriptions)
+        homeOutput.onsSearchTap.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.showSearch()
+        }.store(in: &subscriptions)
         router.setRootModule(homeOutput)
     }
     
@@ -42,6 +46,10 @@ class HomeCoordinator: BaseCoordinator, HomeCoordinatorOutput {
     private func showCategory(selected: Category, categoriesList: [Category]) {
         let categoryHandler = factory.createCategoryHandler(with: categoriesList, and: selected)
         self.router.push(categoryHandler, hideBottomBar: false)
+    }
+    
+    private func showSearch() {
+       // let searchHandler =
     }
 }
 

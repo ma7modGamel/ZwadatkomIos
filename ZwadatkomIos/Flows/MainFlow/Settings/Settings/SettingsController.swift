@@ -10,6 +10,7 @@ import Combine
 
 protocol SettingsControllerProtocol: BaseController {
     var onPersonalTapPublisher: PassthroughSubject<Void, Never> { get }
+    var onOrdersTapPublisher: PassthroughSubject<Void, Never> { get }
 }
 
 final class SettingsController: BaseUIViewController, SettingsControllerProtocol {
@@ -18,6 +19,7 @@ final class SettingsController: BaseUIViewController, SettingsControllerProtocol
     //=======>MARK: -  Coordinator handlers ...
     //----------------------------------------------------------------------------------------------------------------
     internal var onPersonalTapPublisher = PassthroughSubject<Void, Never>()
+    internal var onOrdersTapPublisher = PassthroughSubject<Void, Never>()
     //----------------------------------------------------------------------------------------------------------------
     //=======>MARK: -  Properties ...
     //----------------------------------------------------------------------------------------------------------------
@@ -55,6 +57,7 @@ extension SettingsController {
     private func bindToDataStreamsAndUserInteractions() {
         bindToUserDataStream()
         bindToPersonalInformationsTab()
+        bindToOrdersTab()
     }
     private func bindToUserDataStream() {
         viewModel.userPublisher.sink { [weak self] user in
@@ -66,6 +69,12 @@ extension SettingsController {
         settingsView.personalInformationGesture.tapPublisher.sink { [weak self] _ in
             guard let self = self else { return }
             self.onPersonalTapPublisher.send()
+        }.store(in: &subscriptions)
+    }
+    private func bindToOrdersTab() {
+        settingsView.previousOrdersGesture.tapPublisher.sink { [weak self] _ in
+            guard let self = self else { return }
+            self.onOrdersTapPublisher.send()
         }.store(in: &subscriptions)
     }
 }

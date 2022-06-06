@@ -46,8 +46,16 @@ class NetworkManager {
         return request(target: APIRouter.getCategories)
     }
     
-    func getProducts(inCategory id: Int = 0) -> Future<ProductsMainResponse, Error> {
-        return request(target: APIRouter.getProducts(categoryId: [id]))
+    func getProducts(inCategory id: [Int]? = nil) -> Future<ProductsMainResponse, Error> {
+        return request(target: APIRouter.getProducts(categoryId: id))
+    }
+    
+    func getOrders() -> Future<OrdersMainResponse, Error> {
+        request(target: APIRouter.getOrders)
+    }
+    
+    func getOrder(by orderId: Int) -> Future<OrderMainResponse, Error> {
+        request(target: APIRouter.getOrder(orderId: orderId))
     }
 }
 
@@ -58,7 +66,7 @@ private extension NetworkManager {
             self.provider.request(target) { result in
                 switch result {
                 case .success(let response):
-                     //try! print(response.mapString())
+//                     try! print(response.mapString())
                     do {
                         try promise(.success(response.map(T.self)))
                     } catch {

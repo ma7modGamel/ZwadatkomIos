@@ -24,6 +24,8 @@ struct URLs {
     static let banners = "/v1/promotionView"
     static let categories = "v1/categories"
     static let products = "/v1/products"
+    static let orders = "/v1/order/show"
+    static let order = "/v1/order/details/"
 }
 
 struct Cells {
@@ -31,6 +33,7 @@ struct Cells {
     static let categoryCell = "CategoryCell"
     static let largeCategoryCell = "LargeCategoryCell"
     static let productCell = "ProductCell"
+    static let orderCell = "OrderCell"
 }
 
 struct SectionsHeaders {

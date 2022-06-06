@@ -80,6 +80,16 @@ extension ModuleFactory: HomeModuleFactory {
 }
 
 extension ModuleFactory: SettingsModuleFactory {
+    
+    func createOrderDetailsHandler(for orderId: Int) -> OrderDetailsControllerProtocol {
+        let viewModel = OrderDetailsViewModel(orderId: orderId)
+        return OrderDetailsController(viewModel: viewModel)
+    }
+    
+    func createOrdersHandler() -> OrdersControllerProtocol {
+        let viewModel = OrdersViewModel()
+        return OrdersController(viewModel: viewModel)
+    }
 
     func createPersonalInformationHandler() -> PersonalInformationControllerProtocol {
         let viewModel = PersonalInformationViewModel()

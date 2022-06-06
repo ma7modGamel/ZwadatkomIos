@@ -10,17 +10,19 @@ import Combine
 
 protocol HomeControllerProtocol: BaseController {
     var onShowAllCategoriesTap: PassthroughSubject<[Category], Never> { get }
+    var onsSearchTap: PassthroughSubject<Void, Never> { get }
 }
 
 final class HomeController: BaseUIViewController, HomeControllerProtocol {
     //----------------------------------------------------------------------------------------------------------------
     //=======>MARK: -  Coordinator helpers ...
     //----------------------------------------------------------------------------------------------------------------
-    var onShowAllCategoriesTap = PassthroughSubject<[Category], Never>()
+    let onShowAllCategoriesTap = PassthroughSubject<[Category], Never>()
+    let onsSearchTap = PassthroughSubject<Void, Never>()
+    let onProductTap = PassthroughSubject<Void, Never>()
     //----------------------------------------------------------------------------------------------------------------
     //=======>MARK: -  Properties ...
     //----------------------------------------------------------------------------------------------------------------
-    
     enum HomeItem: Hashable {
         case banner(Banner)
         case category(Category)
@@ -38,7 +40,6 @@ final class HomeController: BaseUIViewController, HomeControllerProtocol {
             self.baseView = newValue
         }
     }
-    
     //----------------------------------------------------------------------------------------------------------------
     //=======>MARK: -  Life cycle methods ...
     //----------------------------------------------------------------------------------------------------------------
@@ -53,7 +54,6 @@ final class HomeController: BaseUIViewController, HomeControllerProtocol {
     
     override func loadView() {
         let homeView = HomeView()
-        //self.baseView = homeView
         self.homeView = homeView
     }
     override func viewDidLoad() {
@@ -71,6 +71,19 @@ extension HomeController {
         bindToBannersList()
         bindToCategoriesList()
         bindToProductsListDataFlow()
+        bindToSearchButtonTap()
+    }
+    
+    private func bindToSearchButtonTap() {
+        homeView.searchButton.tapPublisher.sink { [weak self] _ in
+            
+        }.store(in: &subscriptions)
+    }
+    
+    private func bindToMenuButtonTap() {
+        homeView.menuButton.tapPublisher.sink { _ in
+            print("Menu button has been tapped")
+        }.store(in: &subscriptions)
     }
 
     private func bindToBannersList() {
@@ -97,7 +110,7 @@ extension HomeController {
             .map({ $0.map({ HomeItem.product($0) }) })
             .sink { [weak self] items in
                 guard let self = self else { return }
-                print(items)
+                print("Products ListData : \n \(items)")
                 self.updateDataSource(with: items, in: .Products)
             }.store(in: &subscriptions)
     }
@@ -114,17 +127,17 @@ extension HomeController {
         dataSource = DataSource(collectionView: homeView.homeCollectionView)  { collectionView, indexPath, itemIdentifier in
             switch itemIdentifier {
             case .banner(let banner):
-                print("##### creating banner cell #####")
+//                print("##### creating banner cell #####")
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.bannerCell, for: indexPath) as! BannerCell
                 cell.configure(with: banner)
                 return cell
             case .category(let category):
-                print("##### creating category cell #####")
+//                print("##### creating category cell #####")
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.categoryCell, for: indexPath) as! CategoryCell
                 cell.configure(with: category)
                 return cell
             case .product(let product):
-                print("##### creating product cell #####")
+//                print("##### creating product cell #####")
                 let cell = collectionView.dequeueReusableCell(withReuseIdentifier: Cells.productCell, for: indexPath) as! ProductCell
                 cell.configure(with: product)
                 return cell
@@ -145,6 +158,12 @@ extension HomeController {
                     let categoriesList = self.viewModel.categoriesListPublisher.value
                     self.onShowAllCategoriesTap.send(categoriesList)
                 }
+                return supplementaryView
+            case .Products:
+                let supplementaryView = collectionView.dequeueReusableSupplementaryView(ofKind: kind,
+                                                                                        withReuseIdentifier: SectionsHeaders.sectionHeader,
+                                                                                        for: indexPath) as! SectionHeaderView
+                supplementaryView.sectionTitle = L10n.newestProductsSection
                 return supplementaryView
             default:
                 return nil

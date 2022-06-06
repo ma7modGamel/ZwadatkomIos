@@ -41,7 +41,7 @@ class CategoryViewModel: CategoryViewModelProtocol {
     
 
     private func fetchProducts(for categoryId: Int) {
-        NetworkManager.shared().getProducts(inCategory: categoryId).sink { completion in
+        NetworkManager.shared().getProducts(inCategory: [categoryId]).sink { completion in
             guard case .failure = completion else { return }
             self.productsListPublisher.value.removeAll()
         } receiveValue: { [weak self] response in

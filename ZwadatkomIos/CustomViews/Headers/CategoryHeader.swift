@@ -30,13 +30,11 @@ class CategoryHeaderView: UICollectionReusableView {
 extension CategoryHeaderView {
     func configure() {
         backgroundColor = .clear
-        let insetX = CGFloat(0)
+        let insetX = CGFloat(5)
         let insetY = CGFloat(30)
 
         addSubview(titleLAbel)
         addSubview(viewCategoriesButton)
-        
-        
         
         titleLAbel.translatesAutoresizingMaskIntoConstraints = false
         viewCategoriesButton.translatesAutoresizingMaskIntoConstraints = false

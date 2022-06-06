@@ -91,6 +91,7 @@ class CategoryCell: UICollectionViewCell {
         categoryImageView.anchorCenterSuperview()
         categoryImageView.anchor(widthConstant: 36, heightConstant: 36)
     }
+    
     private func layoutCategoryTitle() {
         container.addSubview(titleLabel)
         titleLabel.anchor(top: imageContainer.bottomAnchor, left: container.leftAnchor, bottom: container.bottomAnchor, right:  container.rightAnchor)
