@@ -33,6 +33,7 @@ internal enum Asset {
   internal static let facebook = ImageAsset(name: "facebook")
   internal static let twitter = ImageAsset(name: "twitter")
   internal static let otpHead = ImageAsset(name: "otpHead")
+  internal static let noSearchResultIcon = ImageAsset(name: "noSearchResultIcon")
   internal static let cardsIcon = ImageAsset(name: "cardsIcon")
   internal static let logoutIcon = ImageAsset(name: "logoutIcon")
   internal static let ordersCountImage = ImageAsset(name: "ordersCountImage")

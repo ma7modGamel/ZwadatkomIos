@@ -76,7 +76,8 @@ extension HomeController {
     
     private func bindToSearchButtonTap() {
         homeView.searchButton.tapPublisher.sink { [weak self] _ in
-            
+            guard let self = self else { return }
+            self.onsSearchTap.send()
         }.store(in: &subscriptions)
     }
     

@@ -14,7 +14,7 @@ enum APIRouter {
     case userInformations
     case getBanners
     case getCategories
-    case getProducts(categoryId: [Int]?)
+    case getProducts(categoryId: [Int]?, productName: String?)
     case getOrders
     case getOrder(orderId: Int)
 }
@@ -74,9 +74,14 @@ extension APIRouter: TargetType, AccessTokenAuthorizable {
         case .login(let loginModel):
             let body = try! toDictionary(model: loginModel)
             return .requestParameters(parameters: body, encoding: JSONEncoding.default)
-        case .getProducts(let categoryId):
-            guard let categoryId = categoryId else { return .requestPlain }
-            return .requestParameters(parameters: ["categories" : [categoryId]], encoding: URLEncoding.queryString)
+        case .getProducts(let categoryId, let productName):
+            if let categoryId = categoryId {
+                return .requestParameters(parameters: ["categories" : [categoryId]], encoding: URLEncoding.queryString)
+            } else if let productName = productName {
+                return .requestParameters(parameters: ["name" : productName], encoding: URLEncoding.queryString)
+            } else {
+                return .requestPlain
+            }
         default:
             return .requestPlain
         }

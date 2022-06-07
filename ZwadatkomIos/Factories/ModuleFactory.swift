@@ -58,8 +58,11 @@ extension ModuleFactory: TabBarModuleFactory {
 }
 
 extension ModuleFactory: HomeModuleFactory {
-
-
+    func createSearchHandler() -> SearchControllerProtocol {
+        let viewModel = SearchViewModel()
+        return SearchController(viewModel: viewModel)
+    }
+    
     func createHomeOutput() -> HomeControllerProtocol {
         let viewModel = HomeViewModel()
         let viewController = HomeController(viewModel: viewModel)
