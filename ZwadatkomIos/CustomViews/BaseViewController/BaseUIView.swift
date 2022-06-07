@@ -93,6 +93,7 @@ class BaseUIView: UIView {
     private func configureSearchBar() {
         searchBar.layerBorderColor = .clear
         searchBar.textField?.backgroundColor = ColorName.offGray.color
+        searchBar.textField?.font = FontFamily.BahijTheSansArabic.semiLight.font(size: 10)
         searchBar.textField?.placeholder = "أكتب محتوي البحث"
         searchBar.backgroundImage = UIImage()
         searchBar.barTintColor = ColorName.whiteColor.color

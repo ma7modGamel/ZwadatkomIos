@@ -38,12 +38,14 @@ struct Cells {
 
 struct SectionsHeaders {
     static let categoryHeader = "CategorySectionHeader"
+    static let noResultHeader = "NoResultHeader"
     static let sectionHeader = "SectionHeader"
 }
 
-struct SupplementaryViews {
+struct SupplementaryViewTypes {
     static let categoryHeader = "CategorySupplementaryView"
     static let sectionHeader = "SectionHeader"
+    static let noResultHeaderView = "NoResultHeaderView"
 }
 
 struct HeaderKeys {
@@ -55,3 +57,8 @@ struct Measurements {
     static let leadingPadding: CGFloat = 55
 }
 
+enum supplementaryViewTypes: String {
+    case categoryHeader
+    case sectionHeader
+    case noResultHeaderView
+}

@@ -53,10 +53,10 @@ class HomeView: BaseUIView {
         homeCollectionView.register(cellWithClass: CategoryCell.self)
         homeCollectionView.register(cellWithClass: ProductCell.self)
         homeCollectionView.register(CategoryHeaderView.self,
-                                    forSupplementaryViewOfKind: SupplementaryViews.categoryHeader,
+                                    forSupplementaryViewOfKind: SupplementaryViewTypes.categoryHeader,
                                     withReuseIdentifier: SectionsHeaders.categoryHeader)
         homeCollectionView.register(SectionHeaderView.self,
-                                    forSupplementaryViewOfKind: SupplementaryViews.sectionHeader,
+                                    forSupplementaryViewOfKind: SupplementaryViewTypes.sectionHeader,
                                     withReuseIdentifier: SectionsHeaders.sectionHeader)
     }
     
@@ -96,7 +96,7 @@ class HomeView: BaseUIView {
     }
     
     func generateLayout() -> UICollectionViewLayout {
-      let layout = Layout { (sectionIndex, layoutEnvironment) in
+      let layout = Layout { (sectionIndex, _) in
 
         let sectionLayoutKind = HomeSection.allCases[sectionIndex]
         switch (sectionLayoutKind) {
@@ -137,7 +137,7 @@ class HomeView: BaseUIView {
 
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(20))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-                                                                        elementKind: SupplementaryViews.categoryHeader,
+                                                                        elementKind: SupplementaryViewTypes.categoryHeader,
                                                                         alignment: .top)
 
         let section = NSCollectionLayoutSection(group: group)
@@ -157,7 +157,7 @@ class HomeView: BaseUIView {
         
         let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(20))
         let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-                                                                        elementKind: SupplementaryViews.sectionHeader,
+                                                                        elementKind: SupplementaryViewTypes.sectionHeader,
                                                                         alignment: .top)
         let section = NSCollectionLayoutSection(group: group)
         section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 55, bottom: 0, trailing: 55)

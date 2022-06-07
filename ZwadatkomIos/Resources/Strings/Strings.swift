@@ -32,8 +32,14 @@ internal enum L10n {
   internal static let logout = L10n.tr("Localizable", "logout")
   /// الجوال
   internal static let mobileTextFieldHead = L10n.tr("Localizable", "mobileTextFieldHead")
+  /// الاكثر مبيعا
+  internal static let mostSelledProducts = L10n.tr("Localizable", "mostSelledProducts")
   /// احدث المنتجات
   internal static let newestProductsSection = L10n.tr("Localizable", "newestProductsSection")
+  /// للأسف لم يتم العثور على نتيجة بحثك
+  internal static let noSearchResultSubTitle = L10n.tr("Localizable", "noSearchResultSubTitle")
+  /// المنتج غير موجود
+  internal static let noSearchResultTitle = L10n.tr("Localizable", "noSearchResultTitle")
   /// ناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى  لصفحة ما سيلهي القارئ عن التركيز على الشكل 
   internal static let onboarding1stContent = L10n.tr("Localizable", "onboarding1stContent")
   /// تسوق اونلاين
@@ -82,6 +88,10 @@ internal enum L10n {
   internal static let sar = L10n.tr("Localizable", "sar")
   /// حفظ
   internal static let saveButton = L10n.tr("Localizable", "saveButton")
+  /// نتائج البحث
+  internal static let searchControllerTitle = L10n.tr("Localizable", "searchControllerTitle")
+  /// نتيجة بحث
+  internal static let searchResultCount = L10n.tr("Localizable", "searchResultCount")
   /// الاعدادات
   internal static let settings = L10n.tr("Localizable", "settings")
   /// عرض الكل

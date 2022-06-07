@@ -46,8 +46,8 @@ class NetworkManager {
         return request(target: APIRouter.getCategories)
     }
     
-    func getProducts(inCategory id: [Int]? = nil) -> Future<ProductsMainResponse, Error> {
-        return request(target: APIRouter.getProducts(categoryId: id))
+    func getProducts(inCategory id: [Int]? = nil, productName: String? = nil) -> Future<ProductsMainResponse, Error> {
+        return request(target: APIRouter.getProducts(categoryId: id, productName: productName))
     }
     
     func getOrders() -> Future<OrdersMainResponse, Error> {

@@ -27,7 +27,7 @@ class CategoriesView: BaseUIView {
         categoriesCollectionView.collectionViewLayout = generateLayout()
         categoriesCollectionView.register(cellWithClass: LargeCategoryCell.self)
         categoriesCollectionView.register(SectionHeaderView.self,
-                                          forSupplementaryViewOfKind: SupplementaryViews.sectionHeader,
+                                          forSupplementaryViewOfKind: SupplementaryViewTypes.sectionHeader,
                                           withReuseIdentifier: SectionsHeaders.sectionHeader)
     }
     
@@ -49,7 +49,7 @@ class CategoriesView: BaseUIView {
             
             let headerSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .estimated(44))
             let sectionHeader = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerSize,
-                                                                            elementKind: SupplementaryViews.sectionHeader,
+                                                                            elementKind: SupplementaryViewTypes.sectionHeader,
                                                                             alignment: .top)
 
             let section = NSCollectionLayoutSection(group: group)

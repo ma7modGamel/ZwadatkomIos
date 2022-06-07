@@ -64,6 +64,14 @@
 "discountLabel" = "الخصم";
 "totalLabel" = "الاجمالي";
 
+
+// search
+"searchControllerTitle" = "نتائج البحث";
+"noSearchResultTitle" = "المنتج غير موجود";
+"noSearchResultSubTitle" = "للأسف لم يتم العثور على نتيجة بحثك";
+"mostSelledProducts" = "الاكثر مبيعا";
+"searchResultCount" = "نتيجة بحث";
+
 // global
 "saveButton" = "حفظ";
 "sar" = "ر.س";
